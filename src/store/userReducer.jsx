@@ -14,7 +14,7 @@ export const initialState = {
       name: 'Ana',
       ITAProfile: 'Frontend',
       ITAFramework: 'React',
-      ITApoints: 143,
+      ITApoints: 130,
     },
   ],
 };
@@ -30,7 +30,8 @@ export const userReducer = (state = initialState, action) => {
       // immer: utilizo método para no implementar spread operator
       //                             draft:nuevo state
       return createNextState(state, (draft) => {
-        draft.users = action.payload;
+        draft.users.push(action.payload);
+        // draft.users = action.payload;
       });
 
     default:
