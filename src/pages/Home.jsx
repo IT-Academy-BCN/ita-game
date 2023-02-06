@@ -1,5 +1,12 @@
+import React from "react"
+import { Navbar } from "../components"
+
 function Home() {
-  return <div>home</div>;
+  return (
+    <>
+      <Navbar>Resumen Semanal</Navbar>
+    </>
+  )
 }
 
-export default Home;
+export default Home
