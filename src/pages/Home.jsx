@@ -41,7 +41,7 @@ function Home() {
           ))
         : 'loading'}
 
-      <button onClick={handleNewUser} style={{ border: '1px black solid' }}>
+      <button className="btn w-64 rounded-full" onClick={handleNewUser} style={{ border: '1px black solid' }}>
         Add New User
       </button>
     </div>
