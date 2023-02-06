@@ -1,6 +1,5 @@
 import React from "react"
-import { IconArrow } from "./atoms"
-import IconInfo from "./atoms/IconInfo"
+import { IconArrow, IconInfo } from "./atoms"
 
 function Navbar({ children }) {
   return (
