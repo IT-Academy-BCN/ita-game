@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../store/UserContext';
 import { Actions } from '../store/userReducer';
+import { Navbar } from "../components"
 
 function Home() {
   const { state, dispatch } = useContext(UserContext);
@@ -31,6 +32,7 @@ function Home() {
   return (
     // card
     <div>
+    <Navbar>Resumen Semanal</Navbar>
       {users !== undefined
         ? users.map((user) => (
             <ul style={{ border: '1px black solid' }} key={user.id}>
@@ -48,4 +50,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home
