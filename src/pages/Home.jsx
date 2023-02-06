@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../store/UserContext';
 import { Actions } from '../store/userReducer';
 
@@ -11,7 +11,6 @@ function Home() {
     dispatch({ type: Actions.ADD_USER, payload: users });
   }, [users, dispatch]);
 
-  console.log(users);
   return (
     // card
     <div>
