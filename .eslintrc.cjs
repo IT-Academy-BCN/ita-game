@@ -20,6 +20,10 @@ module.exports = {
     'space-before-function-paren': [
       'error',
       {
+        props: true,
+        ignorePropertyModificationsFor: ['state', 'draft'],
+        allowTernary: true,
+        allowShortCircuit: true,
         anonymous: 'always',
         named: 'never',
         asyncArrow: 'always'
