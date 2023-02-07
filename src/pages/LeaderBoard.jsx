@@ -1,5 +1,13 @@
+import { FooterMenu, Navbar } from "../components"
+
 function LeaderBoard() {
-  return <div>LeaderBoard</div>;
+  return (
+    <div>
+      <Navbar>Competición</Navbar>
+      LeaderBoard
+      <FooterMenu />
+    </div>
+  )
 }
 
-export default LeaderBoard;
+export default LeaderBoard
