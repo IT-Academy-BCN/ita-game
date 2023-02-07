@@ -1,4 +1,4 @@
-import { createNextState } from '@reduxjs/toolkit';
+// import { createNextState } from '@reduxjs/toolkit';
 // initial state para arrancar app
 export const initialState = {
   users: [
