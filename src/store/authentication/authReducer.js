@@ -1,11 +1,11 @@
 import { createNextState } from '@reduxjs/toolkit';
 
-/* let user = localStorage.getItem('currentUser')
-  ? JSON.parse(localStorage.getItem('currentUser')).user
-  : '';*/
+  let user = localStorage.getItem('currentUser')
+  ? JSON.parse(localStorage.getItem('currentUser'))
+  : '';
 
-export const inicialState = {
-  user: '',
+export const initialState = {
+  user: user,
   loading: false,
   isError: false,
 };
@@ -17,7 +17,7 @@ export const Actions = {
   LOGOUT: 'LOGOUT',
 };
 
-export const authReducer = (state = inicialState, action) => {
+export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case Actions.LOGIN_START:
       return createNextState(state, (draft) => {

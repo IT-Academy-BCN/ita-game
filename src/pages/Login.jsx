@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../store/authentication/authContext";
+import { AuthContext } from "../store/authentication/AuthContext";
 import { Actions } from "../store/authentication/authReducer";
+import axios from "axios";
 
 function Login() {
   const [ values, setValues ] = useState({
@@ -9,12 +10,17 @@ function Login() {
   })
   const { dispatch } = useContext(AuthContext)
 
-  const handleSubmit = async () => {
-    const userCredencials = {email: values.email, password: values.password}
+  const handleSubmit = async (e) => {
+    e.preventDefault()
       try {
         dispatch({ type: Actions.LOGIN_START });
-        const res = await axios.post(/* "/auth/login", login enpoint */ userCredencials);
-        dispatch({ type: Actions.LOGIN_SUCCESS, payload: res.data });
+        const res = await axios.get('http://localhost:3002/users');
+        // if it were a real backend I suppose there is no need find() method
+        const currentUser = res.data.find(item => item.email === values.email)
+        if(currentUser.password === values.password) { 
+          dispatch({ type: Actions.LOGIN_SUCCESS, payload: currentUser});
+          localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        } // else I could put some logic to inform a user that its incorrect password/user         
       } catch (err) {
         dispatch({ type: Actions.LOGIN_ERROR });
         console.log('Login failed', err)
@@ -22,10 +28,8 @@ function Login() {
       }
   }
 
-  // TODO: if there is no user inform user about it 
-
   return (
-    <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-xs space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
