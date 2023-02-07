@@ -1,5 +1,13 @@
+import { FooterMenu, Navbar } from "../components"
+
 function Profile() {
-  return <div>Profile</div>;
+  return (
+    <div>
+      <Navbar>Perfil</Navbar>
+      Profile
+      <FooterMenu />
+    </div>
+  )
 }
 
-export default Profile;
+export default Profile
