@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../store/UserContext";
 import { Actions } from "../store/userReducer";
-import { Navbar, Menu } from "../components";
+import { Navbar, FooterMenu } from "../components";
 
 function Home() {
   const { state, dispatch } = useContext(UserContext);
