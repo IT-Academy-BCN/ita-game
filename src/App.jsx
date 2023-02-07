@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   Home,
   Historical,
@@ -6,7 +6,8 @@ import {
   LeaderBoard,
   Profile,
   Register,
-} from './pages';
+  Information,
+} from "./pages";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/leaderboard" element={<LeaderBoard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/information" element={<Information />} />
         </Routes>
       </BrowserRouter>
     </>
