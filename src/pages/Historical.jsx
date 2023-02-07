@@ -1,5 +1,13 @@
+import { FooterMenu, Navbar } from "../components"
+
 function Historical() {
-  return <div>Historical</div>;
+  return (
+    <div>
+      <Navbar>Historial</Navbar>
+      Historical
+      <FooterMenu />
+    </div>
+  )
 }
 
-export default Historical;
+export default Historical

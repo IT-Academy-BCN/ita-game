@@ -1,10 +1,13 @@
-import { useContext } from "react";
-import { AuthContext } from "../store/authentication/AuthContext";
+import { FooterMenu, Navbar } from "../components"
 
 function Profile() {
-  const { state } = useContext(AuthContext)
-  const { user } = state
-  return <div>{user.name} io</div>;
+  return (
+    <div>
+      <Navbar>Perfil</Navbar>
+      Profile
+      <FooterMenu />
+    </div>
+  )
 }
 
-export default Profile;
+export default Profile
