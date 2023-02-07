@@ -15,7 +15,7 @@ const IconHistorial = ({ children }) => {
           clipRule="evenodd"
         />
       </svg>
-      <p className="text-sm mt-2">{children}</p>
+      <label className="text-sm mt-2">{children}</label>
     </div>
   )
 }

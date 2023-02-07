@@ -1,10 +1,11 @@
-import { Menu } from "../components"
+import { FooterMenu, Navbar } from "../components"
 
 function Profile() {
   return (
     <div>
+      <Navbar>Perfil</Navbar>
       Profile
-      <Menu />
+      <FooterMenu />
     </div>
   )
 }
