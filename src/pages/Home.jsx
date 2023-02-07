@@ -32,6 +32,7 @@ function Home() {
   return (
     <div className="relative bg-[#EBEBEB] w-screen h-screen">
       <Navbar>Resumen Semanal</Navbar>
+
       <FooterMenu />
     </div>
   )
