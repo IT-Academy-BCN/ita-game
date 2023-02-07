@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../store/UserContext"
 import { Actions } from "../store/userReducer"
 import { Navbar, FooterMenu } from "../components"
+import { IndicatorGroup } from "../components/molecules"
+import WeeklyState from "../components/organisms/WeeklyState"
 
 function Home() {
   const { state, dispatch } = useContext(UserContext)
@@ -30,9 +32,14 @@ function Home() {
   }
 
   return (
-    <div className="relative bg-[#EBEBEB] w-screen h-screen">
+    <div className="relative w-screen h-screen bg-base">
       <Navbar>Resumen Semanal</Navbar>
-
+      <div className="p-4">
+        <h1>Hola Ona</h1>
+      </div>
+      <div>
+        <WeeklyState />
+      </div>
       <FooterMenu />
     </div>
   )
@@ -51,7 +58,7 @@ export default Home
       : "loading"}
 
     <button
-      className="btn w-64 rounded-full"
+      className="w-64 rounded-full btn"
       onClick={handleNewUser}
       style={{ border: "1px black solid" }}
     >

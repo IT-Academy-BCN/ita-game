@@ -12,6 +12,7 @@ module.exports = {
           gold: "#EFD700",
           silver: "#7E7E7E",
           coper: "#C6811B",
+          black: "#000000",
         },
       },
     ],
