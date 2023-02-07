@@ -1,4 +1,29 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../store/authentication/authContext";
+import { Actions } from "../store/authentication/authReducer";
+
 function Login() {
+  const [ values, setValues ] = useState({
+    email: '',
+    password: '',
+  })
+  const { dispatch } = useContext(AuthContext)
+
+  const handleSubmit = async () => {
+    const userCredencials = {email: values.email, password: values.password}
+      try {
+        dispatch({ type: Actions.LOGIN_START });
+        const res = await axios.post(/* "/auth/login", login enpoint */ userCredencials);
+        dispatch({ type: Actions.LOGIN_SUCCESS, payload: res.data });
+      } catch (err) {
+        dispatch({ type: Actions.LOGIN_ERROR });
+        console.log('Login failed', err)
+        // TODO: implement better error handling
+      }
+  }
+
+  // TODO: if there is no user inform user about it 
+
   return (
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-xs space-y-8">
@@ -7,7 +32,7 @@ function Login() {
             Sign in to your account
           </h2>
         </div>
-        <form className="mt-8 space-y-6" action="#" method="POST">
+        <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="grid gap-2 rounded-md shadow-sm">
             <div>
@@ -22,6 +47,8 @@ function Login() {
                 required
                 className="input input-bordered input-info w-full max-w-xs"
                 placeholder="Email address"
+                value={values.email}
+                onChange={(e)=> setValues(prev => ({...prev, email: e.target.value}))}
               />
             </div>
             <div>
@@ -36,6 +63,8 @@ function Login() {
                 required
                 className="input input-bordered input-info w-full max-w-xs"
                 placeholder="Password"
+                value={values.password}
+                onChange={(e)=> setValues(prev => ({...prev, password: e.target.value}))}
               />
             </div>
           </div>

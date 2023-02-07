@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 import { inputs } from '../components/atoms/input/Input';
 import Input from '../components/atoms/input/Input';
 
@@ -11,12 +13,27 @@ function Register() {
     confirmPassword: '',
   });
 
+  const navigate = useNavigate();
+
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const user = {
+      name: values.name,
+      surname: values.surname,
+      email: values.email,
+      password: values.password,
+    }
+    try {
+      await axios.post(/* /auth/register endpoint,*/ user);
+      navigate("/login")
+    }catch(err) {
+      console.log(err)
+      // TODO: implement better way of error handling
+    }
   };
 
   const inputArray = inputs(values.password);
