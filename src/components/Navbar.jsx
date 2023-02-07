@@ -13,7 +13,7 @@ function Navbar({ children }) {
   }, [location]);
 
   return (
-    <div className="flex w-full justify-between items-center text-center bg-black text-white p-4 rounded-b-xl">
+    <div className="flex w-full items-center justify-between rounded-b-xl bg-black p-4 text-center text-white">
       <Link to={"/"}>
         <IconArrow />
       </Link>
