@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import SmallCard from "../components/SmallCard";
+import { FooterMenu, Navbar } from "../components";
 
 const currentUser = {
   name: "Homer Simpson",
@@ -7,24 +8,23 @@ const currentUser = {
 };
 
 const users = [
-  { name: "Homer Simpson", points: 123 }, // falta la imagen del avatar y el nivel
+  { name: "Homer Simpson", points: 100 },
   { name: "Marge Simpson", points: 130 },
   { name: "Lisa Simpson", points: 190 },
-  { name: "Barney", points: 7 },
-  { name: "Bart Simpson", points: 98 },
-  { name: "Lisa Simpson", points: 190 },
-  { name: "Barney", points: 7 },
-  { name: "Bart Simpson", points: 98 },
+  { name: "Bart Simpson", points: 115 },
+  { name: "Barney Gumble", points: 78 },
 ];
 
 function LeaderBoard() {
   return (
-    <div class="container max-w-md mx-auto flex flex-col bg-slate-400">
+    <div class="container max-w-md mx-auto flex flex-col">
+      <Navbar>Competición</Navbar>
       <Card user={currentUser} />
-      <p className="text-lg font-semibold m-6">Clasificación semanal</p>
+      <p className="text-lg font-semibold m-6 text-black">
+        Clasificación semanal
+      </p>
       {users
         // aqui filtrar solo los de la ultima semana
-        .slice(0, 6) // enseñamos solo los primeros 7
         .sort((a, b) => (a.points > b.points ? -1 : 0)) // ordenamos por puntos
         .map((user, index) => (
           <SmallCard
@@ -34,6 +34,7 @@ function LeaderBoard() {
             currentUser={currentUser}
           />
         ))}
+      <FooterMenu />
     </div>
   );
 }

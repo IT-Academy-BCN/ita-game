@@ -2,7 +2,7 @@ export default function AvatarLeaderBoard({ children }) {
   return (
     <div className="avatar indicator">
       {children}
-      <div className="w-14 rounded-full bg-primary">
+      <div className="w-14 rounded-full bg-neutral">
         <img src="public/homer.png" />
       </div>
     </div>

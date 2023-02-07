@@ -1,6 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../store/UserContext';
-import { Actions } from '../store/userReducer';
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../store/UserContext";
+import { Actions } from "../store/userReducer";
+import { Navbar, FooterMenu } from "../components";
 
 function Home() {
   const { state, dispatch } = useContext(UserContext);
@@ -20,32 +21,39 @@ function Home() {
   const handleNewUser = () => {
     let fakeUser = {
       id: id,
-      name: 'NewUser',
-      ITAProfile: 'Frontend',
-      ITAFramework: 'React',
+      name: "NewUser",
+      ITAProfile: "Frontend",
+      ITAFramework: "React",
       ITApoints: 100,
     };
     setNewUser(fakeUser);
   };
 
   return (
-    // card
-    <div>
-      {users !== undefined
-        ? users.map((user) => (
-            <ul style={{ border: '1px black solid' }} key={user.id}>
-              <li>{user.name}</li>
-              <li>{user.ITAProfile}</li>
-              <li>{user.ITApoints}</li>
-            </ul>
-          ))
-        : 'loading'}
-
-      <button onClick={handleNewUser} style={{ border: '1px black solid' }}>
-        Add New User
-      </button>
+    <div className="relative h-screen w-screen bg-[#EBEBEB]">
+      <Navbar>Resumen Semanal</Navbar>
+      <FooterMenu />
     </div>
   );
 }
 
 export default Home;
+{
+  /* {users !== undefined
+      ? users.map((user) => (
+          <ul style={{ border: "1px black solid" }} key={user.id}>
+            <li>{user.name}</li>
+            <li>{user.ITAProfile}</li>
+            <li>{user.ITApoints}</li>
+          </ul>
+        ))
+      : "loading"}
+
+    <button
+      className="btn w-64 rounded-full"
+      onClick={handleNewUser}
+      style={{ border: "1px black solid" }}
+    >
+      Add New User
+    </button> */
+}
