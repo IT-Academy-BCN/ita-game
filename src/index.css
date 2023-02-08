@@ -5,5 +5,7 @@
 @layer base {
   body {
     @apply bg-[#EBEBEB] tracking-wide;
+    @apply text-black
+
   }
 }
