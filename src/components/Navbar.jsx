@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { IconArrow, IconInfo, IconHome } from "./atoms";
 
 function Navbar({ children }) {
@@ -14,11 +14,22 @@ function Navbar({ children }) {
 
   return (
     <div className="flex w-full items-center justify-between rounded-b-xl bg-black p-4 text-center text-white">
-      <Link to={"/"}>
+      <NavLink to={"/"}>
         <IconArrow />
-      </Link>
+      </NavLink>
+      <div className="flex flex-grow justify-center">
       {children}
-      {showInfo && <IconInfo />}
+      </div>
+      {showInfo && (
+        <NavLink
+          to="/information"
+          className={`${
+            location.pathname === "/information" ? "text-primary" : ""
+          }`}
+        >
+          <IconInfo />
+        </NavLink>
+      )}
     </div>
   );
 }
