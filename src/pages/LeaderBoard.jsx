@@ -1,10 +1,10 @@
-import Card from "../components/Card";
-import SmallCard from "../components/SmallCard";
+import DisplayModeSmall from "../components/DisplayModeSmall";
+import DisplayMode from "../components/DisplayMode";
 import { FooterMenu, Navbar } from "../components";
 
 const currentUser = {
   name: "Homer Simpson",
-  points: 123,
+  points: 100,
 };
 
 const users = [
@@ -17,25 +17,28 @@ const users = [
 
 function LeaderBoard() {
   return (
-    <div class="container max-w-md mx-auto flex flex-col">
-      <Navbar>Competición</Navbar>
-      <Card user={currentUser} />
-      <p className="text-lg font-semibold m-6 text-black">
-        Clasificación semanal
-      </p>
-      {users
-        // aqui filtrar solo los de la ultima semana
-        .sort((a, b) => (a.points > b.points ? -1 : 0)) // ordenamos por puntos
-        .map((user, index) => (
-          <SmallCard
-            key={user.name}
-            user={user}
-            position={index + 1}
-            currentUser={currentUser}
-          />
-        ))}
+    <>
+      <div class="container max-w-md mx-auto flex flex-col">
+        <Navbar>Competición</Navbar>
+        <DisplayMode user={currentUser} />
+        <p className="text-lg font-semibold m-6 text-black">
+          Clasificación semanal
+        </p>
+        {users
+          // aqui filtrar solo los de la ultima semana
+          .sort((a, b) => (a.points > b.points ? -1 : 0)) // ordenamos por puntuacion
+          .map((user, index) => (
+            <DisplayModeSmall
+              key={user.name}
+              user={user}
+              position={index + 1}
+              currentUser={currentUser}
+              level={5}
+            />
+          ))}
+      </div>
       <FooterMenu />
-    </div>
+    </>
   );
 }
 

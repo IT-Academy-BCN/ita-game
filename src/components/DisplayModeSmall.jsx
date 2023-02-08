@@ -1,7 +1,12 @@
-import AvatarLeaderBoard from "./AvatarLeaderBoard";
+import AvatarTemp from "./AvatarTemp";
 
-export default function SmallCard({ user, position, currentUser }) {
-  console.log("hola", user, position, currentUser);
+export default function DisplayModeSmall({
+  user = { name: "user", points: 0 },
+  position = "",
+  currentUser = { name: "Nombre Apellido", points: 0 },
+  week = null,
+  level = null,
+}) {
   let borderColor = "";
   if (position === 1) {
     borderColor = "border-4 border-yellow-500";
@@ -13,7 +18,7 @@ export default function SmallCard({ user, position, currentUser }) {
 
   let backgroundColor = "";
   if (user.name === currentUser.name) {
-    backgroundColor = "bg-green-500";
+    backgroundColor = "bg-primary";
   } else {
     backgroundColor = "bg-white";
   }
@@ -30,14 +35,17 @@ export default function SmallCard({ user, position, currentUser }) {
       className={`card flex flex-row justify-between items-center p-4 my-2 mx-6 ${borderColor} ${backgroundColor}`}
     >
       <div className="flex flex-row">
-        <AvatarLeaderBoard>
-          <span className={`indicator-item badge ${colorIndex}`}>
-            {position}
-          </span>
-        </AvatarLeaderBoard>
+        <AvatarTemp>
+          {user.points > 0 && (
+            <span className={`indicator-item badge ${colorIndex}`}>
+              {position}
+            </span>
+          )}
+        </AvatarTemp>
         <div className="flex flex-col justify-center pl-6">
           <h2 className="font-bold text-black">{user.name}</h2>
-          <p>#Nivell 5</p>
+          {week && <p>Semana {week}</p>}
+          {level && <p>#Nivell {level}</p>}
         </div>
       </div>
       <div className="flex flex-row ">

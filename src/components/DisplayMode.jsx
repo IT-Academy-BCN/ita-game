@@ -1,10 +1,10 @@
-import AvatarLeaderBoard from "./AvatarLeaderBoard";
+import AvatarTemp from "./AvatarTemp";
 
-export default function Card({ user }) {
+export default function DisplayMode({ user }) {
   return (
     <div className="card bg-white  flex flex-col p-6 content-around mx-6 mt-6">
       <div className="flex flex-row justify-start">
-        <AvatarLeaderBoard />
+        <AvatarTemp />
         <div className="flex flex-col pl-6">
           <p className="text-black font-bold">{user.name}</p>
           <p>jQuery</p>
