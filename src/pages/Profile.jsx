@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
-// UI:Grid on 'Insignias Ganadas' Card
+// UI:Grid on 'Insignias Ganadas' Cards
 function Profile() {
   const [nextMultiple, setNextMultiple] = useState(0);
   const [openModal, setOpenModal] = useState(false);
