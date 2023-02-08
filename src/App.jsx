@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {UserAvatar} from "./components/organisms/UserAvatar"
+import EditAvatar from "./components/organisms/UserAvatar/EditAvatar";
 import {
   Home,
   Historical,
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/information" element={<Information />} />
           <Route path="/testing-useravatar" element={<UserAvatar />} />
+          <Route path="/testing-page-avatar" element={<EditAvatar />} />
         </Routes>
       </BrowserRouter>
     </>
