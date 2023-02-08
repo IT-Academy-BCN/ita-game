@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../store/UserContext"
 import { Actions } from "../store/userReducer"
 import { Navbar, FooterMenu } from "../components"
-import { IndicatorGroup } from "../components/molecules"
-import WeeklyState from "../components/organisms/WeeklyState"
+import { WeeklyResume } from "../components/organisms"
 
 function Home() {
   const { state, dispatch } = useContext(UserContext)
@@ -38,7 +37,7 @@ function Home() {
         <h1>Hola Ona</h1>
       </div>
       <div>
-        <WeeklyState />
+        <WeeklyResume />
       </div>
       <FooterMenu />
     </div>
