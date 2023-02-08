@@ -18,7 +18,7 @@ const users = [
 function LeaderBoard() {
   return (
     <>
-      <div class="container mx-auto flex flex-col">
+      <div className="container mx-auto flex flex-col">
         <Navbar>Competición</Navbar>
         <DisplayMode user={currentUser} />
         <p className="text-lg font-semibold m-6 text-black">
