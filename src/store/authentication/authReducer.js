@@ -34,7 +34,7 @@ export const authReducer = (state = initialState, action) => {
       });
     case Actions.LOGOUT:
       return createNextState(state, (draft) => {
-        localStorage.clear();
+        draft.user = action.payload;
       });
     default:
       state;

@@ -9,7 +9,7 @@ import { Actions } from '../store/authentication/authReducer';
 import { useNavigate } from 'react-router-dom';
 
 // TODO:
-// LOGIC: refactor into smaller components/ endpint Itaawards with images
+// LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
 // UI:Grid on 'Insignias Ganadas' Card
 function Profile() {
   const [nextMultiple, setNextMultiple] = useState(0);
@@ -27,7 +27,9 @@ function Profile() {
   };
 
   const handleLogout = () => {
-    dispatch({ type: Actions.LOGOUT });
+    localStorage.clear();
+    let user = localStorage.getItem('currentUser');
+    dispatch({ type: Actions.LOGOUT, payload: user });
     navigate('/');
   };
 
