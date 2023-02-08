@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { IconArrow, IconInfo } from './atoms';
+import React, { useEffect, useState } from "react"
+import { NavLink, Link, useLocation } from "react-router-dom"
+import { IconArrow, IconInfo } from "./atoms"
 
 function Navbar({ children }) {
-  const [showInfo, setShowInfo] = useState(true);
-  const location = useLocation();
+  const [showInfo, setShowInfo] = useState(true)
+  const location = useLocation()
 
   useEffect(() => {
-    if (location.pathname === '/information') {
-      setShowInfo(false);
+    if (location.pathname === "/information") {
+      setShowInfo(false)
     }
-  }, [location]);
+  }, [location])
 
   return (
     <div className="flex w-full justify-between items-center text-center bg-black text-white p-4 rounded-b-xl">
-      <Link to={'/'}>
+      <Link to={"/"}>
         <IconArrow />
       </Link>
       <div className="flex flex-grow justify-center">{children}</div>
@@ -22,14 +22,14 @@ function Navbar({ children }) {
         <NavLink
           to="/information"
           className={`${
-            location.pathname === '/information' ? 'text-primary' : ''
+            location.pathname === "/information" ? "text-primary" : ""
           }`}
         >
           <IconInfo />
         </NavLink>
       )}
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
