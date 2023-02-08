@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom"
-
 const IconProfile = ({ children }) => {
   return (
     <div className="flex flex-col justify-center items-center ">
@@ -17,7 +15,7 @@ const IconProfile = ({ children }) => {
       </svg>
       <label className="text-sm mt-2 ">{children}</label>
     </div>
-  )
-}
+  );
+};
 
-export default IconProfile
+export default IconProfile;

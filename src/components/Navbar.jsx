@@ -7,7 +7,7 @@ function Navbar({ children }) {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/information") {
+    if (location.pathname === '/information') {
       setShowInfo(false);
     }
   }, [location]);
@@ -22,7 +22,7 @@ function Navbar({ children }) {
         <NavLink
           to="/information"
           className={`${
-            location.pathname === "/information" ? "text-primary" : ""
+            location.pathname === '/information' ? 'text-primary' : ''
           }`}
         >
           <IconInfo />
