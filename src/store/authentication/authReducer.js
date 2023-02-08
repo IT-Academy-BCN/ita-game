@@ -1,6 +1,5 @@
 import { createNextState } from '@reduxjs/toolkit';
-
-  let user = localStorage.getItem('currentUser')
+let user = localStorage.getItem('currentUser')
   ? JSON.parse(localStorage.getItem('currentUser'))
   : '';
 
@@ -33,6 +32,11 @@ export const authReducer = (state = initialState, action) => {
         draft.loading = false;
         draft.isError = true;
       });
-    default: state
+    case Actions.LOGOUT:
+      return createNextState(state, (draft) => {
+        localStorage.clear();
+      });
+    default:
+      state;
   }
 };

@@ -2,46 +2,77 @@ import { FooterMenu, Navbar } from '../components';
 import { folder, gym, rocket, sun } from '../components/assets';
 import { Card, Title } from '../components/atoms/index';
 import Badge from '../components/atoms/Badge';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../store/authentication/AuthContext';
+import { Modal } from '../components/molecules';
+import { Actions } from '../store/authentication/authReducer';
+import { useNavigate } from 'react-router-dom';
 
-// TODO: refactor into smaller components / position card profile header in center /Grid on 'Insignias Ganadas' Card
+// TODO:
+// LOGIC: refactor into smaller components/ endpint Itaawards with images
+// UI:Grid on 'Insignias Ganadas' Card
 function Profile() {
   const [nextMultiple, setNextMultiple] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const { state, dispatch } = useContext(AuthContext);
+  const { user } = state;
+  const navigate = useNavigate();
 
-  // useUser Hook
+  useEffect(() => {
+    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50);
+  }, []);
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleLogout = () => {
+    dispatch({ type: Actions.LOGOUT });
+    navigate('/');
+  };
+
+  // Fake user to obtain SVG and Data for looping
   const fakeUser = {
-    id: 3,
-    name: 'Ona',
-    surname: 'Costa',
-    email: 'test3@test.test',
-    password: 'Test3-1234!',
-    framework: 'Frontend React',
-    ITAScore: 235,
     ITAawards: [
       { name: 'Solete', img: sun, text: '+5 dudas' },
       { name: 'Megamind', img: folder, text: '+3 wikis' },
       { name: 'Imparable', img: rocket, text: '+2 explicaciones' },
     ],
     pendingAwards: ['Coordinator'],
-    activities: 48,
   };
-
-  const { ITAScore } = fakeUser;
-
-  useEffect(() => {
-    setNextMultiple(Math.ceil(ITAScore / 50) * 50);
-  }, []);
 
   return (
     <div className="h-screen w-full">
       <Navbar>Perfil</Navbar>
-
+      {openModal ? (
+        <Modal>
+          <div className="flex flex-col">
+            <div className="card-title justify-between">
+              <Title>Hola {user.name}!</Title>
+              <button
+                className="btn btn-circle bg-secondary"
+                onClick={() => setOpenModal(false)}
+              >
+                X
+              </button>
+            </div>
+            <button
+              className="btn btn-outline btn-primary"
+              onClick={handleLogout}
+            >
+              Log Out
+            </button>
+          </div>
+        </Modal>
+      ) : (
+        ''
+      )}
       <div className="p-5  bg-slate-100">
         <Card>
           {/*  card profile header */}
-          <div className="flex flex-row w-100 justify-center ">
+          <div className="flex flex-row w-100 justify-center relative mb-20">
             {/* avatar box */}
-            <div className="flex flex-col justify-center items-center ">
+            <div className="flex flex-col justify-center items-center absolute ">
               {/* avatar*/}
               <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content rounded-full p-10">
@@ -50,16 +81,19 @@ function Profile() {
               </div>
               {/* name */}
               <div className="text-black font-bold ">
-                {fakeUser.name} {fakeUser.surname}
+                {user.name} {user.surname}
               </div>
               {/* dev position */}
               <div className="text-neutral-focus font-bold">
-                {fakeUser.framework}
+                {user.framework}
               </div>
             </div>
             {/* edit */}
-            <div className="w-1/6">
-              <button className="btn btn-circle bg-primary">
+            <div className="w-1/6 absolute right-0">
+              <button
+                className="btn btn-circle bg-primary"
+                onClick={handleOpenModal}
+              >
                 <svg
                   width="19"
                   height="19"
@@ -76,25 +110,25 @@ function Profile() {
             </div>
           </div>
           {/* card body */}
-          <div className="flex flex-col  mt-5 ">
+          <div className="flex flex-col mt-20 ">
             {/* progressbar  container*/}
             <div className="flex flex-col ">
               {/* bar */}
               <progress
                 className="progress progress-primary w-100"
-                value={(ITAScore * 100) / nextMultiple}
+                value={(user.ITApoints * 100) / nextMultiple}
                 max="100"
               ></progress>
               {/* data bar */}
               <div className="flex justify-between">
                 <div className="flex justify-center">
                   <p className="font-bold text-black text-sm">
-                    {fakeUser.ITAScore} ITAS
+                    {user.ITApoints} ITAS
                   </p>
                 </div>
                 <div className="flex justify-center">
                   <p className="font-bold text-black text-sm">
-                    {nextMultiple - ITAScore}
+                    {nextMultiple - user.ITApoints}
                   </p>
 
                   <p className="text-neutral-focus font-bold text-sm">
@@ -109,7 +143,7 @@ function Profile() {
               <div className="divider before:bg-secondary after:bg-secondary"></div>
               <div className="flex justify-between">
                 <p className="text-black text-base">Actividades Realizadas</p>
-                <p className="text-black text-base">{fakeUser.activities}</p>
+                <p className="text-black text-base">{user.activities}</p>
               </div>
               <div className="divider before:bg-secondary after:bg-secondary"></div>
               <div className="flex justify-between">
