@@ -5,12 +5,50 @@ import folder from '../components/assets/new-folder-dynamic-color.svg'
 import thumb from '../components/assets/thumb-up-dynamic-color.svg'
 import medal from '../components/assets/medal-dynamic-color.png'
 import LineChart from "../components/LineChart"
-// import db from "../db.json"
+import { useEffect, useState } from "react"
+import { DateTime } from 'luxon';
 
 function Historical() {
+    const [currentWeekData, setCurrentWeekData] = useState([]);
 
+    const data = [
+        { "date": 1672847739, "type": "wiki" },
+        { "date": 1675256878, "type": "doubt" },
+        { "date": 1672758090, "type": "wiki" },
+        { "date": 1674481469, "type": "explanation" },
+        { "date": 1675259859, "type": "revision" },
+        { "date": 1674570788, "type": "wiki" },
+        { "date": 1675439257, "type": "doubt" },
+        { "date": 1674661229, "type": "wiki" },
+        { "date": 1674053351, "type": "explanation" },
+        { "date": 1674737388, "type": "revision" },
+        { "date": 1675772169, "type": "wiki" },
+        { "date": 1675692582, "type": "doubt" },
+        { "date": 1675777469, "type": "wiki" },
+        { "date": 1675689428, "type": "explanation" },
+        { "date": 1675687676, "type": "revision" }
+    ]
+
+
+    const weekTimestamp = 1675687676
+
+    useEffect(() => {
+        const weekDate = DateTime.fromMillis(weekTimestamp);
+        const startOfWeek = weekDate.startOf('week');
+        console.log(weekDate)
+        console.log
+
+        setCurrentWeekData(
+          data.filter(item => {
+            const itemDate = DateTime.fromMillis(item.date * 1000);
+            return itemDate >= startOfWeek && itemDate < startOfWeek.plus({ weeks: 1 });
+          })
+        );
+      }, [weekTimestamp]);
     
-const dataByMonth = [];
+
+console.log(currentWeekData)
+// const dataByMonth = [];
 
 // db.forEach(item => {
 
