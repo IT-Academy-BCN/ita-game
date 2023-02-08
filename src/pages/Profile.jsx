@@ -3,15 +3,18 @@ import { folder, gym, rocket, sun } from '../components/assets';
 import { Card, Title } from '../components/atoms/index';
 import Badge from '../components/atoms/Badge';
 
+// TODO: refactor into smaller components & position card profile header in center
 function Profile() {
   return (
     <div className="h-full w-full">
       <Navbar>Perfil</Navbar>
+
       <div className="p-5 gap-4 h-screen">
         <Card>
-          <div className="flex flex-row w-100 justify-center relative">
+          {/*  card profile header */}
+          <div className="flex flex-row w-100 justify-center ">
             {/* avatar box */}
-            <div className="flex flex-col justify-center items-center absolute">
+            <div className="flex flex-col justify-center items-center ">
               {/* avatar*/}
               <div className="avatar placeholder">
                 <div className="bg-neutral-focus text-neutral-content rounded-full p-10">
@@ -26,7 +29,7 @@ function Profile() {
               </div>
             </div>
             {/* edit */}
-            <div className="w-1/6 absolute right-0 ">
+            <div className="w-1/6">
               <button className="btn btn-circle bg-primary">
                 <svg
                   width="19"
@@ -44,7 +47,7 @@ function Profile() {
             </div>
           </div>
           {/* card body */}
-          <div className="flex flex-col  ">
+          <div className="flex flex-col  mt-5 ">
             {/* progressbar  container*/}
             <div className="flex flex-col ">
               {/* bar */}
