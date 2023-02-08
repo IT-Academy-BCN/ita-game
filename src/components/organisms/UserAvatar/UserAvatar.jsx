@@ -1,36 +1,9 @@
-import { useFetch } from '../../../hooks'
+import { useFetch } from './hooks'
+import { handleDelete, handlePost } from './utils/handles'
 function UserAvatar() {
   const URL = 'http://localhost:3002/users'
   const { data, loading } = useFetch(URL)
 
-  const handlePost = async function postData() {
-    try {
-      const response = await fetch(URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          nombre: 'valor'
-        })
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  const handleDelete = async function deleteData(id) {
-    try {
-      const response = await fetch(`${URL}/${id}`, {
-        method: 'DELETE'
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   console.log(data)
   console.log(loading)
