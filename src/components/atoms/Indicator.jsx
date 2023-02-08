@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 
 const Indicator = ({ children, punctuation, points }) => {
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState(0)
 
   useEffect(() => {
     if (punctuation === 0) {
-      setValue("0")
+      setValue(0)
     }
-    if (punctuation === "1 / 2") {
-      setValue("50")
+    if (punctuation === 1 / 2) {
+      setValue(50)
     }
-    if (punctuation === "2 / 2" || punctuation === "1 / 1") {
-      setValue("100")
+    if (punctuation >= 1) {
+      setValue(100)
     }
   }, [punctuation])
 
