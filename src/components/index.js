@@ -1,2 +1,5 @@
 export { default as Navbar } from "./Navbar"
 export { default as FooterMenu } from "./FooterMenu"
+export { default as AvatarTemp } from "./AvatarTemp"
+export { default as DisplayModeSmall } from "./DisplayModeSmall"
+export { default as DisplayMode } from "./DisplayMode"
