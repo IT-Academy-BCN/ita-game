@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { IconArrow, IconInfo, IconHome } from "./atoms";
+import { IconArrow, IconInfo } from "./atoms";
 
 function Navbar({ children }) {
   const [showInfo, setShowInfo] = useState(true);
@@ -17,9 +17,7 @@ function Navbar({ children }) {
       <NavLink to={"/"}>
         <IconArrow />
       </NavLink>
-      <div className="flex flex-grow justify-center">
-      {children}
-      </div>
+      <div className="flex flex-grow justify-center">{children}</div>
       {showInfo && (
         <NavLink
           to="/information"
