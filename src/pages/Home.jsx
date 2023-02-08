@@ -4,20 +4,21 @@ import { Actions } from "../store/userReducer"
 import { Navbar, FooterMenu } from "../components"
 import { WeeklyResume } from "../components/organisms"
 
+
 function Home() {
-  const { state, dispatch } = useContext(UserContext)
-  const { users } = state
-  const [newUser, setNewUser] = useState({})
-  const [id, setId] = useState(users.length)
+  const { state, dispatch } = useContext(UserContext);
+  const { users } = state;
+  const [newUser, setNewUser] = useState({});
+  const [id, setId] = useState(users.length);
 
   // dispatch genera un side efffect (por setear el state (setState))y por eso en useEffect
   useEffect(() => {
     dispatch({
       type: Actions.ADD_USER,
       payload: newUser,
-    })
-    setId(id + 1)
-  }, [newUser])
+    });
+    setId(id + 1);
+  }, [newUser]);
 
   const handleNewUser = () => {
     let fakeUser = {
@@ -26,12 +27,13 @@ function Home() {
       ITAProfile: "Frontend",
       ITAFramework: "React",
       ITApoints: 100,
-    }
-    setNewUser(fakeUser)
-  }
+    };
+    setNewUser(fakeUser);
+  };
 
   return (
     <div className="relative w-screen h-screen bg-base">
+
       <Navbar>Resumen Semanal</Navbar>
       <div className="p-4">
         <h1>Hola Ona</h1>
@@ -41,10 +43,10 @@ function Home() {
       </div>
       <FooterMenu />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
 {
   /* {users !== undefined
       ? users.map((user) => (
