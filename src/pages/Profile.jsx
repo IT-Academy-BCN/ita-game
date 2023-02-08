@@ -2,14 +2,41 @@ import { FooterMenu, Navbar } from '../components';
 import { folder, gym, rocket, sun } from '../components/assets';
 import { Card, Title } from '../components/atoms/index';
 import Badge from '../components/atoms/Badge';
+import { useEffect, useState } from 'react';
 
-// TODO: refactor into smaller components & position card profile header in center
+// TODO: refactor into smaller components / position card profile header in center /Grid on 'Insignias Ganadas' Card
 function Profile() {
+  const [nextMultiple, setNextMultiple] = useState(0);
+
+  // useUser Hook
+  const fakeUser = {
+    id: 3,
+    name: 'Ona',
+    surname: 'Costa',
+    email: 'test3@test.test',
+    password: 'Test3-1234!',
+    framework: 'Frontend React',
+    ITAScore: 235,
+    ITAawards: [
+      { name: 'Solete', img: sun, text: '+5 dudas' },
+      { name: 'Megamind', img: folder, text: '+3 wikis' },
+      { name: 'Imparable', img: rocket, text: '+2 explicaciones' },
+    ],
+    pendingAwards: ['Coordinator'],
+    activities: 48,
+  };
+
+  const { ITAScore } = fakeUser;
+
+  useEffect(() => {
+    setNextMultiple(Math.ceil(ITAScore / 50) * 50);
+  }, []);
+
   return (
-    <div className="h-full w-full">
+    <div className="h-screen w-full">
       <Navbar>Perfil</Navbar>
 
-      <div className="p-5 gap-4 h-screen">
+      <div className="p-5  bg-slate-100">
         <Card>
           {/*  card profile header */}
           <div className="flex flex-row w-100 justify-center ">
@@ -22,10 +49,12 @@ function Profile() {
                 </div>
               </div>
               {/* name */}
-              <div className="text-black font-bold ">Ona Costa</div>
+              <div className="text-black font-bold ">
+                {fakeUser.name} {fakeUser.surname}
+              </div>
               {/* dev position */}
               <div className="text-neutral-focus font-bold">
-                FrontEnd Developer
+                {fakeUser.framework}
               </div>
             </div>
             {/* edit */}
@@ -53,16 +82,21 @@ function Profile() {
               {/* bar */}
               <progress
                 className="progress progress-primary w-100"
-                value="70"
+                value={(ITAScore * 100) / nextMultiple}
                 max="100"
               ></progress>
               {/* data bar */}
               <div className="flex justify-between">
                 <div className="flex justify-center">
-                  <p className="font-bold text-black text-sm">250 ITAS </p>
+                  <p className="font-bold text-black text-sm">
+                    {fakeUser.ITAScore} ITAS
+                  </p>
                 </div>
                 <div className="flex justify-center">
-                  <p className="font-bold text-black text-sm">25 ITAS </p>
+                  <p className="font-bold text-black text-sm">
+                    {nextMultiple - ITAScore}
+                  </p>
+
                   <p className="text-neutral-focus font-bold text-sm">
                     para subir de nivel
                   </p>
@@ -75,7 +109,7 @@ function Profile() {
               <div className="divider before:bg-secondary after:bg-secondary"></div>
               <div className="flex justify-between">
                 <p className="text-black text-base">Actividades Realizadas</p>
-                <p className="text-black text-base">48</p>
+                <p className="text-black text-base">{fakeUser.activities}</p>
               </div>
               <div className="divider before:bg-secondary after:bg-secondary"></div>
               <div className="flex justify-between">
@@ -86,39 +120,24 @@ function Profile() {
           </div>
         </Card>
         <Title>Insignias ganadas</Title>
-        <div className="card bg-base-100 flex flex-row flex-wrap content-center gap-1 mx-3 px-5">
-          <Badge
-            classBody="card-body py-0 px-0 gap-0 items-center text-center"
-            classFigure="px-2 pt-4"
-            classTitle="card-title text-black"
-            img={sun}
-            text="+5 dudas"
-          >
-            Solete
-          </Badge>
-          <Badge
-            classBody="card-body py-0 px-0 gap-0 items-center text-center"
-            classFigure="px-2 pt-4 mt-2"
-            classTitle="card-title text-black"
-            img={folder}
-            text="+3 wikis"
-          >
-            Megamind
-          </Badge>
-          <Badge
-            classBody="card-body pt-0 pb-6 px-0 gap-0 items-center text-center"
-            classFigure="px-2 pt-4"
-            classTitle="card-title text-black"
-            img={rocket}
-            text="+2 explicaciones"
-          >
-            Imparable
-          </Badge>
-        </div>
-        <h3 className="text-xl text-black font-bold mt-7 mb-5 ml-6">
-          Insignias pendientes
-        </h3>
-        <div className="card bg-base-100 flex flex-row flex-wrap content-center gap-1 mx-3 px-5">
+        <Card direction="row">
+          {fakeUser.ITAawards.map((a) => {
+            return (
+              <Badge
+                classBody="card-body py-0 px-0 gap-0 items-center text-center"
+                classFigure="px-2 pt-4"
+                classTitle="card-title text-black"
+                img={a.img}
+                text={a.text}
+                key={a.name}
+              >
+                {a.name}
+              </Badge>
+            );
+          })}
+        </Card>
+        <Title>Insignias Pendientes</Title>
+        <Card>
           <Badge
             classBody="card-body py-0 px-0 gap-0 items-center text-center"
             classFigure="px-2 pt-5"
@@ -128,10 +147,7 @@ function Profile() {
           >
             Cordinator
           </Badge>
-        </div>
-        {/* <Card>card con datos</Card> */}
-        <Title>Insignias pendientes</Title>
-        <Card>card con datos</Card>
+        </Card>
       </div>
       <FooterMenu />
     </div>
