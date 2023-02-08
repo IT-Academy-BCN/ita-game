@@ -29,7 +29,6 @@ function Home() {
     }
     setNewUser(fakeUser)
   }
-
   return (
     <div className="relative w-screen h-screen bg-base">
       <Navbar>Resumen Semanal</Navbar>
