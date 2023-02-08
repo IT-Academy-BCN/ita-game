@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "name": "Joan",
+  "surname": "Artola",
+  "email": "test1@test.test",
+  "password": "Test1-1234!",
+  "framework": "Frontend React",
+  "ITApoints": 123,
+  "ITAawards": [
+    "Solete",
+    "Megamind",
+    "Imparable"
+  ],
+  "activities": 30,
+  "avatar": {
+    "sex": "woman 👗",
+    "hairStyle": "pixie"
+  }
+}

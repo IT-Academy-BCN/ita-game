@@ -1,7 +1,6 @@
-
-const getData = async function (URL) {
+const getUser = async function (url) {
   try {
-    const response = await fetch(URL, {
+    const response = await fetch(url, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -14,10 +13,9 @@ const getData = async function (URL) {
   }
 }
 
-
-const postData = async function (URL) {
+const postData = async function (url) {
   try {
-    const response = await fetch(URL, {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -33,9 +31,9 @@ const postData = async function (URL) {
   }
 }
 
-const deleteData = async function (URL, id) {
+const deleteData = async function (url, id) {
   try {
-    const response = await fetch(`${URL}/${id}`, {
+    const response = await fetch(`${url}/${id}`, {
       method: 'DELETE'
     })
     const data = await response.json()
@@ -44,9 +42,9 @@ const deleteData = async function (URL, id) {
     console.error(error)
   }
 }
-const updateData = async function (URL, id, newAvatar) {
+const updateData = async function (url, id, newAvatar) {
   try {
-    const response = await fetch(`${URL}/${id}`, {
+    const response = await fetch(`${url}/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -60,4 +58,4 @@ const updateData = async function (URL, id, newAvatar) {
   }
 }
 
-export { getData, postData, deleteData, updateData }
+export { getUser, postData, deleteData, updateData }

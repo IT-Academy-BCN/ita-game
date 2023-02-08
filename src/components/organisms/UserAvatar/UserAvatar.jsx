@@ -1,6 +1,7 @@
 import Avatar, { genConfig } from 'react-nice-avatar'
 import { useFetch } from './hooks'
-import { deleteData, postData, getData, updateData } from './utils/dataFetching'
+import { deleteData, postData, getUser, updateData } from './utils/dataFetching'
+import fakeuser from './mocks/user.json'
 const URL = 'http://localhost:3002/users'
 
 const defaultStyle = {
@@ -21,11 +22,16 @@ const defaultStyle = {
  * @param {Object} ...rest, of props.
  */
 
-function UserAvatar({ useId = 1, ...rest }) {
-  const config = genConfig(defaultStyle)
+function UserAvatar({ userId = 1, ...rest }) {
+  const URL = `http://localhost:3002/users/${userId}`
+  const { data: user, isSuccess } = useFetch(URL)
 
-  const URL = 'http://localhost:3002/users'
-  const { data } = useFetch(URL)
+  console.log(user)
+
+  const { avatar } = user ?? { avatar: defaultStyle }
+  const config = genConfig(avatar)
+
+  // const { avatar } = fakeuser
 
   return (
     <article>
