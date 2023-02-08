@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UserAvatar from "./components/UserAvatar";
 import {
   Home,
   Historical,
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/information" element={<Information />} />
+          <Route path="/testing-useravatar" element={<UserAvatar />} />
         </Routes>
       </BrowserRouter>
     </>

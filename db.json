@@ -9,7 +9,8 @@
       "framework": "Frontend React",
       "ITApoints": 123,
       "ITAawards": ["Solete", "Megamind", "Imparable"],
-      "activities": 30
+      "activities": 30,
+      "avatar": { "sex": "man", "hairStyle": "mohawk"}
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "framework": "Backend Java",
       "ITApoints": 133,
       "ITAawards": ["Solete", "Imparable"],
-      "activities": 23
+      "activities": 23,
+      "avatar": { "sex": "man", "hairStyle": "mohawk"}
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "framework": "Frontend React",
       "ITApoints": 203,
       "ITAawards": ["Solete", "Imparable"],
-      "activities": 4
+      "activities": 4,
+      "avatar": { "sex": "man", "hairStyle": "mohawk"}
     }
   ]
 }
