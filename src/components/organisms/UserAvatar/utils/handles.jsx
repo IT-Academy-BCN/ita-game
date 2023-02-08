@@ -1,3 +1,5 @@
+const URL = 'http://localhost:3002/users'
+
 const handlePost = async function postData() {
   try {
     const response = await fetch(URL, {
@@ -26,5 +28,20 @@ const handleDelete = async function deleteData(id) {
     console.error(error);
   }
 }
+const handleUpdate = async function updateData(id, newAvatar) {
+  try {
+    const response = await fetch(`${URL}/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ avatar: newAvatar })
+    })
 
-export { handlePost, handleDelete }
+    const result = await response.json()
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export { handlePost, handleDelete, handleUpdate }

@@ -8,9 +8,16 @@
       "password": "Test1-1234!",
       "framework": "Frontend React",
       "ITApoints": 123,
-      "ITAawards": ["Solete", "Megamind", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Megamind",
+        "Imparable"
+      ],
       "activities": 30,
-      "avatar": { "sex": "man", "hairStyle": "mohawk"}
+      "avatar": {
+        "sex": "woman 👗",
+        "hairStyle": "pixie"
+      }
     },
     {
       "id": 2,
@@ -20,9 +27,15 @@
       "password": "Test2-1234!",
       "framework": "Backend Java",
       "ITApoints": 133,
-      "ITAawards": ["Solete", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Imparable"
+      ],
       "activities": 23,
-      "avatar": { "sex": "man", "hairStyle": "mohawk"}
+      "avatar": {
+        "sex": "man",
+        "hairStyle": "mohawk"
+      }
     },
     {
       "id": 3,
@@ -32,9 +45,15 @@
       "password": "Test3-1234!",
       "framework": "Frontend React",
       "ITApoints": 203,
-      "ITAawards": ["Solete", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Imparable"
+      ],
       "activities": 4,
-      "avatar": { "sex": "man", "hairStyle": "mohawk"}
+      "avatar": {
+        "sex": "man",
+        "hairStyle": "mohawk"
+      }
     }
   ]
 }
