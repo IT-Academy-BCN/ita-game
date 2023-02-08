@@ -17,7 +17,9 @@ function Navbar({ children }) {
       <NavLink to={"/"}>
         <IconArrow />
       </NavLink>
+      <div className="flex flex-grow justify-center">
       {children}
+      </div>
       {showInfo && (
         <NavLink
           to="/information"
