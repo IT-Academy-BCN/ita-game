@@ -1,13 +1,13 @@
 import React from "react"
-import { IndicatorGroup } from "../molecules"
-import magnifier from "../assets/images/zoom-dynamic-color.png"
-import folder from "../assets/images/new-folder-dynamic-color.png"
-import thumb from "../assets/images/thumb-up-dynamic-color.png"
-import medal from "../assets/images/medal-dynamic-color.png"
+import { IndicatorGroup } from "./molecules"
+import magnifier from "./assets/images/zoom-dynamic-color.png"
+import folder from "./assets/images/new-folder-dynamic-color.png"
+import thumb from "./assets/images/thumb-up-dynamic-color.png"
+import medal from "./assets/images/medal-dynamic-color.png"
 
 const WeeklyResume = () => {
   return (
-    <div className="grid grid-rows-2 grid-cols-2 bg-white p-5 m-3 rounded-xl h-2/4 max-h-[400px]">
+    <div className="grid grid-rows-2 grid-cols-2 bg-white p-5 m-3 rounded-xl h-2/4 w-[90%] max-h-[400px]">
       <IndicatorGroup
         title="Revisiones de código"
         punctuation="1 / 1"
