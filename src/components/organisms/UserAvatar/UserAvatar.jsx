@@ -1,5 +1,5 @@
 import Avatar, { genConfig } from 'react-nice-avatar'
-import { useFetch } from './hooks'
+import { useFetch } from '../../../hooks'
 
 const defaultStyle = {
   sex: 'man',
