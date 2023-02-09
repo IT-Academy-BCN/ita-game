@@ -1,11 +1,11 @@
 import React from "react"
-import { Navbar, FooterMenu } from "../components"
+import { Navbar, FooterMenu, ResourcesCard } from "../components"
 
 const Resource = () => {
   return (
     <>
-      <Navbar>Wiki</Navbar>
       <div className="relative w-screen flex flex-col  h-screen bg-base">
+        <Navbar>Wiki</Navbar>
         <div className="flex flex-col items-start p-1">
           <label className="font-bold mt-5 mb-3 ml-6">Filtros</label>
           <select className="select w-[90%] self-center">
@@ -14,7 +14,7 @@ const Resource = () => {
             <option>useState</option>
           </select>
         </div>
-        <div className=" flex flex-col items-center h-screen">
+        <div className=" flex flex-col items-center">
           <div className="flex flex-row bg-white w-[90%] rounded-lg justify-between p-2 my-3 border-solid border-[1px] border-secondary">
             <button className="bg-transparent border-[1px] border-secondary text-secondary px-4 py-3  font-bold rounded-lg hover:bg-primary hover:border-primary hover:text-black">
               Vídeos
@@ -27,9 +27,11 @@ const Resource = () => {
             </button>
           </div>
         </div>
-        <div className="flex justify-center items-center py-3"></div>
-        <FooterMenu />
+        <div className="flex justify-center items-center ">
+          <ResourcesCard />
+        </div>
       </div>
+      <FooterMenu />
     </>
   )
 }

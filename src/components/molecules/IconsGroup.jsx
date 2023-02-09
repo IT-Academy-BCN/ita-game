@@ -1,11 +1,17 @@
 import React from "react"
 import { NavLink, useLocation } from "react-router-dom"
-import { IconHome, IconList, IconProfile, IconHistorial } from "../atoms"
+import {
+  IconHome,
+  IconList,
+  IconProfile,
+  IconHistorial,
+  IconWiki,
+} from "../atoms"
 
 const IconsGroup = () => {
   const location = useLocation()
   return (
-    <div className="flex justify-between mx-6">
+    <div className="flex justify-between">
       <NavLink
         to="/"
         className={`${location.pathname === "/" ? "text-primary" : ""}`}
@@ -27,6 +33,12 @@ const IconsGroup = () => {
         }`}
       >
         <IconHistorial>Historial</IconHistorial>
+      </NavLink>
+      <NavLink
+        to="/wiki"
+        className={`${location.pathname === "/wiki" ? "text-primary" : ""}`}
+      >
+        <IconWiki />
       </NavLink>
       <NavLink
         to="/profile"
