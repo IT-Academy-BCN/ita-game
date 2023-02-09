@@ -8,15 +8,7 @@
       "password": "Test1-1234!",
       "framework": "Frontend React",
       "ITApoints": 123,
-      "ITAawards": [
-        
-        "Solete",
-       
-        "Megamind",
-       
-        "Imparable"
-      
-      ],
+      "ITAawards": ["Solete", "Megamind", "Imparable"],
       "activities": 30,
       "avatar": {
         "sex": "woman 👗",
@@ -31,10 +23,7 @@
       "password": "Test2-1234!",
       "framework": "Backend Java",
       "ITApoints": 133,
-      "ITAawards": [
-        "Solete",
-        "Imparable"
-      ],
+      "ITAawards": ["Solete", "Imparable"],
       "activities": 23,
       "avatar": {
         "sex": "man",
@@ -58,10 +47,7 @@
       "password": "Test3-1234!",
       "framework": "Frontend React",
       "ITApoints": 203,
-      "ITAawards": [
-        "Solete",
-        "Imparable"
-      ],
+      "ITAawards": ["Solete", "Imparable"],
       "activities": 4,
       "avatar": {
         "sex": "man",
@@ -76,5 +62,74 @@
         "bgColor": "#1e4b8f"
       }
     }
-  ]
+  ],
+  "categories": [
+    { "stack": "angular", "url": "endpoint/angular" },
+    { "stack": "react", "url": " http://localhost:3002/reactData" },
+    { "stack": "vue", "url": "endpoint/vue" },
+    { "stack": "javascript", "url": "endpoint/javascript" },
+    { "stack": "datascience", "url": "endpoint/datascience" }
+  ],
+  "stackData": {
+    "reactData": [
+      {
+        "id": "react-1",
+        "title": "Context en 20 minutos",
+        "description": "Teoría con ejemplos",
+        "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
+        "type": { "video": true, "tutorial": true, "blog": false }
+      },
+      {
+        "id": "react-2",
+        "title": "Access Existing Context across Multiple Files",
+        "description": "Teoría con ejemplos",
+        "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
+        "type": { "video": false, "tutorial": true, "blog": true }
+      },
+      {
+        "id": "react-3",
+        "title": "Cómo utilizar useReducer",
+        "description": "Paso a paso de cómo utilizar useReducer en React",
+        "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
+        "type": { "video": true, "tutorial": true, "blog": false }
+      },
+      {
+        "id": "react-4",
+        "title": "React + TypeScript",
+        "description": "Cómo inicializar TP",
+        "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+        "type": { "video": true, "tutorial": true, "blog": false }
+      }
+    ],
+    "angularData": [
+      {
+        "id": "angular-1",
+        "title": "Context en 20 minutos",
+        "description": "Teoría con ejemplos",
+        "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
+        "type": { "video": true, "tutorial": true, "blog": false }
+      },
+      {
+        "id": "angular-2",
+        "title": "Access Existing Context across Multiple Files",
+        "description": "Teoría con ejemplos",
+        "url": "https://stackoverflow.com/questions/49406602/angular-new-context-api-access-existing-context-across-multiple-files",
+        "type": { "video": false, "tutorial": true, "blog": true }
+      },
+      {
+        "id": "angular-3",
+        "title": "Cómo utilizar hooks",
+        "description": "Paso a paso de cómo utilizar useReducer en Angular",
+        "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
+        "type": { "video": true, "tutorial": true, "blog": false }
+      },
+      {
+        "id": "angular-4",
+        "title": "Angular + TypeScript",
+        "description": "Cómo inicializar TP",
+        "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+        "type": { "video": true, "tutorial": true, "blog": false }
+      }
+    ]
+  }
 }
