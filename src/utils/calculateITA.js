@@ -19,12 +19,12 @@ export const calculateITA = (obj) => {
     }
     if (obj.explanation) {
       const length = Object.keys(obj.explanation).length;
-      total += length * 10;
+      total += length * 30;
       explanation += total
     }
     if (obj.revision) {
       const length = Object.keys(obj.revision).length;
-      total += length * 10;
+      total += length * 15;
       revision += total
     }
   

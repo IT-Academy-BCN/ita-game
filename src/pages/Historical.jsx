@@ -35,7 +35,6 @@ function Historical() {
     const weekTimestamp = Math.floor(Date.now() / 1000)
 
     useEffect(() => {
-
         // convierte los milisegundos que le pasamos en un objeto DateTime
         const weekDate = DateTime.fromMillis(weekTimestamp * 1000);
 
