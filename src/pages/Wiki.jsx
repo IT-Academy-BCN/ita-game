@@ -25,7 +25,7 @@ const Wiki = () => {
                      <h2 className="font-bold text-black">.......</h2>
                   </div>
                </div>
-               <NavLink></NavLink>
+               <NavLink>
                   <img className="w-6" src="src/components/assets/arrow_right.svg" alt="search" />
                </NavLink>
             </div>
