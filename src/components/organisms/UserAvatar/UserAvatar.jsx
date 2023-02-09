@@ -21,10 +21,14 @@ const defaultStyle = {
 
 function UserAvatar({ userId = 1, ...rest }) {
   const URL = `http://localhost:3002/users/${userId}`
-  const { data: user } = useFetch(URL)
+  const { data: user, isLoading, isSuccess, isError } = useFetch(URL)
 
   const { avatar } = user ?? { avatar: defaultStyle }
   const config = genConfig(avatar)
+
+  isLoading && <h3>Loading...</h3>
+  isSuccess && <h3>Success...</h3>
+  isError && <h3>Error! No data!</h3>
 
   return <Avatar {...config} {...rest} />
 }
