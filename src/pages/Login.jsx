@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../store/authentication/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { Actions } from "../store/authentication/authReducer";
 import axios from "axios";
 
@@ -9,6 +10,7 @@ function Login() {
     password: '',
   })
   const { dispatch } = useContext(AuthContext)
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,6 +22,7 @@ function Login() {
         if(currentUser.password === values.password) { 
           dispatch({ type: Actions.LOGIN_SUCCESS, payload: currentUser});
           localStorage.setItem('currentUser', JSON.stringify(currentUser));
+          navigate('/')
         } // else I could put some logic to inform a user that its incorrect password/user         
       } catch (err) {
         dispatch({ type: Actions.LOGIN_ERROR });
