@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {UserAvatar, EditAvatar} from "./components/organisms/UserAvatar"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { UserAvatar, EditAvatar } from "./components/organisms/UserAvatar"
 import {
   Home,
   Historical,
@@ -8,7 +8,8 @@ import {
   Profile,
   Register,
   Information,
-} from "./pages";
+  Resource,
+} from "./pages"
 
 export default function App() {
   return (
@@ -24,8 +25,9 @@ export default function App() {
           <Route path="/information" element={<Information />} />
           <Route path="/testing-useravatar" element={<UserAvatar />} />
           <Route path="/testing-page-avatar" element={<EditAvatar />} />
+          <Route path="/wiki/resource" element={<Resource />} />
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
