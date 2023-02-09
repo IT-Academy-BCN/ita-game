@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './input.css'
-
+// {/*`input input-bordered input-info w-full max-w-xs`*/}
 function Input({
   id,
   name,
@@ -28,7 +28,7 @@ function Input({
         name={name}
         type={type}  
         required
-        className={`input input-bordered input-info w-full max-w-xs`}
+        className="input focus:border-primary-500 w-full max-w-xs"
         placeholder={placeholder}
         onChange={onChange}
         onBlur={handleFocus}
@@ -45,14 +45,14 @@ function Input({
 export default Input;
 
 
-// In the future when we have constants folder I will move this code from here
+//TODO: In the future when we have constants folder I will move this code from here
 export const inputs = ({ confirmPatern }) => {
   const inputArray = [
     {
       id: 'name',
       name: 'name',
       type: 'text',
-      placeholder: 'Name',
+      placeholder: 'Nombre',
       errorMessage:
         "Name should be 3-16 characters and shouldn't include any special character!",
       label: 'name',
@@ -63,7 +63,7 @@ export const inputs = ({ confirmPatern }) => {
       id: 'surname',
       name: 'surname',
       type: 'text',
-      placeholder: 'Surname',
+      placeholder: 'Apellido',
       errorMessage:
         "Surname should be 3-16 characters and shouldn't include any special character!",
       label: 'surname',
@@ -83,7 +83,7 @@ export const inputs = ({ confirmPatern }) => {
       id: 'password',
       name: 'password',
       type: 'password',
-      placeholder: 'Password',
+      placeholder: 'Contraseña',
       errorMessage:
         'Password should be 8-20 character and include at least 1 letter, 1 number and 1 special character',
       label: 'Password',
@@ -95,7 +95,7 @@ export const inputs = ({ confirmPatern }) => {
       id: 'confirmPassword',
       name: 'confirmPassword',
       type: 'password',
-      placeholder: 'Confim Password',
+      placeholder: 'Repetir Contraseña',
       errorMessage: "Passwords don't match!",
       label: 'Confirm Password',
       pattern: confirmPatern,

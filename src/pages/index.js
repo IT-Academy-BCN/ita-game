@@ -5,6 +5,7 @@ import Login from "./Login"
 import Profile from "./Profile"
 import Register from "./Register"
 import Information from "./Information"
+import Wiki from "./Wiki"
 import Resource from "./Resource"
 
 export {
@@ -15,5 +16,6 @@ export {
   Profile,
   Register,
   Information,
+  Wiki,
   Resource,
 }
