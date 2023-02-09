@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {UserAvatar} from "./components/organisms/UserAvatar"
-import EditAvatar from "./components/organisms/UserAvatar/EditAvatar";
+import {UserAvatar, EditAvatar} from "./components/organisms/UserAvatar"
 import {
   Home,
   Historical,

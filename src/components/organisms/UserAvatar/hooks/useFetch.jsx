@@ -18,13 +18,18 @@ function useFetch(url) {
           setHasData(false)
         }
       })
-      .catch(err => {
-        setError(err)
-        setIsLoading(false)
-      })
+      .catch(err => setError(err))
+      .finally(() => setIsLoading(false))
   }, [url])
 
-  return { data, isLoading, error, isError: Boolean(error), isSuccess: Boolean(data), hasData }
+  return {
+    data,
+    isLoading,
+    error,
+    isError: Boolean(error),
+    isSuccess: Boolean(data),
+    hasData
+  }
 }
 
 export default useFetch
