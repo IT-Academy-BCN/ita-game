@@ -6,7 +6,6 @@ const AuthContext = createContext(initialState)
 function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, initialState)
   const value = useMemo(() => ({ state, dispatch }), [state])
-  console.log(value)
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
