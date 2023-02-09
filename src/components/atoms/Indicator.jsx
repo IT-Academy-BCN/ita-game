@@ -4,7 +4,7 @@ const Indicator = ({ children, punctuation, points }) => {
   const [value, setValue] = useState("")
 
   useEffect(() => {
-    if (punctuation === 0) {
+    if (punctuation === "0") {
       setValue("0")
     }
     if (punctuation === "1 / 2") {
