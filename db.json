@@ -8,7 +8,11 @@
       "password": "Test1-1234!",
       "framework": "Frontend React",
       "ITApoints": 123,
-      "ITAawards": ["Solete", "Megamind", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Megamind",
+        "Imparable"
+      ],
       "activities": 30
     },
     {
@@ -19,7 +23,10 @@
       "password": "Test2-1234!",
       "framework": "Backend Java",
       "ITApoints": 133,
-      "ITAawards": ["Solete", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Imparable"
+      ],
       "activities": 23
     },
     {
@@ -30,8 +37,22 @@
       "password": "Test3-1234!",
       "framework": "Frontend React",
       "ITApoints": 203,
-      "ITAawards": ["Solete", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Imparable"
+      ],
       "activities": 4
+    },
+    {
+      "name": "Khatuna",
+      "surname": "Jabakhidze",
+      "email": "jabakhidzekhatuna8@gmail.com",
+      "password": "Itagame123#",
+      "framework": "",
+      "ITApoints": 0,
+      "ITAawards": [],
+      "activities": 0,
+      "id": 4
     }
   ]
 }
