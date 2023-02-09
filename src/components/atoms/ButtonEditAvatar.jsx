@@ -1,6 +1,10 @@
-function ButtonEditAvatar({ handleOpenModal }) {
+import { useState } from "react"
+
+function ButtonEditAvatar() {
+  const [edition, setEdition] = useState(false)
+  const handleClick = () => { setEdition(!edition) }
   return (
-    <button onClick={handleOpenModal} className="btn btn-circle bg-primary">
+    <button onClick={handleClick} className="btn btn-circle bg-primary">
       <svg
         width="19"
         height="19"
@@ -13,6 +17,7 @@ function ButtonEditAvatar({ handleOpenModal }) {
           fill="#323232"
         />
       </svg>
+      { edition && 'edition'}
     </button>
   )
 }
