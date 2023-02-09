@@ -5,6 +5,11 @@
 @layer base {
   body {
     @apply bg-[#EBEBEB] tracking-wide;
-    @apply text-black;
+    @apply text-black
+
   }
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
 }

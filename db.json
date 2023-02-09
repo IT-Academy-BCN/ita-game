@@ -9,11 +9,19 @@
       "framework": "Frontend React",
       "ITApoints": 123,
       "ITAawards": [
+        
         "Solete",
+       
         "Megamind",
+       
         "Imparable"
+      
       ],
-      "activities": 30
+      "activities": 30,
+      "avatar": {
+        "sex": "woman 👗",
+        "hairStyle": "pixie"
+      }
     },
     {
       "id": 2,
@@ -27,7 +35,20 @@
         "Solete",
         "Imparable"
       ],
-      "activities": 23
+      "activities": 23,
+      "avatar": {
+        "sex": "man",
+        "faceColor": "green",
+        "hairStyle": "mohawk",
+        "hatStyle": "beanie",
+        "hatColor": "#58c914",
+        "eyeStyle": "circle",
+        "glassesStyle": "square",
+        "noseStyle": "short",
+        "shirtStyle": "short",
+        "shirtColor": "teal",
+        "bgColor": "transparent"
+      }
     },
     {
       "id": 3,
@@ -41,18 +62,19 @@
         "Solete",
         "Imparable"
       ],
-      "activities": 4
-    },
-    {
-      "name": "Khatuna",
-      "surname": "Jabakhidze",
-      "email": "jabakhidzekhatuna8@gmail.com",
-      "password": "Itagame123#",
-      "framework": "",
-      "ITApoints": 0,
-      "ITAawards": [],
-      "activities": 0,
-      "id": 4
+      "activities": 4,
+      "avatar": {
+        "sex": "man",
+        "hairStyle": "mohawk",
+        "hatStyle": "turban",
+        "hatColor": "#caca23",
+        "eyeStyle": "smile",
+        "glassesStyle": "round",
+        "noseStyle": "long",
+        "shirtStyle": "short",
+        "shirtColor": "peru",
+        "bgColor": "#1e4b8f"
+      }
     }
   ]
 }
