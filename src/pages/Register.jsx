@@ -73,12 +73,20 @@ function Register() {
                 />
               ))}
             </div>
-            <select name="sex" className="input focus:border-primary-500 w-full max-w-xs">
-              <option defaultValue="woman">
-                woman
-              </option>
-              <option value="man">man</option>
-            </select>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Pick your avatar</span>
+                <span className="label-text-alt">Woman/Man</span>
+              </label>
+              <select
+                name="sex"
+                className="select select-bordered"
+                onChange={onChange}
+              >
+                <option value="woman">woman</option>
+                <option value="man">man</option>
+              </select>
+            </div>
             <div className="pt-4">
               <button type="submit" className="btn btn-block btn-primary">
                 <span className="font-bold">Registrarme</span>
