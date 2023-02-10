@@ -33,7 +33,18 @@ function Register() {
       ITAawards: [],
       activities: 0,
       avatar: {
-        sex: values.sex
+        sex: values.sex,
+        hairStyle: 'normal',
+        hairColor: '#BA4A00',
+        faceColor: '#FAD7A0',
+        hatStyle: 'beanie',
+        hatColor: '#F1C40F',
+        eyeStyle: 'smile', // circle, oval, smile
+        glassesStyle: 'round', // none, round, square
+        noseStyle: 'long', //short, long, round
+        shirtStyle: 'short', // hoody, short, polo
+        shirtColor: '#BB8FCE',
+        bgColor: '#58c914'
       }
     }
     try {
