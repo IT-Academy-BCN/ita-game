@@ -3,8 +3,8 @@ import UserAvatar from './UserAvatar'
 
 function EditAvatar() {
   return (
-    <div className="relative bg-blue-400 w-36">
-      <ButtonEditAvatar className="absolute z-10 right-3 -top-2" />
+    <div className="relative w-32">
+      <ButtonEditAvatar className="absolute z-10 right-2 -top-3" />
       <UserAvatar />
     </div>
   )
