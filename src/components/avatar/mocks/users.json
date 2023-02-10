@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Joan",
+    "surname": "Artola",
+    "email": "test1@test.test",
+    "password": "Test1-1234!",
+    "framework": "Frontend React",
+    "ITApoints": 123,
+    "ITAawards": [
+      "Solete",
+      "Megamind",
+      "Imparable"
+    ],
+    "activities": 30,
+    "avatar": {
+      "sex": "woman 👗",
+      "hairStyle": "pixie"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ana",
+    "surname": "Cerqueira",
+    "email": "test2@test.test",
+    "password": "Test2-1234!",
+    "framework": "Backend Java",
+    "ITApoints": 133,
+    "ITAawards": [
+      "Solete",
+      "Imparable"
+    ],
+    "activities": 23,
+    "avatar": {
+      "sex": "man",
+      "hairStyle": "mohawk"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Mariona",
+    "surname": "Taull",
+    "email": "test3@test.test",
+    "password": "Test3-1234!",
+    "framework": "Frontend React",
+    "ITApoints": 203,
+    "ITAawards": [
+      "Solete",
+      "Imparable"
+    ],
+    "activities": 4,
+    "avatar": {
+      "sex": "man",
+      "hairStyle": "mohawk"
+    }
+  }
+]
