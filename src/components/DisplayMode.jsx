@@ -1,9 +1,10 @@
-import AvatarTemp from "./AvatarTemp";
+import { HashLink } from 'react-router-hash-link';
+import AvatarTemp from './AvatarTemp';
 
 export default function DisplayMode({ user }) {
   return (
     <div className="card bg-white  flex flex-col p-6 content-around mx-6 mt-6">
-      <div className="flex flex-row justify-start">
+      <div className="flex flex-row justify-start mb-6">
         <AvatarTemp />
         <div className="flex flex-col pl-6">
           <p className="text-black font-bold">{user.name}</p>
@@ -20,18 +21,19 @@ export default function DisplayMode({ user }) {
           </div>
         </div>
       </div>
-      <div className="card-actions justify-end pt-6">
-        <button className="btn btn-block btn-base flex flex-row justify-around">
-          <img src="src/components/assets/cup.svg" />
-
-          <span>Premios conseguidos</span>
-          <img
-            className="w-6"
-            src="src/components/assets/arrow_right.svg"
-            alt="search"
-          />
-        </button>
-      </div>
+      <HashLink smooth to="/profile#premios" style={{with: 'max-content'}}>
+        <div className="card-actions justify-end">
+          <button className="btn btn-block btn-base flex flex-row justify-around">
+            <img src="src/components/assets/cup.svg" />
+            <span>Premios conseguidos</span>
+            <img
+              className="w-6"
+              src="src/components/assets/arrow_right.svg"
+              alt="search"
+            />
+          </button>
+        </div>
+      </HashLink>
     </div>
   );
 }

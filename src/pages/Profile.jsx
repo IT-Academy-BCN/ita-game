@@ -132,7 +132,7 @@ function Profile() {
                   </div>
                </div>
             </Card>
-            <Title>Insignias ganadas</Title>
+            <Title id='premios'>Insignias ganadas</Title>
             <Card direction="row">
                {fakeUser.ITAawards.map((a) => {
                   return (
