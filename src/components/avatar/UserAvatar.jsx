@@ -5,16 +5,18 @@ import user from './mocks/user.json'
 const userId = user.id
 
 const defaultStyle = {
-  sex: 'man',
-  hairStyle: 'mohawk',
-  hatStyle: 'turban',
-  hatColor: '#58c914',
+  sex: 'woman',
+  hairStyle: 'normal',
+  hairColor: '#BA4A00',
+  faceColor: '#FAD7A0',
+  hatStyle: 'beanie',
+  hatColor: '#F1C40F',
   eyeStyle: 'smile', // circle, oval, smile
   glassesStyle: 'round', // none, round, square
   noseStyle: 'long', //short, long, round
   shirtStyle: 'short', // hoody, short, polo
-  shirtColor: 'peru',
-  bgColor: '#1e4b8f'
+  shirtColor: '#BB8FCE',
+  bgColor: '#58c914'
 }
 
 function UserAvatar({ className = 'w-32 h-32', ...rest }) {
