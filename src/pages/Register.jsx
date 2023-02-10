@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import axios from 'axios'
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
 import { inputs } from '../components/atoms/input/Input';
 import Input from '../components/atoms/input/Input';
 
+// TODO: informar el usuario ha sido o no registrado
 function Register() {
   const [values, setValues] = useState({
     name: '',
@@ -26,12 +27,16 @@ function Register() {
       surname: values.surname,
       email: values.email,
       password: values.password,
-    }
+      framework: '',
+      ITApoints: 0,
+      ITAawards: [],
+      activities: 0
+    };
     try {
-      await axios.post(/* /auth/register endpoint,*/ user);
-      navigate("/login")
-    }catch(err) {
-      console.log(err)
+      await axios.post('http://localhost:3002/users', user);
+      navigate('/login');
+    } catch (err) {
+      console.log(err);
       // TODO: implement better way of error handling
     }
   };
@@ -39,75 +44,43 @@ function Register() {
   const inputArray = inputs(values.password);
 
   return (
-    <div className="flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-xs space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Sign up to your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
-            <a
-              href="#"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
-            >
-              start your 14-day free trial
-            </a>
-          </p>
+    <div className="flex min-h-screen justify-center pt-20 px-4">
+      <div className="flex flex-col justify-between w-full max-w-xs">
+        <div className="w-full max-w-xs">
+          <div className="pb-3.5">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              Registro
+            </h2>
+          </div>
+          <form
+            className="mt-8 space-y-6"
+            action="#"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="remember" defaultValue="true" />
+            <div className="grid gap-3 rounded-md shadow-sm">
+              {inputArray.map((input) => (
+                <Input
+                  key={input.id}
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                />
+              ))}
+            </div>
+            <div className="pt-4">
+              <button type="submit" className="btn btn-block btn-primary">
+                  <span className='font-bold'>Registrarme</span> 
+              </button>
+            </div>
+          </form>
         </div>
-        <form
-          className="mt-8 space-y-6"
-          action="#"
-          method="POST"
-          onSubmit={handleSubmit}
-        >
-          <input type="hidden" name="remember" defaultValue="true" />
-          <div className="grid gap-3 rounded-md shadow-sm">
-            { inputArray.map((input) => (
-              <Input
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-              />
-            )) }
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              />
-              <label
-                htmlFor="remember-me"
-                className="ml-2 block text-sm text-gray-900"
-              >
-                Remember me
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                Forgot your password?
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              className="btn btn-block btn-outline btn-primary"
-            >
-              <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span>
-              Sign in
-            </button>
-          </div>
-        </form>
+        <div className='flex justify-center pb-10'>
+          <Link to='/login' className="font-bold text-black hover:text-indigo-500 underline">
+            ¿Tienes una cuenta?,entrar
+          </Link>
+        </div>
       </div>
     </div>
   );

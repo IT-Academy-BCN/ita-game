@@ -9,9 +9,13 @@
       "framework": "Frontend React",
       "ITApoints": 123,
       "ITAawards": [
+        
         "Solete",
+       
         "Megamind",
+       
         "Imparable"
+      
       ],
       "activities": 30,
       "avatar": {
