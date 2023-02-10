@@ -90,7 +90,7 @@ function Historical() {
         </div>
       </div>
 
-      <div>
+      <div id="puntos-ganados">
         <p className="font-bold	mb-5 mt-7">Puntos por actividad</p>
         <div className="card bg-white">
           <div className="card-body">
