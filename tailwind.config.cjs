@@ -1,21 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   daisyui: {
     themes: [
       {
-        myTheme: {
-          base: "#EBEBEB",
-          primary: "#B0F41F",
-          secondary: "#969696",
-          neutral: "#DCDCDD",
-          gold: "#EFD700",
-          silver: "#7E7E7E",
-          coper: "#C6811B",
-          black: "#000000",
-        },
-      },
-    ],
+        ITAgame: {
+          base: '#EBEBEB',
+          primary: '#B0F41F',
+          secondary: '#757575', // button secondary
+          neutral: '#DCDCDD',
+          accent: '#B0F41F',
+          info: 'black', // background bagdes
+          'info-content': 'white', // foreground bagdes
+          // 'accent-content': '#000000',
+          // 'base-content': '#1E1E1E', // used for blank backgrounds
+          // 'base-100': '#969696', // icons
+          warning: '#EFD700',
+          'warning-content': '#C6811B'
+
+        }
+      }
+    ]
   },
-  plugins: [require("daisyui")],
+  plugins: [require('daisyui')]
 }
+
