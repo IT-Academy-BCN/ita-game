@@ -5,5 +5,6 @@ import Login from "./Login";
 import Profile from "./Profile";
 import Register from "./Register";
 import Information from "./Information";
+import Wiki from "./Wiki";
 
-export { Home, Historical, LeaderBoard, Login, Profile, Register, Information };
+export { Home, Historical, LeaderBoard, Login, Profile, Register, Information, Wiki };

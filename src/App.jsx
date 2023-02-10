@@ -8,6 +8,7 @@ import {
   Profile,
   Register,
   Information,
+  Wiki
 } from "./pages";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/information" element={<Information />} />
           <Route path="/testing-useravatar" element={<UserAvatar />} />
           <Route path="/testing-page-avatar" element={<EditAvatar />} />
+          <Route path="/wiki" element={<Wiki />} />
         </Routes>
       </BrowserRouter>
     </>
