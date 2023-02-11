@@ -28,8 +28,8 @@ export default function AvatarContainer({ className, ...rest }) {
   const avatar = user.avatar || defaultStyle
 
   useEffect(() => {
-    dispatch({ type: actions.SET_INITIAL_USER, payload: { avatar } })
-  }, [avatar])
+    dispatch({ type: actions.UPDATE_AVATAR, payload: { avatar } })
+  }, [])
 
   const config = genConfig(avatar)
 
