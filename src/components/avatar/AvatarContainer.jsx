@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
-import AvatarNice, { genConfig } from 'react-nice-avatar'
 import { AvatarContext } from './store/context'
+import AvatarNice, { genConfig } from 'react-nice-avatar'
 import { actions } from './store/reducer'
 
 const defaultStyle = {
@@ -23,7 +23,9 @@ const defaultStyle = {
 export default function AvatarContainer({ className, ...rest }) {
   const { state, dispatch } = useContext(AvatarContext)
   const { user } = state
-  const { avatar } = user.avatar || defaultStyle
+  const { avatar } = user //|| defaultStyle
+
+  console.log('desde AvatarContainer', avatar.hairStyle)
 
   const [config, setConfig] = useState(genConfig(avatar))
 
