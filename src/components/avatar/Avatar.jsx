@@ -1,6 +1,7 @@
 import NiceAvatar, { genConfig } from 'react-nice-avatar'
 import { useFetch } from '../../hooks'
 import user from './mocks/user.json'
+import AvatarProvider from './store/AvatarProvider'
 
 const userId = user.id
 
@@ -20,7 +21,6 @@ const defaultStyle = {
 }
 
 function Avatar({ className = 'w-32 h-32', ...rest }) {
-  
   const URL = `http://localhost:3002/users/${userId}`
   const { data: user, isLoading, isSuccess, isError } = useFetch(URL)
 
@@ -31,7 +31,11 @@ function Avatar({ className = 'w-32 h-32', ...rest }) {
   isSuccess && <h3>Success...</h3>
   isError && <h3>Fail to load the avatar!</h3>
 
-  return <NiceAvatar className={className} {...config} {...rest} />
+  return (
+    <AvatarProvider>
+      <NiceAvatar className={className} {...config} {...rest} />
+    </AvatarProvider>
+  )
 }
 
 export default Avatar
