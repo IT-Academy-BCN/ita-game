@@ -1,3 +1,5 @@
+import Options from "./Options";
+
 export default function Modal({ modalLink }) {
   return (
     <div className="modal">
@@ -7,6 +9,7 @@ export default function Modal({ modalLink }) {
           Puedes elegir el tipo de pelo, color de la piel, tipo de ojos, con o
           sin gafas, la nariz, la boca, la ropa y su color.
         </p>
+        <Options />
         <div className="modal-action">
           <label htmlFor={modalLink} className="btn btn-primary">
             Guarda mi Avatar
