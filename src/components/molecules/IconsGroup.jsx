@@ -24,7 +24,7 @@ const IconsGroup = () => {
           location.pathname === "/leaderboard" ? "text-primary" : ""
         }`}
       >
-        <IconList>Competición</IconList>
+        <IconList>Ránking</IconList>
       </NavLink>
       <NavLink
         to="/historical"

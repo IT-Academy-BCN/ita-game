@@ -16,7 +16,7 @@ export const Actions = {
   LOGOUT: 'LOGOUT',
 };
 
-export const authReducer = (state = initialState, action) => {
+export const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case Actions.LOGIN_START:
       return createNextState(state, (draft) => {

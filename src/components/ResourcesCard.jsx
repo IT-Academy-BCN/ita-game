@@ -2,7 +2,7 @@ import React from "react"
 
 const ResourcesCard = () => {
   return (
-    <div className="flex flex-row border-[1px] border-secondary w-[90%] p-3 rounded-xl">
+    <div className="flex flex-row border-[1px] mb-5 border-secondary w-[90%] p-3 rounded-xl">
       {/* CONTADOR DE PUNTOS */}
       <div className="mx-4 mt-2">
         {/* ICONO ARRIBA */}
