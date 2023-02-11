@@ -1,6 +1,6 @@
-import Avatar, { genConfig } from 'react-nice-avatar'
-import { useFetch } from '../../../hooks'
-import user from '../mocks/user.json'
+import NiceAvatar, { genConfig } from 'react-nice-avatar'
+import { useFetch } from '../../hooks'
+import user from './mocks/user.json'
 
 const userId = user.id
 
@@ -19,7 +19,7 @@ const defaultStyle = {
   bgColor: '#58c914'
 }
 
-function UserAvatar({ className = 'w-32 h-32', ...rest }) {
+function Avatar({ className = 'w-32 h-32', ...rest }) {
   
   const URL = `http://localhost:3002/users/${userId}`
   const { data: user, isLoading, isSuccess, isError } = useFetch(URL)
@@ -31,7 +31,7 @@ function UserAvatar({ className = 'w-32 h-32', ...rest }) {
   isSuccess && <h3>Success...</h3>
   isError && <h3>Fail to load the avatar!</h3>
 
-  return <Avatar className={className} {...config} {...rest} />
+  return <NiceAvatar className={className} {...config} {...rest} />
 }
 
-export default UserAvatar
+export default Avatar
