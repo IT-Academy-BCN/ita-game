@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
 import AvatarNice, { genConfig } from 'react-nice-avatar'
@@ -24,11 +25,16 @@ export default function AvatarContainer({ className, ...rest }) {
   const { user } = state
   const { avatar } = user.avatar || defaultStyle
 
-  useEffect(() => {
-    dispatch({ type: actions.UPDATE_AVATAR, payload: { ...avatar } })
-  }, [])
+  const [config, setConfig] = useState(genConfig(avatar))
 
-  const config = genConfig(avatar)
+  useEffect(() => {
+    dispatch({type: actions.UPDATE_AVATAR, payload:{...avatar}})
+  }, [])
+  
+  useEffect(() => {
+    setConfig(genConfig(avatar))
+  }, [state])
+
 
   return <AvatarNice className={className} {...config} {...rest} />
 }
