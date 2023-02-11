@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function useFetch(url) {
+function useGetData(url) {
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -9,7 +9,15 @@ function useFetch(url) {
   useEffect(() => {
     setIsLoading(true)
     setError(null)
-    fetch(url)
+
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      Cookie: document.cookie
+    })
+    fetch(url, {
+      method: 'GET',
+      headers: headers
+    })
       .then(response => response.json())
       .then(response => {
         setData(response)
@@ -32,4 +40,4 @@ function useFetch(url) {
   }
 }
 
-export default useFetch
+export default useGetData
