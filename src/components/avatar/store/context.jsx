@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react'
-import { initialState, reducer } from './reducer'
+import { initialState, reducer, Actions } from './reducer'
 
-const AvatarContext = createContext(initialState)
+export const AvatarContext = createContext(initialState)
 
 export default function AvatarProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState)
