@@ -1,6 +1,6 @@
 import Avatar, { genConfig } from 'react-nice-avatar'
-import { useFetch } from '../../hooks'
-import user from './mocks/user.json'
+import { useFetch } from '../../../hooks'
+import user from '../mocks/user.json'
 
 const userId = user.id
 
