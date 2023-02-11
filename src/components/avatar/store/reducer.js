@@ -1,3 +1,7 @@
+export const Actions = {
+  
+}
+
 export const initialState = {
   user: {
     id: 1,
