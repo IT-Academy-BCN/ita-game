@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../store/authentication/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { Actions } from '../store/authentication/authReducer';
+import { Actions } from '../store/authentication/AuthReducer';
 import axios from 'axios';
 
 function Login() {

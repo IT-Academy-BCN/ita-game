@@ -5,7 +5,7 @@ import Badge from '../components/atoms/Badge';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../store/authentication/AuthContext';
 import { Modal } from '../components/molecules';
-import { Actions } from '../store/authentication/authReducer';
+import { Actions } from '../store/authentication/AuthReducer';
 import { useNavigate } from 'react-router-dom';
 
 // TODO:
