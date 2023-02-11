@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react'
-import { initialState, reducer, Actions } from './reducer'
+import { initialState, reducer, actions } from './reducer'
 
 export const AvatarContext = createContext(initialState)
 

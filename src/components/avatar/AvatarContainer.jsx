@@ -1,7 +1,8 @@
+import { useEffect } from 'react'
 import { useContext } from 'react'
 import AvatarNice, { genConfig } from 'react-nice-avatar'
 import { AvatarContext } from './store/context'
-import { Actions } from './store/reducer'
+import { actions } from './store/reducer'
 
 const defaultStyle = {
   sex: 'woman',
@@ -25,6 +26,11 @@ export default function AvatarContainer({ className, ...rest }) {
   } = useContext(AvatarContext)
 
   const avatar = user.avatar || defaultStyle
+
+  useEffect(() => {
+    dispatch({ type: actions.SET_INITIAL_USER, payload: { avatar } })
+  }, [avatar])
+
   const config = genConfig(avatar)
 
   return <AvatarNice className={className} {...config} {...rest} />

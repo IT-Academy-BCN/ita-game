@@ -1,6 +1,3 @@
-export const Actions = {
-  
-}
 
 export const initialState = {
   user: {
@@ -15,7 +12,7 @@ export const initialState = {
     activities: 30,
     avatar: {
       sex: 'woman',
-      hairStyle: 'normal',
+      hairStyle: 'thick', // normal, thick, mohawk, womanLong, womanShort
       hairColor: '#BA4A00',
       faceColor: '#FAD7A0',
       hatStyle: 'beanie',
@@ -29,7 +26,23 @@ export const initialState = {
     }
   }
 }
+export const actions = {
+  SET_INITIAL_USER: 'SET_INITIAL_USER'
+}
 
 export function reducer(state = initialState, action) {
-  return { state }
+  switch (action.type) {
+    case actions.SET_INITIAL_USER:
+      const newState = {
+        ...state,
+        user: {
+          ...state.user,
+          avatar: action.payload
+        }
+      }
+      return newState
+    
+    default:
+      return state
+  }
 }
