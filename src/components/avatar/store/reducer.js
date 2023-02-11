@@ -1,4 +1,3 @@
-
 export const initialState = {
   user: {
     id: 1,
@@ -44,5 +43,7 @@ export function reducer(state = initialState, action) {
 
     default:
       return state
+
+      throw Error('Unknown action: ' + action.type)
   }
 }

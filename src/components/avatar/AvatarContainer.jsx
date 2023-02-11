@@ -20,15 +20,12 @@ const defaultStyle = {
 }
 
 export default function AvatarContainer({ className, ...rest }) {
-  const {
-    state: { user },
-    dispatch
-  } = useContext(AvatarContext)
-
-  const avatar = user.avatar || defaultStyle
+  const { state, dispatch } = useContext(AvatarContext)
+  const { user } = state
+  const { avatar } = user.avatar || defaultStyle
 
   useEffect(() => {
-    dispatch({ type: actions.UPDATE_AVATAR, payload: { avatar } })
+    dispatch({ type: actions.UPDATE_AVATAR, payload: { ...avatar } })
   }, [])
 
   const config = genConfig(avatar)

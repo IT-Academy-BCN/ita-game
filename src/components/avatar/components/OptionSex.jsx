@@ -3,7 +3,7 @@ import { AvatarContext } from '../store/context'
 // man, woman
 function OptionSex() {
   const { state, dispatch } = useContext(AvatarContext)
-  console.log('desde Options', state)
+  console.log('desde OptionSex', state.user.avatar.hairStyle)
   
   return (
     <>
