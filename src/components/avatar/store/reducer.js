@@ -26,6 +26,7 @@ export const initialState = {
     }
   }
 }
+
 export const actions = {
   UPDATE_AVATAR: 'UPDATE_AVATAR'
 }
