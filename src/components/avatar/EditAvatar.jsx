@@ -1,5 +1,5 @@
 import ButtonEditAvatar from './components/ButtonEditAvatar'
-import UserAvatar from './components/UserAvatar'
+import Avatar from './Avatar'
 
 function EditAvatar() {
 
@@ -9,7 +9,7 @@ function EditAvatar() {
       <ButtonEditAvatar
         className="absolute z-10 right-2 -top-3"
       />
-      <UserAvatar />
+      <Avatar />
     </div>
   )
 }
