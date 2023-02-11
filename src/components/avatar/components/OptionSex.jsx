@@ -1,6 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
+import { AvatarContext } from '../store/context'
 // man, woman
 function OptionSex() {
+  const { state, dispatch } = useContext(AvatarContext)
+  console.log('desde Options', state)
+  
   return (
     <>
       <label className="label">
