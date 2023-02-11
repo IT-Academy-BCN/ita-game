@@ -1,16 +1,19 @@
 import ButtonEditAvatar from './components/ButtonEditAvatar'
 import Avatar from './Avatar'
+import AvatarProvider from './store/context'
 
 function EditAvatar() {
 
 
   return (
-    <div className="relative w-32">
-      <ButtonEditAvatar
-        className="absolute z-10 right-2 -top-3"
-      />
-      <Avatar />
-    </div>
+    <AvatarProvider>
+      <div className="relative w-32">
+        <ButtonEditAvatar
+          className="absolute z-10 right-2 -top-3"
+        />
+        <Avatar />
+      </div>
+    </AvatarProvider>
   )
 }
 
