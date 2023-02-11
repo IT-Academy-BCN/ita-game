@@ -27,21 +27,20 @@ export const initialState = {
   }
 }
 export const actions = {
-  SET_INITIAL_USER: 'SET_INITIAL_USER'
+  UPDATE_AVATAR: 'UPDATE_AVATAR'
 }
 
 export function reducer(state = initialState, action) {
   switch (action.type) {
-    case actions.SET_INITIAL_USER:
-      const newState = {
+    case actions.UPDATE_AVATAR:
+      return {
         ...state,
         user: {
           ...state.user,
           avatar: action.payload
         }
       }
-      return newState
-    
+
     default:
       return state
   }
