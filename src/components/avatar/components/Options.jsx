@@ -6,7 +6,7 @@ import OptionShirtStyle from './OptionShirtStyle'
 function Options() {
   return (
     <>
-    <OptionSex />
+      <OptionSex />
       <OptionHairStyle />
       <OptionGlassesStyle />
       <OptionShirtStyle />
