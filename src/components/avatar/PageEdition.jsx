@@ -1,4 +1,4 @@
-import Avatar from "./Avatar"
+import Avatar from "./AvatarWrapper"
 import EditAvatar from "./EditAvatar"
 
 function PageEdition() {

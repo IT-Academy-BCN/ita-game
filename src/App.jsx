@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Avatar, EditAvatar, PageEdition } from './components/avatar';
+import { AvatarWrapper, EditAvatar, PageEdition } from './components/avatar';
 import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki } from './pages';
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
                <Route path="/register" element={<Register />} />
                <Route path="/information" element={<Information />} />
                <Route path="/wiki" element={<Wiki />} />
-               <Route path="/testing-useravatar" element={<Avatar />} />
+               <Route path="/testing-useravatar" element={<AvatarWrapper />} />
                <Route path="/testing-edit-avatar" element={<EditAvatar />} />
                <Route path="/testing-page-edition" element={<PageEdition />} />
             </Routes>
