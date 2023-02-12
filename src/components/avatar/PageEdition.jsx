@@ -1,11 +1,13 @@
-import Avatar from "./Avatar"
+import { useState } from 'react'
+import Avatar from './Avatar'
 
 function PageEdition() {
+  const [edit, setEdit] = useState(false)
+  const handleClick = () => setEdit(!edit)
   return (
     <div className="flex justify-center p-5 bg-slate-500">
-      <Avatar edit />
-      <Avatar />
-      
+      <button className="btn btn-primary" onClick={handleClick}>Display Edition</button>
+      <Avatar edit={edit} />
     </div>
   )
 }
