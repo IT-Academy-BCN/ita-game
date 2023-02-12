@@ -1,8 +1,8 @@
 import ButtonEditAvatar from './components/ButtonEditAvatar'
-import Avatar from './AvatarEdition'
+import AvatarEdition from './AvatarEdition'
 import AvatarProvider from './store/context'
 
-function EditAvatar() {
+function Avatar() {
 
 
   return (
@@ -11,10 +11,10 @@ function EditAvatar() {
         <ButtonEditAvatar
           className="absolute z-10 right-2 -top-3"
         />
-        <Avatar />
+        <AvatarEdition />
       </div>
     </AvatarProvider>
   )
 }
 
-export default EditAvatar
+export default Avatar

@@ -1,10 +1,9 @@
-import Avatar from "./AvatarWrapper"
-import EditAvatar from "./EditAvatar"
+import Avatar from "./Avatar"
 
 function PageEdition() {
   return (
     <div className="flex justify-center p-5 bg-slate-500">
-      <EditAvatar />
+      <Avatar />
       
     </div>
   )
