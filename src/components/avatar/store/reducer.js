@@ -14,7 +14,7 @@ export const initialState = {
       hairStyle: 'thick', // normal, thick, mohawk, womanLong, womanShort
       hairColor: '#BA4A00',
       faceColor: '#FAD7A0',
-      // hatStyle: 'beanie',
+      hatStyle: 'none',
       hatColor: '#F1C40F',
       eyeStyle: 'smile',
       glassesStyle: 'round',
