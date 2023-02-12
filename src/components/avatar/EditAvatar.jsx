@@ -1,5 +1,5 @@
 import ButtonEditAvatar from './components/ButtonEditAvatar'
-import Avatar from './Avatar'
+import Avatar from './AvatarEdition'
 import AvatarProvider from './store/context'
 
 function EditAvatar() {

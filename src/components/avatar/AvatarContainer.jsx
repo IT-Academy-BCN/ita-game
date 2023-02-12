@@ -5,8 +5,7 @@ import { actions } from './store/reducer'
 
 export default function AvatarContainer({ className, ...rest }) {
   const { state, dispatch } = useContext(AvatarContext)
-  const { user } = state
-  const { avatar } = user
+  const { avatar } = state.user
 
   const config = genConfig(avatar)
 
