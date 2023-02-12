@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AvatarContext } from './store/context'
 import AvatarNice, { genConfig } from 'react-nice-avatar'
 import { actions } from './store/reducer'
