@@ -1,4 +1,4 @@
-import AvatarEdition from './AvatarEdition'
+import AvatarEdition from './AvatarBase'
 import ButtonEditAvatar from './components/ButtonEditAvatar'
 
 export default function AvatarEditionButton() {
