@@ -17,6 +17,7 @@ export const initialState = {
       hatStyle: 'none',
       hatColor: '#F1C40F',
       eyeStyle: 'smile',
+      earSize: 'big',
       glassesStyle: 'round',
       noseStyle: 'long',
       shirtStyle: 'short',

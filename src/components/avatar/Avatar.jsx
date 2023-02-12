@@ -7,7 +7,6 @@ function Avatar({ edit }) {
     <AvatarProvider>
       <div className="relative w-32">
         {edit ? <AvatarEditionButton /> : <AvatarEdition />}
-        <AvatarEdition />
       </div>
     </AvatarProvider>
   )
