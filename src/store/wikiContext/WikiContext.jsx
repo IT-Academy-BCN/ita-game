@@ -6,6 +6,8 @@ export const WikiContext = createContext();
 
 export const WikiContextProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
+  const [data, setData] = useState([]);
+  const [stack, setStack] = useState('');
   const [stackData, setStackData] = useState([]);
 
   useEffect(() => {
@@ -14,6 +16,7 @@ export const WikiContextProvider = ({ children }) => {
         const response = await axios.get(urls.categories);
         if (response.status === 200) {
           const { data } = response;
+          setData(data);
           setCategories(data);
         }
       } catch (error) {
@@ -29,9 +32,10 @@ export const WikiContextProvider = ({ children }) => {
       const response = await axios.get(urls.stackData);
       if (response.status === 200) {
         const { data } = response;
-        const selectedStack = data[framework];
-        console.log(selectedStack);
+        // aqui guardar toda data para sobreescribir en post?
+        const selectedStack = data.filter((d) => d.stack === framework);
         setStackData(selectedStack);
+        setStack(framework);
       }
     } catch (error) {
       console.error(error);
@@ -39,7 +43,16 @@ export const WikiContextProvider = ({ children }) => {
   };
 
   const addResource = (resource) => {
-    console.log('added resource');
+    axios
+      .post(`http://localhost:3002/stackData?stack=${stack}`, resource, {
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      });
+
     // try {
     //   const response = await axios.post(urls.stackData);
     //   if (response.status === 200) {

@@ -3,6 +3,13 @@ import { useLocation } from 'react-router-dom';
 import { WikiContext } from '../store/wikiContext/WikiContext';
 
 function Stack() {
+  // PENDINGS
+  // erase stackReact, route to react and angular
+  // propose :id route to go to stackData info
+  // REvised: NavLink to="???"
+  // check how to get data if NavLink is not pressed
+  //on AddResource fetch to post json serve
+  //   ckeck: how to access to react and angular objects on JSON serve
   const [display, setDisplay] = useState([]);
   const { stackData, getStackData, addResource } = useContext(WikiContext);
   const location = useLocation();
@@ -18,9 +25,10 @@ function Stack() {
   }, []);
 
   let fakeData = {
-    id: 'react-1',
-    title: 'Context en 20 minutos',
-    description: 'Teoría con ejemplos',
+    id: 'react-200',
+    stack: 'react',
+    title: 'testin',
+    description: 'testing',
     url: 'https://www.youtube.com/watch?v=gigKP6PPmW0',
     type: { video: true, tutorial: true, blog: false },
   };
@@ -30,7 +38,7 @@ function Stack() {
       {stackData.map((e) => (
         <p>{e.title}</p>
       ))}
-      <button onClick={() => addResource()}> add resource</button>
+      <button onClick={() => addResource(fakeData)}> add resource</button>
     </div>
   );
 }

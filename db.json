@@ -100,66 +100,70 @@
       "theme": 1
     }
   ],
-  "stackData": {
-    "react": [
-      {
-        "id": "react-1",
-        "title": "Context en 20 minutos",
-        "description": "Teoría con ejemplos",
-        "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
-        "type": { "video": true, "tutorial": true, "blog": false }
-      },
-      {
-        "id": "react-2",
-        "title": "Access Existing Context across Multiple Files",
-        "description": "Teoría con ejemplos",
-        "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
-        "type": { "video": false, "tutorial": true, "blog": true }
-      },
-      {
-        "id": "react-3",
-        "title": "Cómo utilizar useReducer",
-        "description": "Paso a paso de cómo utilizar useReducer en React",
-        "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
-        "type": { "video": true, "tutorial": true, "blog": false }
-      },
-      {
-        "id": "react-4",
-        "title": "React + TypeScript",
-        "description": "Cómo inicializar TP",
-        "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
-        "type": { "video": true, "tutorial": true, "blog": false }
-      }
-    ],
-    "angular": [
-      {
-        "id": "angular-1",
-        "title": "Context en 20 minutos",
-        "description": "Teoría con ejemplos",
-        "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
-        "type": { "video": true, "tutorial": true, "blog": false }
-      },
-      {
-        "id": "angular-2",
-        "title": "Access Existing Context across Multiple Files",
-        "description": "Teoría con ejemplos",
-        "url": "https://stackoverflow.com/questions/49406602/angular-new-context-api-access-existing-context-across-multiple-files",
-        "type": { "video": false, "tutorial": true, "blog": true }
-      },
-      {
-        "id": "angular-3",
-        "title": "Cómo utilizar hooks",
-        "description": "Paso a paso de cómo utilizar useReducer en Angular",
-        "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
-        "type": { "video": true, "tutorial": true, "blog": false }
-      },
-      {
-        "id": "angular-4",
-        "title": "Angular + TypeScript",
-        "description": "Cómo inicializar TP",
-        "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
-        "type": { "video": true, "tutorial": true, "blog": false }
-      }
-    ]
-  }
+  "stackData": [
+    {
+      "id": "react-1",
+      "stack": "react",
+      "title": "Context en 20 minutos",
+      "description": "Teoría con ejemplos",
+      "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "react-2",
+      "stack": "react",
+      "title": "Access Existing Context across Multiple Files",
+      "description": "Teoría con ejemplos",
+      "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
+      "type": { "video": false, "tutorial": true, "blog": true }
+    },
+    {
+      "id": "react-3",
+      "stack": "react",
+      "title": "Cómo utilizar useReducer",
+      "description": "Paso a paso de cómo utilizar useReducer en React",
+      "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "react-4",
+      "stack": "react",
+      "title": "React + TypeScript",
+      "description": "Cómo inicializar TP",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "angular-1",
+      "stack": "angular",
+      "title": "Context en 20 minutos",
+      "description": "Teoría con ejemplos",
+      "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "angular-2",
+      "stack": "angular",
+      "title": "Access Existing Context across Multiple Files",
+      "description": "Teoría con ejemplos",
+      "url": "https://stackoverflow.com/questions/49406602/angular-new-context-api-access-existing-context-across-multiple-files",
+      "type": { "video": false, "tutorial": true, "blog": true }
+    },
+    {
+      "id": "angular-3",
+      "stack": "angular",
+      "title": "Cómo utilizar hooks",
+      "description": "Paso a paso de cómo utilizar useReducer en Angular",
+      "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "angular-4",
+      "stack": "angular",
+      "title": "Angular + TypeScript",
+      "description": "Cómo inicializar TP",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    }
+  ]
 }
