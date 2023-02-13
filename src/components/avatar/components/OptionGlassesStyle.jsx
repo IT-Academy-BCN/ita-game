@@ -14,7 +14,6 @@ function OptionGlassesStyle() {
     })
     console.log('from OptionGlasses', e.target.value )
   }
-  console.log('avatar from option glasses', avatar)
 
   const options = ['none', 'round', 'square']
 
