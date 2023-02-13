@@ -1,23 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { UserAvatar, EditAvatar } from './components/organisms/UserAvatar';
-import {
-  Home,
-  Historical,
-  Login,
-  LeaderBoard,
-  Profile,
-  Register,
-  Information,
-  Wiki,
-} from './pages';
+import { PageEdition } from './components/avatar';
+import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki } from './pages';
 import Stack from './components/StackReact';
-
 export default function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
+   return (
+      <>
+         <BrowserRouter>
+            <Routes>
+         <Route path="/" element={<Home />} />
           <Route path="/historical" element={<Historical />} />
           <Route path="/login" element={<Login />} />
           <Route path="/leaderboard" element={<LeaderBoard />} />
@@ -29,8 +19,9 @@ export default function App() {
           <Route path="/wiki" element={<Wiki />} />
           <Route path="/react" element={<Stack />} />
           <Route path="/angular" element={<Stack />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+            </Routes>
+         </BrowserRouter>
+      </>
+   );
+
 }
