@@ -7,20 +7,19 @@ export const UsersContext = createContext()
 export const UsersContextProvider = ({ children }) => {
   const [user, setUser] = useState([])
 
-  const getUser = async (id) => {
+  const getUser = async () => {
     try {
       const resp = await axios.get(
         `https://itacademy.onrender.com/api/users/${id}`
       )
-      console.log("prueba", resp)
+      if (resp.status === 200) {
+        const { data } = resp
+        setUser(data)
+      }
     } catch (error) {
       console.log(error)
     }
   }
-
-  useEffect(() => {
-    getUser("63e645c760e6610040667efd")
-  }, [])
 
   return (
     <UsersContext.Provider value={{ getUser }}>
