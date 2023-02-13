@@ -16,7 +16,7 @@ function OptionSex() {
       type: actions.UPDATE_AVATAR,
       payload: { ...avatar, sex: e.target.value }
     })
-    setGender(e.target.value)
+    setGender(e.target.value);
   }
 
   return (
