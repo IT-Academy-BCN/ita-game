@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import NewResource from '../components/organisms/NewResource';
-import { FooterMenu, Navbar } from '../components';
-import DisplayModeWiki from '../components/DisplayModeWiki';
-import { arrowRight } from '../components/assets';
-import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import { WikiContext } from '../store/wikiContext/WikiContext';
+import { useState } from "react"
+import NewResource from "../components/organisms/NewResource"
+import { FooterMenu, Navbar } from "../components"
+import DisplayModeWiki from "../components/DisplayModeWiki"
+import { arrowRight } from "../components/assets"
+import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { WikiContext } from "../store/wikiContext/WikiContext"
 
 const Wiki = () => {
-  const { categories } = useContext(WikiContext);
+  const { categories } = useContext(WikiContext)
   return (
     <>
-      <div className="container min-w-full flex flex-col bg-white pb-10">
-        <Navbar>Wiki</Navbar>
+      <Navbar>Wiki</Navbar>
+      <div className="container min-w-full flex flex-col bg-white pt-14 pb-10">
         <div className="card flex flex-row justify-around items-center p-2.5 my-2 mx-6 border border-stone-300">
           <div className="flex flex-row">
             <div className="avatar">
@@ -72,7 +72,7 @@ const Wiki = () => {
       </div>
       <FooterMenu />
     </>
-  );
-};
+  )
+}
 
-export default Wiki;
+export default Wiki
