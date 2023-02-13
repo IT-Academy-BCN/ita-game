@@ -12,6 +12,7 @@ function Register() {
   const [values, setValues] = useState({
     name: '',
     surname: '',
+    sex: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -21,11 +22,11 @@ function Register() {
     errorMessage: null,
   });
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const onChange = e => {
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
 
   const showAlert = ({ message }) =>
     Swal.fire({
@@ -45,16 +46,30 @@ function Register() {
       ITApoints: 0,
       ITAawards: [],
       activities: 0,
-    };
+      avatar: {
+        sex: values.sex,
+        hairStyle: 'normal',
+        hairColor: '#BA4A00',
+        faceColor: '#FAD7A0',
+        hatStyle: 'beanie',
+        hatColor: '#F1C40F',
+        eyeStyle: 'smile', // circle, oval, smile
+        glassesStyle: 'round', // none, round, square
+        noseStyle: 'long', //short, long, round
+        shirtStyle: 'short', // hoody, short, polo
+        shirtColor: '#BB8FCE',
+        bgColor: '#58c914'
+      }
+    }
     try {
       setState((prev) => ({ ...prev, loading: true }));
-      await axios.post(API_URL, user);
+      await axios.post(API_URL, user)
       setState((prev) => ({ ...prev, loading: false }));
-      navigate('/login');
+      navigate('/login')
     } catch (err) {
       setState(prev => ({ ...prev, errorMessage: err, loading: false }));
       showAlert(state.errorMessage);
-      console.log(err);
+      console.log(err)
       // TODO: implement better way of error handling
     }
   };
@@ -78,7 +93,7 @@ function Register() {
           >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="grid gap-3 rounded-md shadow-sm">
-              {inputArray.map((input) => (
+              {inputArray.map(input => (
                 <Input
                   key={input.id}
                   {...input}
@@ -86,6 +101,20 @@ function Register() {
                   onChange={onChange}
                 />
               ))}
+            </div>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Pick your avatar</span>
+                <span className="label-text-alt">Woman/Man</span>
+              </label>
+              <select
+                name="sex"
+                className="select select-bordered"
+                onChange={onChange}
+              >
+                <option value="woman">woman</option>
+                <option value="man">man</option>
+              </select>
             </div>
             <div className="pt-4">
               <button type="submit" className="btn btn-block btn-primary">
@@ -106,7 +135,7 @@ function Register() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Register;
+export default Register

@@ -11,8 +11,8 @@ function useFetch(url) {
     setError(null)
     fetch(url)
       .then(response => response.json())
-      .then(d => {
-        setData(d)
+      .then(response => {
+        setData(response)
         setIsLoading(false)
         if (data && data.length === 0) {
           setHasData(false)

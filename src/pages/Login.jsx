@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../store/authentication/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { Actions } from '../store/authentication/authReducer';
+import { Actions } from '../store/authentication/AuthReducer';
 import axios from 'axios';
 
 const API_URL = 'https://itacademy.onrender.com/auth/signin'; 
@@ -29,8 +29,8 @@ function Login() {
       dispatch({ type: Actions.LOGIN_START });
       const res = await axios.post(API_URL, credentials);
       if (res.data.token) {
-        dispatch({ type: Actions.LOGIN_SUCCESS, payload: res.data });
-        localStorage.setItem('currentUser', JSON.stringify(res.data));
+        dispatch({ type: Actions.LOGIN_SUCCESS, payload: res.data.user });
+        sessionStorage.setItem('currentUser', JSON.stringify(res.data.token));
         navigate('/');
       }
     } catch (err) {

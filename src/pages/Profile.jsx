@@ -1,34 +1,34 @@
-import { FooterMenu, Navbar } from "../components"
-import { folder, gym, rocket, sun } from "../components/assets"
-import { Card, Title } from "../components/atoms/index"
-import Badge from "../components/atoms/Badge"
-import { useContext, useEffect, useState } from "react"
-import { AuthContext } from "../store/authentication/AuthContext"
-import { Modal } from "../components/molecules"
-import { Actions } from "../store/authentication/authReducer"
-import { useNavigate } from "react-router-dom"
+import { FooterMenu, Navbar } from '../components';
+import { folder, gym, rocket, sun } from '../components/assets';
+import { Card, Title } from '../components/atoms/index';
+import Badge from '../components/atoms/Badge';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../store/authentication/AuthContext';
+import { Modal } from '../components/molecules';
+import { Actions } from '../store/authentication/AuthReducer';
+import { useNavigate } from 'react-router-dom';
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
 // UI:Grid on 'Insignias Ganadas' Cards
 function Profile() {
-  const [nextMultiple, setNextMultiple] = useState(0)
-  const [openModal, setOpenModal] = useState(false)
-  const { state, dispatch } = useContext(AuthContext)
-  const { user } = state
-  const navigate = useNavigate()
+  const [nextMultiple, setNextMultiple] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const { state, dispatch } = useContext(AuthContext);
+  const { user } = state;
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50)
-  }, [])
+    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50);
+  }, []);
 
   const handleOpenModal = () => {
-    setOpenModal(true)
-  }
+    setOpenModal(true);
+  };
 
   const handleLogout = () => {
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('currentUser');
+    sessionStorage.removeItem('token');
     dispatch({ type: Actions.LOGOUT })
     navigate("/")
   }
@@ -36,12 +36,12 @@ function Profile() {
   // Fake user to obtain SVG and Data for looping
   const fakeUser = {
     ITAawards: [
-      { name: "Solete", img: sun, text: "+5 dudas" },
-      { name: "Megamind", img: folder, text: "+3 wikis" },
-      { name: "Imparable", img: rocket, text: "+2 explicaciones" },
+      { name: 'Solete', img: sun, text: '+5 dudas' },
+      { name: 'Megamind', img: folder, text: '+3 wikis' },
+      { name: 'Imparable', img: rocket, text: '+2 explicaciones' },
     ],
-    pendingAwards: ["Coordinator"],
-  }
+    pendingAwards: ['Coordinator'],
+  };
 
   return (
     <div className="h-screen w-full">
@@ -67,7 +67,7 @@ function Profile() {
           </div>
         </Modal>
       ) : (
-        ""
+        ''
       )}
       <div className="p-5  bg-slate-100">
         <Card>
@@ -169,7 +169,7 @@ function Profile() {
               >
                 {a.name}
               </Badge>
-            )
+            );
           })}
         </Card>
         <Title>Insignias Pendientes</Title>
@@ -187,6 +187,6 @@ function Profile() {
       </div>
       <FooterMenu />
     </div>
-  )
+  );
 }
-export default Profile
+export default Profile;

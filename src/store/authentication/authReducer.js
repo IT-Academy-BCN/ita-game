@@ -1,15 +1,15 @@
 import { createNextState } from '@reduxjs/toolkit';
 
-let user = localStorage.getItem('currentUser')
+/* let user = localStorage.getItem('currentUser')
   ? JSON.parse(localStorage.getItem('currentUser')).user
-  : '';
+  : ''; */
 
 let token = localStorage.getItem('currentUser')
-  ? JSON.parse(localStorage.getItem('currentUser')).token
+  ? JSON.parse(sessionStorage.getItem('currentUser')).token
   : ''
 
 export const initialState = {
-  user: user,
+  user: '',
   token: token,
   loading: false,
   errorMessage: null,
@@ -22,7 +22,7 @@ export const Actions = {
   LOGOUT: 'LOGOUT',
 };
 
-export const authReducer = (state = initialState, action) => {
+export const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case Actions.LOGIN_START:
       return createNextState(state, (draft) => {
