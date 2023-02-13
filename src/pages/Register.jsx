@@ -108,7 +108,7 @@ function Register() {
                 <span className="label-text-alt">Woman/Man</span>
               </label>
               <select
-                name='sex'
+                name="sex"
                 className="select select-bordered"
                 onChange={onChange}
               >
