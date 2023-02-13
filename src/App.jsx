@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { PageEdition } from './components/avatar';
 import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki } from './pages';
 import Stack from './components/StackReact';
 export default function App() {
@@ -14,8 +13,6 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/information" element={<Information />} />
-          <Route path="/testing-useravatar" element={<UserAvatar />} />
-          <Route path="/testing-page-avatar" element={<EditAvatar />} />
           <Route path="/wiki" element={<Wiki />} />
           <Route path="/react" element={<Stack />} />
           <Route path="/angular" element={<Stack />} />
