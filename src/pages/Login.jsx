@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../store/authentication/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { Actions } from '../store/authentication/authReducer';
+import { Actions } from '../store/authentication/AuthReducer';
 import axios from 'axios';
 
 function Login() {
@@ -103,7 +103,7 @@ function Login() {
               </div>
               <div className="text-sm">
                 {/* TODO: activate below functionality */}
-                <Link className='font-medium text-black hover:text-indigo-500 underline'>
+                <Link className="font-medium text-black hover:text-indigo-500 underline">
                   Forgot your password?
                 </Link>
               </div>
@@ -118,7 +118,10 @@ function Login() {
           </form>
         </div>
         <div className="flex justify-center pb-10">
-          <Link to='/register' className="font-bold text-black hover:text-indigo-500 underline">
+          <Link
+            to="/register"
+            className="font-bold text-black hover:text-indigo-500 underline"
+          >
             ¿No tienes una cuenta?,crear una
           </Link>
         </div>

@@ -1,117 +1,72 @@
 import { useState } from 'react';
 import NewResource from '../components/organisms/NewResource';
-import { NavLink } from 'react-router-dom';
 import { FooterMenu, Navbar } from '../components';
 import DisplayModeWiki from '../components/DisplayModeWiki';
-import {
-  angular,
-  datascience,
-  javascript,
-  react,
-  vue,
-} from '../components/assets';
-import folder from '../components/assets/images/new-folder-dynamic-color.png';
-import { Title } from '../components/atoms';
-
-const categories = [
-  {
-    name: 'Angular',
-    resource: 49,
-    theme: 6,
-    link: '.../angular',
-    img: angular,
-  },
-  { name: 'React', resource: 65, theme: 7, link: '.../react', img: react },
-  { name: 'Vue', resource: 32, theme: 8, link: '.../vue', img: vue },
-  {
-    name: 'Javascript',
-    resource: 44,
-    theme: 3,
-    link: '.../javascript',
-    img: javascript,
-  },
-  {
-    name: 'Data Science',
-    resource: 44,
-    theme: 3,
-    link: '.../datascience',
-    img: datascience,
-  },
-];
+import { arrowRight } from '../components/assets';
+import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { WikiContext } from '../store/wikiContext/WikiContext';
 
 const Wiki = () => {
-  const [isModal, setIsModal] = useState(false);
+  const { categories } = useContext(WikiContext);
   return (
     <>
-      <div className="">
-        {/* modal trigger button, Sergio localiza donde tu quieras este boton*/}
-        <button
-          className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button"
-          onClick={() => setIsModal((prev) => !prev)}
-        >
-          Toggle modal
-        </button>
-        {isModal && <NewResource setIsModal={setIsModal} />}
-      </div>
-      <Navbar>Wiki</Navbar>
-      <div className="container min-w-full flex flex-col bg-white pb-10 mt-5">
-        <div className="bg-slate-200 ">
-          <div className="card flex  flex-row justify-between h-20 items-center my-2 mx-6 border border-stone-300 bg-white">
-            <div className="h-full rounded-l-xl rounded-r-3xl  bg-primary w-24 mr-6">
-              <div className="flex items-center justify-start ml-4 h-full">
-                <img src={folder} alt="New folder" className="z-50" />
+      <div className="container min-w-full flex flex-col bg-white pb-10">
+        <Navbar>Wiki</Navbar>
+        <div className="card flex flex-row justify-around items-center p-2.5 my-2 mx-6 border border-stone-300">
+          <div className="flex flex-row">
+            <div className="avatar">
+              <div className="w-14 rounded-full px-2 py-2">
+                {/* <img src={image} alt={n} /> */}
               </div>
             </div>
-            <div className="w-5/12 flex sm:justify-center">
-              <h2 className="font-bold text-black text-sm">
-                ¿Cómo colaborar en la wiki?
-              </h2>
-            </div>
-            <NavLink className="flex justify-end ml-12 mr-2.5">
-              <img
-                className="w-6"
-                src="src/components/assets/arrow_right.svg"
-                alt="search"
-              />
-            </NavLink>
-          </div>
-          <div className="form-control mx-6 mt-7 -mb-5 border border-stone-300 rounded-lg">
-            <div className="input-group flex justify-center">
-              <input
-                type="text"
-                placeholder="¿Buscas un tema?"
-                className="input input-bordered w-full"
-              />
-              <button className="btn btn-square">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </button>
+            <div className="flex flex-col justify-around pl-2 my-1">
+              <h2 className="font-bold text-black">.......</h2>
             </div>
           </div>
+          <NavLink>
+            <img className="w-6" src={arrowRight} alt="search" />
+          </NavLink>
         </div>
-        <div className="mx-7 mt-10 mb-0">
-          <Title>Categorías</Title>
+        <div className="form-control">
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Search…"
+              className="input input-bordered"
+            />
+            <button className="btn btn-square">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        {categories.map((item) => (
+        <div className="flex flex-row justify-between">
+          <p className="flex items-center font-bold m-7 text-black ">
+            Categorías
+          </p>
+          <button className="bg-primary hover:bg-secondary m-7 text-black font-bold  rounded-xl px-2 h-11">
+            + Nuevo recurso
+          </button>
+        </div>
+        {categories.map((c) => (
           <DisplayModeWiki
-            key={item.name}
-            name={item.name}
-            image={item.img}
-            resource={item.resource}
-            theme={item.theme}
+            key={c.id}
+            name={c.stack}
+            resource={c.resource}
+            theme={c.theme}
           />
         ))}
       </div>
