@@ -7,3 +7,4 @@ export { default as datascience } from './datascience.svg';
 export { default as javascript } from './javascript.svg';
 export { default as react } from './react.svg';
 export { default as vue } from './vue.svg';
+export { default as arrowRight } from './arrow_right.svg';
