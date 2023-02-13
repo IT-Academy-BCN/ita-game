@@ -1,7 +1,6 @@
-
-import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { IconArrow, IconInfo } from "./atoms";
+import React, { useEffect, useState } from "react"
+import { NavLink, useLocation } from "react-router-dom"
+import { IconArrow, IconInfo } from "./atoms"
 
 function Navbar({ children }) {
   const [showInfo, setShowInfo] = useState(true)
@@ -14,10 +13,8 @@ function Navbar({ children }) {
   }, [location])
 
   return (
-
-    <div className="flex w-full items-center justify-between rounded-b-xl bg-black p-3 text-center text-white">
+    <div className="fixed z-[1000] flex w-full items-center justify-between rounded-b-xl bg-black p-3 text-center text-white">
       <NavLink to={"/"}>
-
         <IconArrow />
       </NavLink>
       <div className="flex flex-grow justify-center">{children}</div>
