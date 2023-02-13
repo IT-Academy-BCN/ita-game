@@ -1,9 +1,9 @@
-import React from "react";
-import { IndicatorGroup } from "./molecules";
-import zoom from "../assets/images/zoom-dynamic-color.png";
-import folder from "../assets/images/new-folder-dynamic-color.png";
-import thumb from "../assets/images/thumb-up-dynamic-color.png";
-import medal from "../assets/images/medal-dynamic-color.png";
+import React from 'react';
+import { IndicatorGroup } from './';
+import magnifier from './assets/images/zoom-dynamic-color.png';
+import folder from './assets/images/new-folder-dynamic-color.png';
+import thumb from './assets/images/thumb-up-dynamic-color.png';
+import medal from './assets/images/medal-dynamic-color.png';
 
 const WeeklyResume = () => {
   return (

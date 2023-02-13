@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { Navbar, FooterMenu, ResourcesCard } from '../components';
-import { WikiContext } from '../store/wikiContext/WikiContext';
-import NewResource from '../components/organisms/NewResource';
 
 const Resource = () => {
   const [openModal, setOpenModal] = useState(false);

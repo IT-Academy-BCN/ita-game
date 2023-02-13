@@ -1,4 +1,4 @@
-import { Card } from '../atoms';
+import { Card } from './';
 
 function Modal({ children }) {
   return <Card>{children}</Card>;

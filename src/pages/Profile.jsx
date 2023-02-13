@@ -1,5 +1,10 @@
+import { FooterMenu, Navbar } from '../components';
+import { folder, gym, rocket, sun } from '../components/assets';
+import { Card, Title } from '../components';
+import Badge from '../components';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../store/authentication/AuthContext';
+import { Modal } from '../components';
 import { Actions } from '../store/authentication/AuthReducer';
 import { FooterMenu, Navbar } from '../components';
 import { Card, Title } from '../components/atoms/index';
