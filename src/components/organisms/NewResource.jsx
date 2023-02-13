@@ -1,44 +1,44 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from "react"
 
 const NewResource = ({ setIsModal }) => {
   const [values, setValues] = useState({
-    title: '',
-    description: '',
-    url: '',
+    title: "",
+    description: "",
+    url: "",
     video: false,
     tutorial: false,
     blog: false,
-  });
+  })
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
-  }, []);
-  const clickOutsideRef = useRef(null);
+    document.addEventListener("click", handleClickOutside, true)
+  }, [])
+  const clickOutsideRef = useRef(null)
   const handleClickOutside = (e) => {
     if (!clickOutsideRef.current.contains(e.target)) {
-      setIsModal((prev) => !prev);
+      setIsModal((prev) => !prev)
     }
-  };
+  }
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked } = event.target
     setValues((prev) => {
       return {
         ...prev,
-        [name]: type === 'checkbox' ? checked : value,
-      };
-    });
-  };
+        [name]: type === "checkbox" ? checked : value,
+      }
+    })
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // utilizare addResourse del context para enviar datos de new resourse
   }
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full bg-black opacity-70 flex justify-center items-center">
       <div ref={clickOutsideRef} className="relative bg-white rounded-2xl z-50">
-        <div className="flex flex-col justify-center p-5 pb-7 rounded-t dark:border-gray-600">
+        <div className="flex flex-col justify-center p-5 pb-7 rounded-t dark:border-secondary">
           <button
             type="button"
             className="btn btn-ghost btn-square absolute top-0 right-0"
@@ -61,7 +61,10 @@ const NewResource = ({ setIsModal }) => {
           </button>
 
           <h2 className="text-center font-black mb-8 mt-6">Nuevo recurso</h2>
-          <form className="flex flex-col items-center gap-3" onSubmit={handleSubmit}>
+          <form
+            className="flex flex-col items-center gap-3"
+            onSubmit={handleSubmit}
+          >
             <label htmlFor="title" className="sr-only">
               Título
             </label>
@@ -102,7 +105,7 @@ const NewResource = ({ setIsModal }) => {
               onChange={handleChange}
             />
             <div className="flex">
-              {' '}
+              {" "}
               {/* checkboxes */}
               <div className="flex items-center">
                 <input
@@ -154,13 +157,13 @@ const NewResource = ({ setIsModal }) => {
               </div>
             </div>
             <button type="submit" className="btn btn-block btn-primary mt-6">
-              <span className="text-gray-900">Crear</span>
+              <span className="text-black">Crear</span>
             </button>
           </form>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewResource;
+export default NewResource
