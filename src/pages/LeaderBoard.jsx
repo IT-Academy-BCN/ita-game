@@ -23,7 +23,44 @@ function LeaderBoard() {
   //  puntos
   //  nivel???
   // 3. ordenarlo
-  console.log("db: ", db);
+
+  // let arrayC = [{ name: "Albert García" }];
+  // db.forEach((user) => {
+  //   const found = arrayC.find((e) => e.name === user.doneBy.name);
+  //   console.log("found::", found);
+  // });
+
+  // let arrayC = [];
+  // db.forEach((user) => {
+  //   const found = arrayC.find((e) => e.id === user.doneBy._id);
+  //   if (!found) {
+  //     arrayC.push({
+  //       id: user.doneBy._id,
+  //       name: user.doneBy.name,
+  //       score: user.typeId.points,
+  //     });
+  //   } else {
+
+  //   }
+  // });
+
+  let arrayC = [];
+  db.forEach((user) => {
+    const found = arrayC.findIndex((e) => e.id === user.doneBy._id);
+    if (found === -1) {
+      arrayC.push({
+        id: user.doneBy._id,
+        name: user.doneBy.name,
+        points: user.typeId.points,
+      });
+    } else {
+      arrayC[found].points += user.typeId.points;
+    }
+  });
+
+  //console.log("db[0].doneBy.name: ", db[0].doneBy.name);
+  // console.log("db: ", db);
+  console.log("arrayC: ", arrayC);
   return (
     <>
       <Navbar>Competición</Navbar>
