@@ -15,6 +15,3 @@ export default function useHandler() {
   return { handler }
 }
 
-
-
-// hairStyle
