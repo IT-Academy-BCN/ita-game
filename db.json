@@ -9,17 +9,13 @@
       "framework": "Frontend React",
       "ITApoints": 123,
       "ITAawards": [
-        
         "Solete",
-       
         "Megamind",
-       
         "Imparable"
-      
       ],
       "activities": 30,
       "avatar": {
-        "sex": "woman 👗",
+        "sex": "woman",
         "hairStyle": "pixie"
       }
     },
@@ -31,10 +27,7 @@
       "password": "Test2-1234!",
       "framework": "Backend Java",
       "ITApoints": 133,
-      "ITAawards": [
-        "Solete",
-        "Imparable"
-      ],
+      "ITAawards": ["Solete", "Imparable"],
       "activities": 23,
       "avatar": {
         "sex": "man",
@@ -58,16 +51,13 @@
       "password": "Test3-1234!",
       "framework": "Frontend React",
       "ITApoints": 203,
-      "ITAawards": [
-        "Solete",
-        "Imparable"
-      ],
+      "ITAawards": ["Solete", "Imparable"],
       "activities": 4,
       "avatar": {
         "sex": "man",
         "hairStyle": "mohawk",
         "hatStyle": "turban",
-        "hatColor": "#caca23",
+        "hatColor": "#caca22",
         "eyeStyle": "smile",
         "glassesStyle": "round",
         "noseStyle": "long",
@@ -75,6 +65,109 @@
         "shirtColor": "peru",
         "bgColor": "#1e4b8f"
       }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "stack": "angular",
+      "url": "http://localhost:3002/stackData?angular",
+      "resource": 49,
+      "theme": 6
+    },
+    {
+      "id": 2,
+      "stack": "react",
+      "url": "http://localhost:3002/stackData?react",
+      "resource": 109,
+      "theme": 21
+    },
+    {
+      "id": 3,
+      "stack": "vue",
+      "url": "endpoint/vue",
+      "resource": 10,
+      "theme": 1
+    },
+    {
+      "id": 4,
+      "stack": "javascript",
+      "url": "endpoint/javascript",
+      "resource": 83,
+      "theme": 10
+    },
+    {
+      "id": 5,
+      "stack": "datascience",
+      "url": "endpoint/datascience",
+      "resource": 9,
+      "theme": 1
+    }
+  ],
+  "stackData": [
+    {
+      "id": "react-1",
+      "stack": "react",
+      "title": "Context en 20 minutos",
+      "description": "Teoría con ejemplos",
+      "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "react-2",
+      "stack": "react",
+      "title": "Access Existing Context across Multiple Files",
+      "description": "Teoría con ejemplos",
+      "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
+      "type": { "video": false, "tutorial": true, "blog": true }
+    },
+    {
+      "id": "react-3",
+      "stack": "react",
+      "title": "Cómo utilizar useReducer",
+      "description": "Paso a paso de cómo utilizar useReducer en React",
+      "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "react-4",
+      "stack": "react",
+      "title": "React + TypeScript",
+      "description": "Cómo inicializar TP",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "angular-1",
+      "stack": "angular",
+      "title": "Context en 20 minutos",
+      "description": "Teoría con ejemplos",
+      "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "angular-2",
+      "stack": "angular",
+      "title": "Access Existing Context across Multiple Files",
+      "description": "Teoría con ejemplos",
+      "url": "https://stackoverflow.com/questions/49406602/angular-new-context-api-access-existing-context-across-multiple-files",
+      "type": { "video": false, "tutorial": true, "blog": true }
+    },
+    {
+      "id": "angular-3",
+      "stack": "angular",
+      "title": "Cómo utilizar hooks",
+      "description": "Paso a paso de cómo utilizar useReducer en Angular",
+      "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
+      "type": { "video": true, "tutorial": true, "blog": false }
+    },
+    {
+      "id": "angular-4",
+      "stack": "angular",
+      "title": "Angular + TypeScript",
+      "description": "Cómo inicializar TP",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": { "video": true, "tutorial": true, "blog": false }
     }
   ]
 }
