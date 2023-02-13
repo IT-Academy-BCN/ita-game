@@ -4,7 +4,7 @@ import { createNextState } from '@reduxjs/toolkit';
   ? JSON.parse(localStorage.getItem('currentUser')).user
   : ''; */
 
-let token = localStorage.getItem('currentUser')
+let token = sessionStorage.getItem('currentUser')
   ? JSON.parse(sessionStorage.getItem('currentUser')).token
   : ''
 
