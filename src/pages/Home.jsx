@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { Navbar, FooterMenu, UserCard } from "../components"
 import { WeeklyResume } from "../components"
 import { AuthContext } from "../store/authentication/AuthContext"
+import { UsersContext } from "../store/usersApi/UsersContext"
 
 function Home() {
   const { state } = useContext(AuthContext)
