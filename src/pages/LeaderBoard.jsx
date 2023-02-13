@@ -21,8 +21,10 @@ const options = {
 
 function LeaderBoard() {
   const [users, SetUsers] = useState();
+  const [isLoading, SetIsLoading] = useState(false);
 
   useEffect(() => {
+    SetIsLoading(true);
     const weekTimestamp = Math.floor(Date.now() / 1000);
     const weekDate = DateTime.fromMillis(weekTimestamp * 1000);
     const startOfWeek = weekDate.startOf("week");
@@ -60,6 +62,7 @@ function LeaderBoard() {
             users[found].points += user.typeId.points;
           }
           SetUsers(users);
+          SetIsLoading(false);
         });
     };
     getCategoriesArray();
@@ -73,6 +76,7 @@ function LeaderBoard() {
         <p className="text-lg font-semibold m-6 text-black">
           Clasificación semanal
         </p>
+        {isLoading && <p className="text-center">Loading...</p>}
         {users &&
           users
             // ordenamos por puntuacion
