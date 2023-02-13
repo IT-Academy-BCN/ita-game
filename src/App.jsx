@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { UserAvatar, EditAvatar } from "./components/organisms/UserAvatar"
 import { PageEdition } from './components/avatar';
 import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki } from './pages';
 import Stack from './components/StackReact';
+
 export default function App() {
    return (
       <>
@@ -19,9 +21,9 @@ export default function App() {
           <Route path="/wiki" element={<Wiki />} />
           <Route path="/react" element={<Stack />} />
           <Route path="/angular" element={<Stack />} />
-            </Routes>
-         </BrowserRouter>
-      </>
+          <Route path="/wiki/resource" element={<Resource />} />
+        </Routes>
+      </BrowserRouter>
+    </>
    );
-
 }
