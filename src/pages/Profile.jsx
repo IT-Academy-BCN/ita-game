@@ -27,8 +27,6 @@ function Profile() {
   };
 
   const handleLogout = () => {
-    sessionStorage.removeItem('currentUser');
-    sessionStorage.removeItem('token');
     dispatch({ type: Actions.LOGOUT })
     navigate("/")
   }

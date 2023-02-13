@@ -28,9 +28,8 @@ function Login() {
     try {
       dispatch({ type: Actions.LOGIN_START });
       const res = await axios.post(API_URL, credentials);
-      if (res.data.token) {
+      if (res.data) {
         dispatch({ type: Actions.LOGIN_SUCCESS, payload: res.data.user });
-        sessionStorage.setItem('currentUser', JSON.stringify(res.data.token));
         navigate('/');
       }
     } catch (err) {
