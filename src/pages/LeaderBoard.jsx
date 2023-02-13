@@ -18,8 +18,8 @@ const users = [
 function LeaderBoard() {
   return (
     <>
-      <div className="container mx-auto flex flex-col">
-        <Navbar>Competición</Navbar>
+      <Navbar>Competición</Navbar>
+      <div className="container pt-10 mx-auto flex flex-col">
         <DisplayMode user={currentUser} />
         <p className="text-lg font-semibold m-6 text-black">
           Clasificación semanal

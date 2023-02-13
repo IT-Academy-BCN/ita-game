@@ -50,7 +50,6 @@ const Wiki = () => {
                   </div>
                </div>
             </div>
-
             <div className="mx-7 mt-10 mb-0">
                <Title>Categorías</Title>
             </div>
@@ -63,4 +62,5 @@ const Wiki = () => {
    );
 };
 
-export default Wiki;
+export default Wiki
+
