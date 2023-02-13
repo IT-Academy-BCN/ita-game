@@ -1,14 +1,21 @@
-import React from "react"
-import { Navbar, FooterMenu, ResourcesCard } from "../components"
+import { useState } from 'react';
+import { Navbar, FooterMenu, ResourcesCard } from '../components';
+import NewResource from '../components/organisms/NewResource';
 
 const Resource = () => {
+  const [isModal, setIsModal] = useState(false);
   return (
     <>
+      {isModal && <NewResource setIsModal={setIsModal} />}
       <Navbar>Wiki</Navbar>
       <div className="relative pt-10 w-screen flex flex-col h-screen bg-base">
         <div className="flex flex-row justify-between p-5 mt-5">
           <h1 className="font-bold text-xl">Recursos React.js</h1>
-          <button className="btn btn-circle bg-primary border-none">
+          <button
+            type="button"
+            onClick={() => setIsModal((prev) => !prev)}
+            className="btn btn-circle bg-primary border-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -66,7 +73,7 @@ const Resource = () => {
         <FooterMenu />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Resource
+export default Resource;
