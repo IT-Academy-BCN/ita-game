@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Stack from './components/StackReact';
-import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki, Resources } from './pages';
+import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki, Resource } from './pages';
 export default function App() {
    return (
       <>
