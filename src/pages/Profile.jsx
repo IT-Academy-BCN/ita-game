@@ -1,4 +1,5 @@
-import { FooterMenu, Navbar } from "../components"
+import { AvatarTemp, FooterMenu, Navbar } from "../components"
+import { Avatar } from '../components/avatar'
 import { folder, gym, rocket, sun } from "../components/assets"
 import { Card, Title } from "../components/atoms/index"
 import Badge from "../components/atoms/Badge"
@@ -78,9 +79,7 @@ function Profile() {
               <div className="flex flex-col justify-center items-center absolute ">
                 {/* avatar*/}
                 <div className="avatar placeholder">
-                  <div className="bg-neutral-focus text-neutral-content rounded-full p-10">
-                    <span className="text-xs">AA</span>
-                  </div>
+                    <Avatar edit />
                 </div>
                 {/* name */}
                 <div className="text-black font-bold ">
