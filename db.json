@@ -8,10 +8,14 @@
       "password": "Test1-1234!",
       "framework": "Frontend React",
       "ITApoints": 123,
-      "ITAawards": ["Solete", "Megamind", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Megamind",
+        "Imparable"
+      ],
       "activities": 30,
       "avatar": {
-        "sex": "woman 👗",
+        "sex": "woman",
         "hairStyle": "pixie"
       }
     },
@@ -53,7 +57,7 @@
         "sex": "man",
         "hairStyle": "mohawk",
         "hatStyle": "turban",
-        "hatColor": "#caca23",
+        "hatColor": "#caca22",
         "eyeStyle": "smile",
         "glassesStyle": "round",
         "noseStyle": "long",
