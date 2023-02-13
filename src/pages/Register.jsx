@@ -3,6 +3,9 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { inputs } from '../components/atoms/input/Input';
 import Input from '../components/atoms/input/Input';
+import Swal from 'sweetalert2';
+
+const API_URL = 'https://itacademy.onrender.com/api/users';
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -13,12 +16,23 @@ function Register() {
     password: '',
     confirmPassword: '',
   });
+  const [state, setState] = useState({
+    loading: false,
+    errorMessage: null,
+  });
 
   const navigate = useNavigate();
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  const showAlert = ({ message }) =>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: message,
+    });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,12 +44,16 @@ function Register() {
       framework: '',
       ITApoints: 0,
       ITAawards: [],
-      activities: 0
+      activities: 0,
     };
     try {
-      await axios.post('http://localhost:3002/users', user);
+      setState((prev) => ({ ...prev, loading: true }));
+      await axios.post(API_URL, user);
+      setState((prev) => ({ ...prev, loading: false }));
       navigate('/login');
     } catch (err) {
+      setState(prev => ({ ...prev, errorMessage: err, loading: false }));
+      showAlert(state.errorMessage);
       console.log(err);
       // TODO: implement better way of error handling
     }
@@ -71,13 +89,18 @@ function Register() {
             </div>
             <div className="pt-4">
               <button type="submit" className="btn btn-block btn-primary">
-                  <span className='font-bold'>Registrarme</span> 
+                <span className="font-bold">
+                  {state.loading ? 'Loading...' : 'Registrarme'}
+                </span>
               </button>
             </div>
           </form>
         </div>
-        <div className='flex justify-center pb-10'>
-          <Link to='/login' className="font-bold text-black hover:text-indigo-500 underline">
+        <div className="flex justify-center pb-10">
+          <Link
+            to="/login"
+            className="font-bold text-black hover:text-indigo-500 underline"
+          >
             ¿Tienes una cuenta?,entrar
           </Link>
         </div>

@@ -27,9 +27,9 @@ function Profile() {
   }
 
   const handleLogout = () => {
-    localStorage.clear()
-    let user = localStorage.getItem("currentUser")
-    dispatch({ type: Actions.LOGOUT, payload: user })
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
+    dispatch({ type: Actions.LOGOUT })
     navigate("/")
   }
 
