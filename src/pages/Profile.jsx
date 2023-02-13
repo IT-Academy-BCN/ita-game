@@ -53,6 +53,7 @@ function Profile() {
             <div className="flex flex-col">
               <div className="card-title justify-between">
                 <Title>Hola {user.name}!</Title>
+                {openModal && <Avatar edit /> }
                 <button
                   className="btn btn-circle bg-secondary"
                   onClick={() => setOpenModal(false)}
@@ -79,7 +80,7 @@ function Profile() {
               <div className="flex flex-col justify-center items-center absolute ">
                 {/* avatar*/}
                 <div className="avatar placeholder">
-                    <Avatar edit />
+                   {!openModal && <Avatar />} 
                 </div>
                 {/* name */}
                 <div className="text-black font-bold ">
