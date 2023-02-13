@@ -38,7 +38,7 @@ function Information() {
             <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
               <img
                 className="absolute top-[-1.1rem] right-1 w-28"
-                src="src/components/assets/search.svg"
+                src="src/components/assets/images/zoom-dynamic-color.png"
                 alt="search"
               />
               <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -53,7 +53,7 @@ function Information() {
             <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
               <img
                 className="absolute top-[-1rem] right-3 w-20"
-                src="src/components/assets/new-folder-dynamic-color.svg"
+                src="src/components/assets/images/new-folder-dynamic-color.png"
                 alt="search"
               />
               <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -68,7 +68,7 @@ function Information() {
             <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
               <img
                 className="absolute top-[-1.7rem] right-1 w-24"
-                src="src/components/assets/thumb-up-dynamic-color.svg"
+                src="src/components/assets/images/thumb-up-dynamic-color.png"
                 alt="search"
               />
               <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -90,7 +90,7 @@ function Information() {
             <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
               <img
                 className="absolute top-[-1.1rem] right-1 w-28"
-                src="src/components/assets/search.svg"
+                src="src/components/assets/images/zoom-dynamic-color.png"
                 alt="search"
               />
               <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -105,7 +105,7 @@ function Information() {
             <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
               <img
                 className="absolute top-[-1rem] right-3 w-20"
-                src="src/components/assets/new-folder-dynamic-color.svg"
+                src="src/components/assets/images/new-folder-dynamic-color.png"
                 alt="search"
               />
               <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -120,7 +120,7 @@ function Information() {
             <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
               <img
                 className="absolute top-[-1.7rem] right-1 w-24"
-                src="src/components/assets/thumb-up-dynamic-color.svg"
+                src="src/components/assets/images/thumb-up-dynamic-color.png"
                 alt="search"
               />
               <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
