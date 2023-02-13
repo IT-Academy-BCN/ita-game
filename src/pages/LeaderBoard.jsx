@@ -1,11 +1,12 @@
-import DisplayModeSmall from "../components/DisplayModeSmall"
-import DisplayMode from "../components/DisplayMode"
-import { FooterMenu, Navbar } from "../components"
+import DisplayModeSmall from "../components/DisplayModeSmall";
+import DisplayMode from "../components/DisplayMode";
+import { FooterMenu, Navbar } from "../components";
+import db from "../../dbLeaderBoard.json";
 
 const currentUser = {
   name: "Homer Simpson",
   points: 100,
-}
+};
 
 const users = [
   { name: "Homer Simpson", points: 100 },
@@ -13,9 +14,16 @@ const users = [
   { name: "Lisa Simpson", points: 190 },
   { name: "Bart Simpson", points: 115 },
   { name: "Barney Gumble", points: 78 },
-]
+];
 
 function LeaderBoard() {
+  // 1. filtrar las actividades de la ultima semana
+  // 2. crear un array de usuarios con:
+  //  nombre
+  //  puntos
+  //  nivel???
+  // 3. ordenarlo
+  console.log("db: ", db);
   return (
     <>
       <div className="container mx-auto flex flex-col">
@@ -39,7 +47,7 @@ function LeaderBoard() {
       </div>
       <FooterMenu />
     </>
-  )
+  );
 }
 
-export default LeaderBoard
+export default LeaderBoard;
