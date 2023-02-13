@@ -5,19 +5,7 @@ import NewResource from "../components/organisms/NewResource"
 import { WikiContext } from "../store/wikiContext/WikiContext"
 
 const Resource = () => {
-  const { stackData, getStackData, addResource } = useContext(WikiContext)
-  const location = useLocation()
-
   const [isModal, setIsModal] = useState(false)
-
-  const newData = location.pathname
-  const newAdded = newData.replace("/", "")
-
-  useEffect(() => {
-    if (stackData.length === 0) {
-      getStackData(newAdded)
-    }
-  }, [])
 
   return (
     <>

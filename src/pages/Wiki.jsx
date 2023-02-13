@@ -9,6 +9,7 @@ import { WikiContext } from "../store/wikiContext/WikiContext"
 
 const Wiki = () => {
   const { categories } = useContext(WikiContext)
+
   return (
     <>
       <Navbar>Wiki</Navbar>
