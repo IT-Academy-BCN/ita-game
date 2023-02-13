@@ -32,6 +32,7 @@ export const WikiContextProvider = ({ children }) => {
       const response = await axios.get(urls.stackData);
       if (response.status === 200) {
         const { data } = response;
+        console.log(framework);
         const selectedStack = data.filter((d) => d.stack === framework);
         setStackData(selectedStack);
         setStack(framework);

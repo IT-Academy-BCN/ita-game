@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useContext } from 'react';
 import { Navbar, FooterMenu, ResourcesCard } from '../components';
-import NewResource from '../components/organisms/NewResource';
+import { WikiContext } from '../store/wikiContext/WikiContext';
 
 const Resource = () => {
-  const [isModal, setIsModal] = useState(false);
+  const { stackData, getStackData, addResource } = useContext(WikiContext);
+  console.log(stackData);
   return (
     <>
       {isModal && <NewResource setIsModal={setIsModal} />}
