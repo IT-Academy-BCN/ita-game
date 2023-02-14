@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Stack from './components/StackReact';
 import { Home, Historical, Login, LeaderBoard, Profile, Register, Information, Wiki, Resource, Admin } from './pages';
 export default function App() {
    return (
@@ -14,8 +13,6 @@ export default function App() {
                <Route path="/register" element={<Register />} />
                <Route path="/information" element={<Information />} />
                <Route path="/wiki" element={<Wiki />} />
-               <Route path="/react" element={<Stack />} />
-               <Route path="/angular" element={<Stack />} />
                <Route path="/wiki/resource" element={<Resource />} />
                <Route path="/admin" element={<Admin />} />
             </Routes>
