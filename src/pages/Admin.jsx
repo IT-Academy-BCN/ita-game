@@ -1,10 +1,10 @@
 import { forwardRef, useRef, useState } from 'react';
 import { FooterMenu, Navbar } from '../components';
-import arrowDown from '../components/assets/arrow_down.svg';
+import arrowDown from '../assets/arrow_down.svg';
 import { Title } from '../components/atoms';
-import avatar from '../components/assets/images/avatar.png';
-import thumbUp from '../components/assets/images/thumb-up-dynamic-color.png';
-import calender from '../components/assets/images/calender-dynamic-color.png';
+import avatar from '../assets/images/avatar.png';
+import thumbUp from '../assets/images/thumb-up-dynamic-color.png';
+import calender from '../assets/images/calender-dynamic-color.png';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -16,7 +16,6 @@ const fakeAdmin = [
 
 const Admin = () => {
    const [startDate, setStartDate] = useState(new Date());
-   console.log('startDate', startDate);
    const hiddenBrowseButton = useRef(null);
 
    const CalenderInput = forwardRef(({ onClick }, ref) => (
