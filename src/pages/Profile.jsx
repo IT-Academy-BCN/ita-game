@@ -1,7 +1,6 @@
 import { FooterMenu, Navbar } from '../components'
-import Badge from '../components/atoms/Badge'
+import Badge from '../components/profile/Badge'
 import folder from '../components/assets/images/folder-dynamic.png'
-import gym from '../components/assets/images/gym-dynamic-clay.png'
 import rocket from '../components/assets/images/rocket-dynamic.png'
 import sun from '../components/assets/images/sun-dynamic.png'
 import ButtonEdit from '../components/profile/ButtonEdit'
@@ -11,6 +10,8 @@ import Title from '../components/profile/Title'
 import Card from '../components/profile/Card'
 import user from '../components/profile/mocks/user.json'
 import SubLabelProgressBar from '../components/profile/SubLabelProgressBar'
+import EarnBadges from '../components/profile/EarnBadges'
+import PendingBadges from '../components/profile/PendingBadges'
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
@@ -18,16 +19,16 @@ import SubLabelProgressBar from '../components/profile/SubLabelProgressBar'
 function Profile() {
   const nextMultiple = Math.ceil(user.ITApoints / 50) * 50
 
-  const subLabeData = {
+  const data = {
     points: user.ITApoints,
     multiple: nextMultiple
   }
   // Fake user to obtain SVG and Data for looping
-  const fakeUser = {
+  const fakeUsers = {
     ITAawards: [
-      { name: 'Solete', img: sun, text: '+5 dudas' },
-      { name: 'Megamind', img: folder, text: '+3 wikis' },
-      { name: 'Imparable', img: rocket, text: '+2 explicaciones' }
+      { name: user.ITAawards[0], img: sun, text: '+5 dudas' },
+      { name: user.ITAawards[1], img: folder, text: '+3 wikis' },
+      { name: user.ITAawards[2], img: rocket, text: '+2 explicaciones' }
     ],
     pendingAwards: ['Coordinator']
   }
@@ -63,9 +64,8 @@ function Profile() {
               {/* progressbar  container*/}
               <div className="flex flex-col w-full">
                 {/* bar */}
-
                 <ProgressBar value={user.ITApoints} />
-                <SubLabelProgressBar subLabeData={subLabeData} />
+                <SubLabelProgressBar subLabeData={data} />
               </div>
 
               {/* divider section */}
@@ -84,35 +84,8 @@ function Profile() {
             </div>
           </Card>
 
-          <Title>Insignias ganadas</Title>
-          <Card direction="row">
-            {fakeUser.ITAawards.map(a => {
-              return (
-                <Badge
-                  classBody="card-body py-0 px-0 gap-0 items-center text-center"
-                  classFigure="px-2 pt-4"
-                  classTitle="card-title text-black"
-                  img={a.img}
-                  text={a.text}
-                  key={a.name}
-                >
-                  {a.name}
-                </Badge>
-              )
-            })}
-          </Card>
-          <Title>Insignias Pendientes</Title>
-          <Card>
-            <Badge
-              classBody="card-body py-0 px-0 gap-0 items-center text-center"
-              classFigure="px-2 pt-5"
-              classTitle="card-title text-gray-400"
-              img={gym}
-              text="+3 revisiones código"
-            >
-              Cordinator
-            </Badge>
-          </Card>
+          <EarnBadges fakeUsers={fakeUsers} />
+          <PendingBadges fakeUsers={fakeUsers} />
         </div>
         <FooterMenu />
       </div>
