@@ -17,7 +17,6 @@ const Resource = () => {
 
   return (
     <>
-      {isModal && <NewResource setIsModal={setIsModal} />}
       <Navbar>Wiki</Navbar>
       <div className="relative pt-10 w-screen flex flex-col h-screen bg-base">
         <div className="flex flex-row justify-between p-5 mt-5">
