@@ -10,20 +10,9 @@ import { DateTime } from "luxon"
 import { groupByType } from "../utils/groupByType"
 import { calculateITA } from "../utils/calculateITA"
 import axios from "axios"
+import { useContext } from "react"
+import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
 
-const currentUser = {
-  id: "63e9d29bb04cb600417abcb6",
-  name: "Ona Costa",
-  points: 80,
-};
-const url = "https://itacademy.onrender.com/api/activity/by";
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
-const options = {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-};
 
 
 const data = [
@@ -46,23 +35,9 @@ const data = [
 
 function Historical() {
   const [currentWeekData, setCurrentWeekData] = useState([])
-
-  const [activities, setActivities] = useState([]);
-  useEffect(() => {
-      const getActivitiesOfAUser = async () => {
-      try {
-        const response = await axios.get(`${url}/${currentUser.id}`, options);
-        if (response.status === 200) {
-          const { data } = response;
-          setActivities(data)
-        }
-      } catch (error) {
-        console.error(error);
-      }      
-    };
-    getActivitiesOfAUser();
-  }, []);
-
+  const {activities} = useContext(ActivitiesContext)
+  
+  
   // DÍA ACTUAL TIMESTAMP EN SEGUNDOS
   const weekTimestamp = Math.floor(Date.now() / 1000)
   // const weekTimestamp = Math.floor(d2.getTime()/ 1000)
@@ -92,6 +67,8 @@ function Historical() {
   const totalPerWeek = calculateITA(groupedData)
 
   // PUNTOS TOTAL POR ACTIVIDAD
+ 
+
   const totalITAS = groupByType(activities)
   const { wiki, explanation, doubt, revision } = calculateITA(totalITAS)
 
