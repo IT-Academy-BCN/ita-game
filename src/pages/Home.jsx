@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       <Navbar>Resumen Semanal</Navbar>
-      <div className="w-screen h-screen bg-base pt-12">
+      <div className="w-full h-full bg-base pt-12 pb-12">
         <div className="flex items-start p-6">
           <h1 className="font-bold text-3xl">Hola {user.name}!</h1>
         </div>
@@ -23,7 +23,7 @@ function Home() {
         <div className="flex items-start ml-6 mt-4">
           <p className="font-bold">Estado de la semana</p>
         </div>
-        <div className="flex justify-center items-center pt-3">
+        <div className="flex justify-center items-center">
           <WeeklyResume />
         </div>
       </div>
