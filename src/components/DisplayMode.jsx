@@ -24,7 +24,7 @@ export default function DisplayMode({ user }) {
           </div>
         </div>
       </div>
-    <HashLink smooth to="/profile#premios" style={{with: 'max-content'}}>
+    <HashLink smooth to="/profile#premios">
       <div className="card-actions justify-end pt-6 ">
         <button className="btn btn-block btn-base flex flex-row justify-around">
           <img src={cup} alt="cup" className="w-6" />
