@@ -4,8 +4,8 @@ import { WikiContext } from '../store/wikiContext/WikiContext';
 import { FooterMenu, Navbar } from '../components';
 import { Title } from '../components/atoms';
 import DisplayModeWiki from '../components/DisplayModeWiki';
-import folder from '../components/assets/images/new-folder-dynamic-color.png';
-import arrowRight from '../components/assets/arrow_right.svg';
+import folder from '../assets/images/new-folder-dynamic-color.png';
+import arrowRight from '../assets/arrow_right.svg';
 
 const Wiki = () => {
   const { categories, getStackData } = useContext(WikiContext);

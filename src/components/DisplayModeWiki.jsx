@@ -1,4 +1,4 @@
-import arrowRight from './assets/arrow_right.svg';
+import arrowRight from "../assets/arrow_right.svg";
 
 export default function DisplayModeWiki({ name, resource, theme }) {
   return (
