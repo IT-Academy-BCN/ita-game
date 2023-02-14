@@ -1,20 +1,7 @@
-import React from 'react'
-import { useContext } from 'react'
-import { AvatarContext } from '../store/context'
-import { actions } from '../store/reducer'
+import { useHandler } from "../hooks"
 
 function OptionGlassesStyle() {
-  const { state, dispatch } = useContext(AvatarContext)
-  const { avatar } = state.user
-
-  const handleChange = e => {
-    dispatch({
-      type: actions.UPDATE_AVATAR,
-      payload: { ...avatar, glassesStyle: e.target.value }
-    })
-    console.log('from OptionGlasses', e.target.value )
-  }
-  console.log('avatar from option glasses', avatar)
+  const { handler } = useHandler()
 
   const options = ['none', 'round', 'square']
 
@@ -23,7 +10,7 @@ function OptionGlassesStyle() {
       <label className="label">
         <span className="label-text">Pick the best glass style</span>
       </label>
-      <select onChange={handleChange} className="select select-primary select-bordered" placeholder="Pick one">
+      <select onChange={handler('glassesStyle')} className="select select-primary select-bordered" placeholder="Pick one">
         {options.map(option => (
           <option key={option}>{option}</option>
         ))}

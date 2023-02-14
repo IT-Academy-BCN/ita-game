@@ -1,13 +1,18 @@
-import React, { useContext } from "react"
-import { AuthContext } from "../store/authentication/AuthContext"
-import { AvatarTemp } from "./index"
+import React, { useContext } from 'react';
+import { AuthContext } from '../store/authentication/AuthContext';
+import { AvatarTemp } from './index';
+import { NavHashLink } from 'react-router-hash-link';
 
 const UserCard = () => {
-  const { state } = useContext(AuthContext)
-  const { user } = state
+  const { state } = useContext(AuthContext);
+  const { user } = state;
 
   return (
-    <div className="card flex flex-row justify-between items-center p-4 my-2 mx-6 bg-white w-[90%]">
+    <NavHashLink
+      smooth
+      to="/historical#puntos-ganados"
+      className="card flex flex-row justify-between items-center p-4 my-2 mx-6 bg-white w-[90%]"
+    >
       <div className="flex flex-row">
         <AvatarTemp>
           <span className="flex font-semibold z-[100] items-center justify-center border-white w-[25px] h-[25px] border-2 absolute right-0 bottom-[35px] left-10 rounded-full text-center text-[10px] bg-primary text-black">
@@ -18,7 +23,7 @@ const UserCard = () => {
           <h2 className="font-bold text-black">
             {user.name} {user.surname}
           </h2>
-          <p className="text-secondary font-bold text-xs mt-2">Semana 34</p>
+          <p className="text-secondary font-bold text-xs">Semana 34</p>
         </div>
       </div>
       <div className="flex flex-row ">
@@ -31,8 +36,8 @@ const UserCard = () => {
           alt="search"
         />
       </div>
-    </div>
-  )
-}
+    </NavHashLink>
+  );
+};
 
-export default UserCard
+export default UserCard;
