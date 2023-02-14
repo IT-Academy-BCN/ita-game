@@ -9,30 +9,63 @@ import { useEffect, useState } from "react"
 import { DateTime } from "luxon"
 import { groupByType } from "../utils/groupByType"
 import { calculateITA } from "../utils/calculateITA"
+import axios from "axios"
+
+const currentUser = {
+  id: "63e9d29bb04cb600417abcb6",
+  name: "Ona Costa",
+  points: 80,
+};
+const url = "https://itacademy.onrender.com/api/activity/by";
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
+const options = {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+};
+
+
+const data = [
+  { date: 1672847739, type: "wiki" },
+  { date: 1675256878, type: "doubt" },
+  { date: 1672758090, type: "wiki" },
+  { date: 1674481469, type: "explanation" },
+  { date: 1675259859, type: "revision" },
+  { date: 1674570788, type: "wiki" },
+  { date: 1675439257, type: "doubt" },
+  { date: 1674661229, type: "wiki" },
+  { date: 1674053351, type: "explanation" },
+  { date: 1674737388, type: "revision" },
+  { date: 1675772169, type: "wiki" },
+  { date: 1675692582, type: "doubt" },
+  { date: 1675777469, type: "wiki" },
+  { date: 1675779142, type: "explanation" },
+  { date: 1675687676, type: "revision" },
+]
 
 function Historical() {
   const [currentWeekData, setCurrentWeekData] = useState([])
 
-  const data = [
-    { date: 1672847739, type: "wiki" },
-    { date: 1675256878, type: "doubt" },
-    { date: 1672758090, type: "wiki" },
-    { date: 1674481469, type: "explanation" },
-    { date: 1675259859, type: "revision" },
-    { date: 1674570788, type: "wiki" },
-    { date: 1675439257, type: "doubt" },
-    { date: 1674661229, type: "wiki" },
-    { date: 1674053351, type: "explanation" },
-    { date: 1674737388, type: "revision" },
-    { date: 1675772169, type: "wiki" },
-    { date: 1675692582, type: "doubt" },
-    { date: 1675777469, type: "wiki" },
-    { date: 1675779142, type: "explanation" },
-    { date: 1675687676, type: "revision" },
-  ]
+  const [activities, setActivities] = useState([]);
+  useEffect(() => {
+      const getActivitiesOfAUser = async () => {
+      try {
+        const response = await axios.get(`${url}/${currentUser.id}`, options);
+        if (response.status === 200) {
+          const { data } = response;
+          setActivities(data)
+        }
+      } catch (error) {
+        console.error(error);
+      }      
+    };
+    getActivitiesOfAUser();
+  }, []);
 
   // DÍA ACTUAL TIMESTAMP EN SEGUNDOS
   const weekTimestamp = Math.floor(Date.now() / 1000)
+  // const weekTimestamp = Math.floor(d2.getTime()/ 1000)
 
   useEffect(() => {
     // convierte los milisegundos que le pasamos en un objeto DateTime
@@ -59,8 +92,11 @@ function Historical() {
   const totalPerWeek = calculateITA(groupedData)
 
   // PUNTOS TOTAL POR ACTIVIDAD
-  const totalITAS = groupByType(data)
+  const totalITAS = groupByType(activities)
   const { wiki, explanation, doubt, revision } = calculateITA(totalITAS)
+
+
+
 
   return (
     <>
