@@ -16,12 +16,12 @@ export const initialState = {
       faceColor: '#FAD7A0',
       hatStyle: 'none',
       hatColor: '#F1C40F',
-      eyeStyle: 'smile',
+      // eyeStyle: 'smile',
       earSize: 'big',
       glassesStyle: 'round',
       noseStyle: 'long',
       shirtStyle: 'short',
-      shirtColor: '#BB8FCE',
+      // shirtColor: '#BB8FCE',
       bgColor: '#58c914'
     }
   }
