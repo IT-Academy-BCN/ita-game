@@ -7,9 +7,9 @@ function Information() {
   return (
     <>
       <Navbar>Información y normativa</Navbar>
-      <div className="relative pt-16 pb-16 min-h-screen w-screen bg-gray-200">
-        <div className="w-full">
-          <div className="flex overflow-x-scroll hide-scrollbar max-w-full mt-4 ml-4">
+      <div className="relative overflow-x-hidden pt-16 pb-16 min-h-screen w-screen bg-gray-200">
+        <div className="w-full overflow-x-auto">
+          <div className="flex max-w-full mt-4 ml-4">
             <button
               onClick={() => setSelectedTab("instrucciones")}
               className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
