@@ -1,16 +1,7 @@
-import { useContext } from 'react'
-import { AvatarContext } from '../store/context'
-import { actions } from '../store/reducer'
+import { useHandler } from '../hooks'
 
 export default function OptionShirtStyle() {
-  const { state, dispatch } = useContext(AvatarContext)
-  const { avatar } = state.user
-
-  const handleChange = ({ target }) =>
-    dispatch({
-      type: actions.UPDATE_AVATAR,
-      payload: { ...avatar, shirtStyle: target.value }
-    })
+  const { handler } = useHandler()
 
   const options = ['hoody', 'short', 'polo']
 
@@ -20,7 +11,7 @@ export default function OptionShirtStyle() {
         <span className="label-text">Pick your SHIRT Style</span>
       </label>
       <select
-        onChange={handleChange}
+        onChange={handler('shirtStyle')}
         className="select select-primary select-bordered"
       >
         {options.map(option => (

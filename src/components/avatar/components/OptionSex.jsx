@@ -1,23 +1,9 @@
 import { useState } from 'react'
-import { useContext } from 'react'
-import { AvatarContext } from '../store/context'
-import { actions } from '../store/reducer'
-// man, woman
+import { useHandler } from '../hooks'
+
 function OptionSex() {
-  const { state, dispatch } = useContext(AvatarContext)
-  const {
-    user: { avatar }
-  } = state
-
+  const { handler } = useHandler()
   const [gender, setGender] = useState('')
-
-  const handleChange = e => {
-    dispatch({
-      type: actions.UPDATE_AVATAR,
-      payload: { ...avatar, sex: e.target.value }
-    })
-    setGender(e.target.value);
-  }
 
   return (
     <>
@@ -32,7 +18,10 @@ function OptionSex() {
             value="woman"
             className="mr-2 radio radio-primary checked:bg-pink-300"
             checked={gender === 'woman'}
-            onChange={handleChange}
+            onChange={e => {
+              handler('sex')
+              setGender(e.target.value)
+            }}
           />
           <span className="label-text">Woman</span>
         </label>
@@ -43,7 +32,10 @@ function OptionSex() {
             value="man"
             className="mr-2 radio radio-primary checked:bg-blue-300"
             checked={gender === 'man'}
-            onChange={handleChange}
+            onChange={e => {
+              handler('sex')
+              setGender(e.target.value)
+            }}
           />
           <span className="label-text">Man</span>
         </label>
