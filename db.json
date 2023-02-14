@@ -228,6 +228,118 @@
         "tutorial": true,
         "blog": false
       }
+    },
+    {
+      "id": "vue-1",
+      "createdBy": "Joan Artola",
+      "createdOn": "20 febrero 2022",
+      "stack": "vue",
+      "title": "Vue + TypeScript",
+      "likes": 25,
+      "description": "Typescript con Vue",
+      "topic": "Typescript + Vue",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "vue-2",
+      "createdBy": "Mariona Bosch",
+      "createdOn": "10 febrero 2022",
+      "stack": "vue",
+      "title": "Vue Components",
+      "likes": 25,
+      "description": "Componentes con Vue",
+      "topic": "Components",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "javascript-1",
+      "createdBy": "Mariona Bosch",
+      "createdOn": "1 febrero 2022",
+      "stack": "javascript",
+      "title": "Filters",
+      "likes": 20,
+      "description": "Filter method",
+      "topic": "Cúando utilizarlo",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "javascript-2",
+      "createdBy": "Joan Bosch",
+      "createdOn": "1 febrero 2022",
+      "stack": "javascript",
+      "title": "Maps",
+      "likes": 20,
+      "description": "Cómo implementarlo",
+      "topic": "Map",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "javascript-3",
+      "createdBy": "Mariona Bosch",
+      "createdOn": "1 febrero 2022",
+      "stack": "javascript",
+      "title": "Spread Operator",
+      "likes": 20,
+      "description": "Clonar objetos",
+      "topic": "Spread Operator",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "datascience-1",
+      "createdBy": "Luis Vicente",
+      "createdOn": "1 febrero 2022",
+      "stack": "javascript",
+      "title": "Modelos Predictivos",
+      "likes": 20,
+      "description": "Modelos Predictivos",
+      "topic": "Estructurar la data",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "datascience-2",
+      "createdBy": "Luis Vicente",
+      "createdOn": "1 febrero 2022",
+      "stack": "javascript",
+      "title": "Júpiter",
+      "likes": 20,
+      "description": "Cómo inicializarlo",
+      "topic": "Modelos Predictivos",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     }
   ]
 }
