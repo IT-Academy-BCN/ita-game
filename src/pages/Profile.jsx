@@ -22,9 +22,9 @@ function Profile() {
   const [nextMultiple, setNextMultiple] = useState(0)
   const navigate = useNavigate()
 
-  useEffect(() => {
-    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50)
-  }, [])
+  // useEffect(() => {
+  //   setNextMultiple(Math.ceil(user.ITApoints / 50) * 50)
+  // }, [])
 
   const handleLogout = () => {
     localStorage.clear()

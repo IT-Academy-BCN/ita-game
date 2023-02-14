@@ -1,18 +1,16 @@
 import { useState } from 'react'
 
-export default function ProgressBar({ ITApoints, className }) {
-  const [progress, setProgress] = useState(ITApoints)
-
+function ProgressBar({ value }) {
   return (
-    <div>
-      <progress
-        className={className}
-        max="300"
-        style={{ width: `${progress}%`, height: '1.2rem' }}
-        value={ITApoints * 100}
+    <div className="bg-gray-200 rounded-full">
+      <div
+        className="bg-primary rounded-full text-center text-secondary"
+        style={{ width: `${value}%` }}
       >
-        {progress}%
-      </progress>
+        {value}%
+      </div>
     </div>
-  )
+  );
 }
+
+export default ProgressBar
