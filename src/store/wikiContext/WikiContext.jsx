@@ -6,7 +6,6 @@ export const WikiContext = createContext();
 
 export const WikiContextProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
-  const [data, setData] = useState([]);
   const [stack, setStack] = useState('');
   const [stackData, setStackData] = useState([]);
 
@@ -16,7 +15,6 @@ export const WikiContextProvider = ({ children }) => {
         const response = await axios.get(urls.categories);
         if (response.status === 200) {
           const { data } = response;
-          setData(data);
           setCategories(data);
         }
       } catch (error) {
@@ -32,7 +30,6 @@ export const WikiContextProvider = ({ children }) => {
       const response = await axios.get(urls.stackData);
       if (response.status === 200) {
         const { data } = response;
-        console.log(framework);
         const selectedStack = data.filter((d) => d.stack === framework);
         setStackData(selectedStack);
         setStack(framework);
@@ -40,6 +37,8 @@ export const WikiContextProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
+
+    localStorage.setItem('currentFramework', JSON.stringify(framework));
   };
 
   const addResource = (resource) => {
@@ -56,7 +55,7 @@ export const WikiContextProvider = ({ children }) => {
 
   return (
     <WikiContext.Provider
-      value={{ categories, stackData, getStackData, addResource }}
+      value={{ categories, stackData, getStackData, addResource, stack }}
     >
       {children}
     </WikiContext.Provider>
