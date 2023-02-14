@@ -1,9 +1,9 @@
-import React from "react"
-import { IndicatorGroup } from "./molecules"
-import magnifier from "./assets/images/zoom-dynamic-color.png"
-import folder from "./assets/images/new-folder-dynamic-color.png"
-import thumb from "./assets/images/thumb-up-dynamic-color.png"
-import medal from "./assets/images/medal-dynamic-color.png"
+import React from "react";
+import { IndicatorGroup } from "./molecules";
+import zoom from "../assets/images/zoom-dynamic-color.png";
+import folder from "../assets/images/new-folder-dynamic-color.png";
+import thumb from "../assets/images/thumb-up-dynamic-color.png";
+import medal from "../assets/images/medal-dynamic-color.png";
 
 const WeeklyResume = () => {
   return (
@@ -13,7 +13,7 @@ const WeeklyResume = () => {
         punctuation="1 / 2"
         points="+15"
       >
-        <img src={magnifier} alt="zoom" className="z-[100] h-14" />
+        <img src={zoom} alt="zoom" className="z-[100] h-14" />
       </IndicatorGroup>
 
       <IndicatorGroup title="Entradas en la wiki" punctuation="2" points="+5">
@@ -32,7 +32,7 @@ const WeeklyResume = () => {
         <img src={medal} alt="zoom" className="z-[100] h-14" />
       </IndicatorGroup>
     </div>
-  )
-}
+  );
+};
 
-export default WeeklyResume
+export default WeeklyResume;

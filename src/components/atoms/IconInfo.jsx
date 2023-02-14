@@ -1,7 +1,7 @@
-import iconInfo from "../assets/info_square_icon.svg"
+import iconInfo from '../../assets/info_square_icon.svg';
 
 const IconInfo = () => {
-  return <img src={iconInfo} alt="icon info" />
-}
+  return <img src={iconInfo} alt="icon info" />;
+};
 
-export default IconInfo
+export default IconInfo;

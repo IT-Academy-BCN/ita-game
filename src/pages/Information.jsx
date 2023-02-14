@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import { Navbar } from "../components";
+import React, { useState } from 'react';
+import { Navbar } from '../components';
+import zoom from '../assets/images/zoom-dynamic-color.png';
+import folder from '../assets/images/new-folder-dynamic-color.png';
+import thumb from '../assets/images/thumb-up-dynamic-color.png';
 
 function Information() {
-  const [selectedTab, setSelectedTab] = useState("instrucciones");
+  const [selectedTab, setSelectedTab] = useState('instrucciones');
 
   return (
     <>
@@ -11,38 +14,38 @@ function Information() {
         <div className="w-full">
           <div className="flex overflow-x-scroll hide-scrollbar max-w-full mt-4 ml-4">
             <button
-              onClick={() => setSelectedTab("instrucciones")}
+              onClick={() => setSelectedTab('instrucciones')}
               className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
-                selectedTab === "instrucciones"
-                  ? "bg-primary font-bold active"
-                  : "hover:border-stone-400"
+                selectedTab === 'instrucciones'
+                  ? 'bg-primary font-bold active'
+                  : 'hover:border-stone-400'
               } mr-4`}
             >
               Instrucciones
             </button>
             <button
-              onClick={() => setSelectedTab("normativa")}
+              onClick={() => setSelectedTab('normativa')}
               className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
-                selectedTab === "normativa"
-                  ? "bg-primary font-bold active"
-                  : "hover:border-stone-400"
+                selectedTab === 'normativa'
+                  ? 'bg-primary font-bold active'
+                  : 'hover:border-stone-400'
               } mr-4`}
             >
               Normativa
             </button>
             <button
-              onClick={() => setSelectedTab("wiki")}
+              onClick={() => setSelectedTab('wiki')}
               className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
-                selectedTab === "wiki"
-                  ? "bg-primary font-bold active"
-                  : "hover:border-stone-400"
+                selectedTab === 'wiki'
+                  ? 'bg-primary font-bold active'
+                  : 'hover:border-stone-400'
               }`}
             >
               Wiki
             </button>
           </div>
 
-          {selectedTab === "instrucciones" && (
+          {selectedTab === 'instrucciones' && (
             <div>
               <h1 className="mt-6 ml-3 p-3 text-left text-lg font-bold text-black">
                 Instrucciones para ganar puntos
@@ -50,7 +53,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-1.1rem] right-0.5 w-24"
-                  src="src/components/assets/images/zoom-dynamic-color.png"
+                  src={zoom}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -65,7 +68,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-0.75rem] right-3 w-16"
-                  src="src/components/assets/images/new-folder-dynamic-color.png"
+                  src={folder}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -80,7 +83,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-1.5rem] right-2 w-20"
-                  src="src/components/assets/images/thumb-up-dynamic-color.png"
+                  src={thumb}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -94,7 +97,7 @@ function Information() {
               </div>
             </div>
           )}
-          {selectedTab === "normativa" && (
+          {selectedTab === 'normativa' && (
             <div>
               <h1 className="mt-6 ml-3 p-3 text-left text-lg font-bold text-black">
                 Normativa
@@ -102,7 +105,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-1.1rem] right-0.5 w-24"
-                  src="src/components/assets/images/zoom-dynamic-color.png"
+                  src={zoom}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -117,7 +120,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-0.75rem] right-3 w-16"
-                  src="src/components/assets/images/new-folder-dynamic-color.png"
+                  src={folder}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -132,7 +135,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-1.5rem] right-2 w-20"
-                  src="src/components/assets/images/thumb-up-dynamic-color.png"
+                  src={thumb}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -146,7 +149,7 @@ function Information() {
               </div>
             </div>
           )}
-          {selectedTab === "wiki" && (
+          {selectedTab === 'wiki' && (
             <div>
               <h1 className="mt-6 ml-3 p-3 text-left text-lg font-bold text-black">
                 Wiki
@@ -154,7 +157,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-1.1rem] right-0.5 w-24"
-                  src="src/components/assets/images/zoom-dynamic-color.png"
+                  src={zoom}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -169,7 +172,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-0.75rem] right-3 w-16"
-                  src="src/components/assets/images/new-folder-dynamic-color.png"
+                  src={folder}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
@@ -184,7 +187,7 @@ function Information() {
               <div className="relative my-6 mx-4 flex flex-col rounded-3xl bg-white p-1">
                 <img
                   className="absolute top-[-1.5rem] right-2 w-20"
-                  src="src/components/assets/images/thumb-up-dynamic-color.png"
+                  src={thumb}
                   alt="search"
                 />
                 <h2 className="mt-6 ml-1 p-3 text-xl font-bold leading-tight text-black">
