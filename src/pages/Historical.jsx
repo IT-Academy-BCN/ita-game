@@ -11,26 +11,6 @@ import { useContext } from "react"
 import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
 import useCurrentWeek from "../hooks/useCurrentWeek"
 
-
-
-// const data = [
-//   { date: 1672847739, type: "wiki" },
-//   { date: 1675256878, type: "doubt" },
-//   { date: 1672758090, type: "wiki" },
-//   { date: 1674481469, type: "explanation" },
-//   { date: 1675259859, type: "revision" },
-//   { date: 1674570788, type: "wiki" },
-//   { date: 1675439257, type: "doubt" },
-//   { date: 1674661229, type: "wiki" },
-//   { date: 1674053351, type: "explanation" },
-//   { date: 1674737388, type: "revision" },
-//   { date: 1675772169, type: "wiki" },
-//   { date: 1675692582, type: "doubt" },
-//   { date: 1676374589, type: "wiki" },
-//   { date: 1676374589, type: "explanation" },
-//   { date: 1676374589, type: "revision" },
-// ]
-
 function Historical() {
   const {activities} = useContext(ActivitiesContext)
 
