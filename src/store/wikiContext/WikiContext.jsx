@@ -25,21 +25,17 @@ export const WikiContextProvider = ({ children }) => {
     getCategories();
   }, []);
 
-  useEffect(() => {
-    localStorage.removeItem('currentFramework');
-    localStorage.setItem('currentFramework', JSON.stringify(stack));
-  }, [stack]);
-
   const getStackData = async (framework) => {
     localStorage.removeItem('currentFramework');
+    localStorage.setItem('currentFramework', JSON.stringify({ framework }));
     try {
       const response = await axios.get(urls.stackData);
       if (response.status === 200) {
         const { data } = response;
+
         const selectedStack = data.filter((d) => d.stack === framework);
         setStackData(selectedStack);
         setStack(framework);
-        localStorage.setItem('currentFramework', JSON.stringify(framework));
       }
     } catch (error) {
       console.error(error);
@@ -60,7 +56,14 @@ export const WikiContextProvider = ({ children }) => {
 
   return (
     <WikiContext.Provider
-      value={{ categories, stackData, stack, getStackData, addResource }}
+      value={{
+        categories,
+        stackData,
+        stack,
+        getStackData,
+        addResource,
+        setStack,
+      }}
     >
       {children}
     </WikiContext.Provider>

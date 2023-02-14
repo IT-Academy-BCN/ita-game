@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { WikiContext } from '../store/wikiContext/WikiContext';
 import { FooterMenu, Navbar } from '../components';
