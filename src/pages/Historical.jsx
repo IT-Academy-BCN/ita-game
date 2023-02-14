@@ -1,30 +1,29 @@
-import { FooterMenu, Navbar } from "../components"
-import place from "../components/assets/images/first-place.png"
-import zoom from "../components/assets/images/zoom-dynamic-color.png"
-import folder from "../components/assets/new-folder-dynamic-color.svg"
-import thumb from "../components/assets/thumb-up-dynamic-color.svg"
-import medal from "../components/assets/images/medal-dynamic-color.png"
-import LineChart from "../components/LineChart"
-import { groupByType } from "../utils/groupByType"
-import { calculateITA } from "../utils/calculateITA"
-import { useContext } from "react"
-import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
-import useCurrentWeek from "../hooks/useCurrentWeek"
+import { FooterMenu, Navbar } from "../components";
+import place from "../components/assets/images/first-place.png";
+import zoom from "../components/assets/images/zoom-dynamic-color.png";
+import folder from "../components/assets/images/new-folder-dynamic-color.png";
+import thumb from "../components/assets/images/thumb-up-dynamic-color.png";
+import medal from "../components/assets/images/medal-dynamic-color.png";
+import LineChart from "../components/LineChart";
+import { groupByType } from "../utils/groupByType";
+import { calculateITA } from "../utils/calculateITA";
+import { useContext } from "react";
+import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext";
+import useCurrentWeek from "../hooks/useCurrentWeek";
 
 function Historical() {
-  const {activities} = useContext(ActivitiesContext)
+  const { activities } = useContext(ActivitiesContext);
 
-  const currentWeekData = useCurrentWeek()
+  const currentWeekData = useCurrentWeek();
 
   // separa los datos de la semana actual por los tipos de actividad
-  const groupedData = groupByType(currentWeekData)
+  const groupedData = groupByType(currentWeekData);
   // suma el total de todas las actividad y el total por actividades separada
-  const totalPerWeek = calculateITA(groupedData)
+  const totalPerWeek = calculateITA(groupedData);
 
   // PUNTOS TOTAL POR ACTIVIDAD
-  const totalITAS = groupByType(activities)
-  const { wiki, explanation, doubt, revision } = calculateITA(totalITAS)
-
+  const totalITAS = groupByType(activities);
+  const { wiki, explanation, doubt, revision } = calculateITA(totalITAS);
 
   return (
     <>
@@ -93,7 +92,7 @@ function Historical() {
       </div>
       <FooterMenu />
     </>
-  )
+  );
 }
 
-export default Historical
+export default Historical;
