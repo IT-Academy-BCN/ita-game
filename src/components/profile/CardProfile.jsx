@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Avatar } from '../avatar'
 import ButtonEdit from './ButtonEdit'
 import Card from './Card'
@@ -8,6 +8,11 @@ import SubLabelProgressBar from './SubLabelProgressBar'
 
 function CardProfile({ data }) {
   const { name, surname, framework } = data
+
+  const [edit, setEdit] = useState(false)
+  const handleClick = e =>  setEdit(!edit)
+  
+
   return (
     <Card>
       {/*  card profile header */}
@@ -15,7 +20,7 @@ function CardProfile({ data }) {
         {/* avatar box */}
         <div className="absolute flex flex-col items-center justify-center ">
           {/* avatar*/}
-          <Avatar />
+           <Avatar />
           {/* name */}
           <div className="font-bold text-black">
             {name} {surname}
@@ -25,11 +30,11 @@ function CardProfile({ data }) {
         </div>
         {/* edition */}
         <div className="absolute right-0 w-1/6">
-          <ButtonEdit />
+          <ButtonEdit handleClick={handleClick} />
         </div>
       </div>
       {/* card body */}
-      <div className="flex flex-col mt-20 ">
+      <div className="flex flex-col mt-28">
         {/* progressbar  container*/}
         <div className="flex flex-col w-full">
           {/* bar */}

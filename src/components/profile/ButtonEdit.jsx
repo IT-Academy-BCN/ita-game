@@ -1,19 +1,36 @@
-function ButtonEdit() {
+import { useState } from 'react'
+import ButtonCheckbox from '../avatar/components/ButtonCheckbox'
+import Modal from './Modal'
+
+function ButtonEdit({ handleClick }) {
   return (
-    <button className="btn btn-circle bg-primary">
-      <svg
-        width="19"
-        height="19"
-        viewBox="0 0 19 19"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M11.06 6.67091L11.98 7.61674L2.92 16.9311H2V15.9853L11.06 6.67091V6.67091ZM14.66 0.481873C14.41 0.481873 14.15 0.58468 13.96 0.780016L12.13 2.6614L15.88 6.5167L17.71 4.63531C18.1 4.23436 18.1 3.58667 17.71 3.18572L15.37 0.780016C15.17 0.5744 14.92 0.481873 14.66 0.481873V0.481873ZM11.06 3.76145L0 15.132V18.9873H3.75L14.81 7.61674L11.06 3.76145V3.76145Z"
-          fill="#323232"
-        />
-      </svg>
-    </button>
+    <div>
+      <ButtonCheckbox
+        className="btn btn-circle bg-primary"
+        modalLink="modalprofile"
+      />
+      <Modal modalLink="modalprofile" />
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="modalprofile" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative">
+          <label
+            htmlFor="modalprofile"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
+            ✕
+          </label>
+          <h3 className="text-lg font-bold">
+            Congratulations random Internet user!
+          </h3>
+          <p className="py-4">
+            You've been selected for a chance to get one year of subscription to
+            use Wikipedia for free!
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
 
