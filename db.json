@@ -109,8 +109,13 @@
       "title": "Context en 20 minutos",
       "likes": 167,
       "description": "Teoría con ejemplos",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "react-2",
@@ -120,8 +125,13 @@
       "title": "Access Existing Context across Multiple Files",
       "likes": 300,
       "description": "Teoría con ejemplos",
+      "topic": "Props",
       "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
-      "type": { "video": false, "tutorial": true, "blog": true }
+      "type": {
+        "video": false,
+        "tutorial": true,
+        "blog": true
+      }
     },
     {
       "id": "react-3",
@@ -131,8 +141,13 @@
       "title": "Cómo utilizar useReducer",
       "likes": 2,
       "description": "Paso a paso de cómo utilizar useReducer en React",
+      "topic": "Hooks",
       "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "react-4",
@@ -142,30 +157,45 @@
       "title": "React + TypeScript",
       "likes": 125,
       "description": "Cómo inicializar TP",
+      "topic": "Components",
       "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "angular-1",
       "createdBy": "Ona Costa",
       "createdOn": "14 febrero 2023",
       "stack": "angular",
-      "title": "Context en 20 minutos",
+      "title": "Global Theme Angular",
       "likes": 60,
       "description": "Teoría con ejemplos",
+      "topic": "Types",
       "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "angular-2",
       "createdBy": "Ona Costa",
       "createdOn": "14 febrero 2023",
       "stack": "angular",
-      "title": "Access Existing Context across Multiple Files",
+      "title": "Access to types",
       "likes": 250,
       "description": "Teoría con ejemplos",
+      "topic": "Renders",
       "url": "https://stackoverflow.com/questions/49406602/angular-new-context-api-access-existing-context-across-multiple-files",
-      "type": { "video": false, "tutorial": true, "blog": true }
+      "type": {
+        "video": false,
+        "tutorial": true,
+        "blog": true
+      }
     },
     {
       "id": "angular-3",
@@ -175,8 +205,13 @@
       "title": "Cómo utilizar hooks",
       "likes": 8,
       "description": "Paso a paso de cómo utilizar useReducer en Angular",
+      "topic": "Mode",
       "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "angular-4",
@@ -186,8 +221,13 @@
       "title": "Angular + TypeScript",
       "likes": 125,
       "description": "Cómo inicializar TP",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     }
   ]
 }

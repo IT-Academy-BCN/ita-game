@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Navbar, FooterMenu, ResourcesCard } from '../components';
 import { WikiContext } from '../store/wikiContext/WikiContext';
+import NewResource from '../components/organisms/NewResource';
 
 const Resource = () => {
   const [openModal, setOpenModal] = useState(false);
-  const { stackData, getStackData } = useContext(WikiContext);
+  const { stackData, getStackData, stack } = useContext(WikiContext);
 
   useEffect(() => {
     if (stackData.length === 0) {
@@ -13,16 +14,15 @@ const Resource = () => {
     }
   }, []);
 
-  const handleOpenModal = () => {};
-
   return (
     <>
+      {openModal && <NewResource setOpenModal={setOpenModal} />}
       <Navbar>Wiki</Navbar>
       <div className="relative pt-10 w-screen flex flex-col h-screen bg-base">
         <div className="flex flex-row justify-between p-5 mt-5">
-          <h1 className="font-bold text-xl">Recursos React.js</h1>
+          <h1 className="font-bold text-xl">Recursos {stack}</h1>
           <button
-            onClick={handleOpenModal}
+            onClick={() => setOpenModal((prev) => !prev)}
             className="btn btn-circle bg-primary border-none"
           >
             <svg
@@ -45,9 +45,9 @@ const Resource = () => {
         <div className="flex flex-col items-start p-1">
           <label className="font-bold  mb-3 ml-6">Temas</label>
           <select className="select w-[90%] self-center">
-            <option>Context API</option>
-            <option>Hooks</option>
-            <option>useState</option>
+            {stackData.map((data) => {
+              return <option key={data.id}>{data.topic}</option>;
+            })}
           </select>
         </div>
         <div className=" flex flex-col items-center">

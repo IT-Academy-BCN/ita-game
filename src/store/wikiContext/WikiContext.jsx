@@ -42,6 +42,7 @@ export const WikiContextProvider = ({ children }) => {
   };
 
   const addResource = (resource) => {
+    console.log('desde contx', resource);
     axios
       .post(`http://localhost:3002/stackData?stack=${stack}`, resource, {
         headers: {
