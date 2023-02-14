@@ -6,8 +6,7 @@ export default function Modal({ modalLink }) {
       <div className="modal-box">
         <h3 className="font-bold text-lg">Edita tu Avatar!</h3>
         <p className="py-4">
-          Puedes elegir el tipo de pelo, color de la piel, tipo de ojos, con o
-          sin gafas, la nariz, la boca, la ropa y su color.
+          Aquí puedes editar tu avatar.
         </p>
         <Options />
         <div className="modal-action">
