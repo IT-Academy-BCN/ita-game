@@ -1,6 +1,4 @@
-import React from "react"
-
-const ResourcesCard = () => {
+const ResourcesCard = ({ title, likes, description, createdOn, createdBy }) => {
   return (
     <div className="flex flex-row border-[1px] mb-5 border-secondary w-[90%] p-3 rounded-xl">
       {/* CONTADOR DE PUNTOS */}
@@ -20,7 +18,7 @@ const ResourcesCard = () => {
             d="M4.5 15.75l7.5-7.5 7.5 7.5"
           />
         </svg>
-        <p className="font-bold">123</p>
+        <p className="font-bold text-center">{likes}</p>
         {/* FLECHA ABAJO */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +37,7 @@ const ResourcesCard = () => {
       </div>
       <div className="p-1 ml-2">
         <div className="flex justify-between ml-3">
-          <p className="font-bold">Context en 20 minutos</p>
+          <p className="font-bold">{title}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -55,9 +53,7 @@ const ResourcesCard = () => {
             />
           </svg>
         </div>
-        <p className="font-bold text-sm text-secondary ml-3">
-          Teoría con ejemplos
-        </p>
+        <p className="font-bold text-sm text-secondary ml-3">{description}</p>
 
         <div className="flex flex-row items-center mt-5 ml-3">
           {/* AVATAR */}
@@ -68,13 +64,13 @@ const ResourcesCard = () => {
           </div>
           <div>
             <p className="font-bold text-secondary text-xs ml-3">
-              Ona Costa, 8 agosto de 2022
+              {createdBy}, {createdOn}
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ResourcesCard
+export default ResourcesCard;

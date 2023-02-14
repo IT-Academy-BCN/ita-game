@@ -6,7 +6,6 @@ export const WikiContext = createContext();
 
 export const WikiContextProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
-  const [data, setData] = useState([]);
   const [stack, setStack] = useState('');
   const [stackData, setStackData] = useState([]);
 
@@ -16,7 +15,6 @@ export const WikiContextProvider = ({ children }) => {
         const response = await axios.get(urls.categories);
         if (response.status === 200) {
           const { data } = response;
-          setData(data);
           setCategories(data);
         }
       } catch (error) {
@@ -28,10 +26,13 @@ export const WikiContextProvider = ({ children }) => {
   }, []);
 
   const getStackData = async (framework) => {
+    localStorage.removeItem('currentFramework');
+    localStorage.setItem('currentFramework', JSON.stringify({ framework }));
     try {
       const response = await axios.get(urls.stackData);
       if (response.status === 200) {
         const { data } = response;
+
         const selectedStack = data.filter((d) => d.stack === framework);
         setStackData(selectedStack);
         setStack(framework);
@@ -55,7 +56,14 @@ export const WikiContextProvider = ({ children }) => {
 
   return (
     <WikiContext.Provider
-      value={{ categories, stackData, getStackData, addResource }}
+      value={{
+        categories,
+        stackData,
+        stack,
+        getStackData,
+        addResource,
+        setStack,
+      }}
     >
       {children}
     </WikiContext.Provider>
