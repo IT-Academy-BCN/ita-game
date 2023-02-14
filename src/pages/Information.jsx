@@ -7,7 +7,7 @@ function Information() {
   return (
     <>
       <Navbar>Información y normativa</Navbar>
-      <div className="relative pt-16 min-h-screen w-screen bg-gray-200">
+      <div className="relative pt-16 pb-16 min-h-screen w-screen bg-gray-200">
         <div className="w-full">
           <div className="flex overflow-x-hidden max-w-full mt-4 ml-4">
             <button
@@ -22,7 +22,7 @@ function Information() {
             </button>
             <button
               onClick={() => setSelectedTab("normativa")}
-              className={`flex-1 py-2 px-4 text-center text-black  bg-white rounded-full ${
+              className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
                 selectedTab === "normativa"
                   ? "bg-primary font-bold active"
                   : "hover:border-stone-400"
@@ -32,7 +32,7 @@ function Information() {
             </button>
             <button
               onClick={() => setSelectedTab("wiki")}
-              className={`flex-1 py-2 px-4 text-center text-black  bg-white rounded-full ${
+              className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
                 selectedTab === "wiki"
                   ? "bg-primary font-bold active"
                   : "hover:border-stone-400"
