@@ -1,13 +1,15 @@
-import { AvatarTemp, FooterMenu, Navbar } from "../components"
-import { Avatar } from "../components/avatar"
-import { folder, gym, rocket, sun } from "../components/assets"
-import { Card, Title } from "../components/atoms/index"
-import Badge from "../components/atoms/Badge"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../store/authentication/AuthContext"
-import { Modal } from "../components/molecules"
 import { Actions } from "../store/authentication/AuthReducer"
+import { FooterMenu, Navbar } from "../components"
+import { Card, Title } from "../components/atoms/index"
+import Badge from "../components/atoms/Badge"
+import { Modal } from "../components/molecules"
 import { useNavigate } from "react-router-dom"
+import folder from "../components/assets/images/folder-dynamic.png"
+import gym from "../components/assets/images/gym-dynamic-clay.png"
+import rocket from "../components/assets/images/rocket-dynamic.png"
+import sun from "../components/assets/images/sun-dynamic.png"
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
@@ -47,13 +49,12 @@ function Profile() {
   return (
     <>
       <Navbar>Perfil</Navbar>
-      <div className="h-screen pt-10 w-full">
+      <div className="h-screen pt-10 mb-15">
         {openModal ? (
           <Modal>
             <div className="flex flex-col">
               <div className="card-title justify-between">
                 <Title>Hola {user.name}!</Title>
-                {openModal && <Avatar edit />}
                 <button
                   className="btn btn-circle bg-secondary"
                   onClick={() => setOpenModal(false)}
@@ -80,7 +81,9 @@ function Profile() {
               <div className="flex flex-col justify-center items-center absolute ">
                 {/* avatar*/}
                 <div className="avatar placeholder">
-                  {!openModal && <Avatar />}
+                  <div className="bg-neutral-focus text-neutral-content rounded-full p-10">
+                    <span className="text-xs">AA</span>
+                  </div>
                 </div>
                 {/* name */}
                 <div className="text-black font-bold ">
@@ -156,7 +159,7 @@ function Profile() {
               </div>
             </div>
           </Card>
-          <Title>Insignias ganadas</Title>
+          <Title id="premios">Insignias ganadas</Title>
           <Card direction="row">
             {fakeUser.ITAawards.map((a) => {
               return (
