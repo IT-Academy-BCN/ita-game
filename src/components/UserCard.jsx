@@ -23,7 +23,7 @@ const UserCard = () => {
           <h2 className="font-bold text-black">
             {user.name} {user.surname}
           </h2>
-          <p className="text-secondary font-bold text-xs mt-2">Semana 34</p>
+          <p className="text-secondary font-bold text-xs">Semana 34</p>
         </div>
       </div>
       <div className="flex flex-row ">

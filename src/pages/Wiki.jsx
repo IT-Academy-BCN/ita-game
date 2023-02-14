@@ -1,37 +1,33 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { WikiContext } from '../store/wikiContext/WikiContext';
 import { FooterMenu, Navbar } from '../components';
-import DisplayModeWiki from '../components/DisplayModeWiki';
-import { angular, datascience, javascript, react, vue } from '../components/assets';
-import folder from '../components/assets/images/new-folder-dynamic-color.png';
 import { Title } from '../components/atoms';
-
-const categories = [
-   { name: 'Angular', resource: 49, theme: 6, link: '.../angular', img: angular },
-   { name: 'React', resource: 65, theme: 7, link: '.../react', img: react },
-   { name: 'Vue', resource: 32, theme: 8, link: '.../vue', img: vue },
-   { name: 'Javascript', resource: 44, theme: 3, link: '.../javascript', img: javascript },
-   { name: 'Data Science', resource: 44, theme: 3, link: '.../datascience', img: datascience }
-];
+import DisplayModeWiki from '../components/DisplayModeWiki';
+import folder from '../components/assets/images/new-folder-dynamic-color.png';
+import arrowRight from '../components/assets/arrow_right.svg';
 
 const Wiki = () => {
+   const { categories } = useContext(WikiContext);
+
    return (
       <>
          <Navbar>Wiki</Navbar>
-         <div className="container min-w-full flex flex-col bg-white pb-10 mt-5">
-            <div className="bg-slate-200 ">
-               <div className="card flex  flex-row justify-between h-20 items-center my-2 mx-6 border border-stone-300 bg-white">
-                  <div className="h-full rounded-l-xl rounded-r-3xl  bg-primary w-24 mr-6">
-                     <div className="flex items-center justify-start ml-4 h-full">
-                        <img src={folder} alt="New folder" className="z-50" />
+         <div className="container min-w-full flex flex-col bg-white pb-10">
+            <div className="bg-slate-200  pt-20">
+               <NavLink to={`/wiki/resource`}>
+                  <div className="card flex  flex-row justify-between h-20 items-center my-2 mx-6 border border-stone-300 bg-white hover:border-stone-400">
+                     <div className="h-full rounded-l-xl rounded-r-3xl  bg-primary w-24 mr-6">
+                        <div className="flex items-center justify-start ml-4 h-full">
+                           <img src={folder} alt="New folder" className="w-2/3" />
+                        </div>
                      </div>
+                     <div className="w-5/12 flex sm:justify-center">
+                        <h2 className="font-bold text-black text-sm">¿Cómo colaborar en la wiki?</h2>
+                     </div>
+                     <img className="w-6 ml-12 mr-2.5" src={arrowRight} alt="search" />
                   </div>
-                  <div className="w-5/12 flex sm:justify-center">
-                     <h2 className="font-bold text-black text-sm">¿Cómo colaborar en la wiki?</h2>
-                  </div>
-                  <NavLink className="flex justify-end ml-12 mr-2.5">
-                     <img className="w-6" src="src/components/assets/arrow_right.svg" alt="search" />
-                  </NavLink>
-               </div>
+               </NavLink>
                <div className="form-control mx-6 mt-7 -mb-5 border border-stone-300 rounded-lg">
                   <div className="input-group flex justify-center">
                      <input type="text" placeholder="¿Buscas un tema?" className="input input-bordered w-full" />
@@ -57,19 +53,14 @@ const Wiki = () => {
             <div className="mx-7 mt-10 mb-0">
                <Title>Categorías</Title>
             </div>
-            {categories.map((item) => (
-               <DisplayModeWiki
-                  key={item.name}
-                  name={item.name}
-                  image={item.img}
-                  resource={item.resource}
-                  theme={item.theme}
-               />
+            {categories.map((c) => (
+               <DisplayModeWiki key={c.id} name={c.stack} resource={c.resource} theme={c.theme} />
             ))}
+            <FooterMenu />
          </div>
-         <FooterMenu />
       </>
    );
 };
 
-export default Wiki;
+export default Wiki
+

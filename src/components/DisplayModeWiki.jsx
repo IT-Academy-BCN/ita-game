@@ -1,12 +1,21 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { WikiContext } from '../store/wikiContext/WikiContext';
+import arrowRight from './assets/arrow_right.svg';
 
-export default function DisplayModeWiki({ name, resource, theme, image }) {
+export default function DisplayModeWiki({ name, resource, theme }) {
+   const { getStackData } = useContext(WikiContext);
+
    return (
-      <div className="card flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300">
+      <NavLink
+         onClick={() => getStackData(name)}
+         to={`/${name}`}
+         className="card flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300 hover:border-stone-400"
+      >
          <div className="flex flex-row">
             <div className="avatar">
                <div className="w-14 rounded-full px-2 py-2">
-                  <img src={image} alt={name} />
+                  <img src={import.meta.resolve(`./assets/images/${name}.png`)} alt={`${name}-logo`} />
                </div>
             </div>
             <div className="flex flex-col justify-around pl-2 my-1">
@@ -18,9 +27,9 @@ export default function DisplayModeWiki({ name, resource, theme, image }) {
                </div>
             </div>
          </div>
-         <NavLink>
-            <img className="w-6" src="src/components/assets/arrow_right.svg" alt="search" />
-         </NavLink>
-      </div>
+         <div>
+            <img className="w-6" src={arrowRight} alt="search" />
+         </div>
+      </NavLink>
    );
 }

@@ -1,8 +1,8 @@
-import Chart from "react-apexcharts";
+import { primary, secondary } from "daisyui/src/colors"
+import Chart from "react-apexcharts"
 
-export default function LineChart({totalPerWeek}) {
-
-    const {total} = totalPerWeek
+export default function LineChart({ totalPerWeek }) {
+  const { total } = totalPerWeek
   const chartData = {
     series: [
       {
@@ -23,8 +23,7 @@ export default function LineChart({totalPerWeek}) {
         },
       },
 
-      
-      colors: ['#B0F41F', '#808080'],
+      colors: [primary, secondary],
 
       dataLabels: {
         enabled: false,
@@ -44,14 +43,10 @@ export default function LineChart({totalPerWeek}) {
         },
       },
       xaxis: {
-        categories: [
-          "-2 semanas",
-          "Semana pasada",
-          "Esta semana"
-        ],
-      }
+        categories: ["-2 semanas", "Semana pasada", "Esta semana"],
+      },
     },
-  };
+  }
 
   return (
     <div id="chart">
@@ -61,5 +56,5 @@ export default function LineChart({totalPerWeek}) {
         height={350}
       />
     </div>
-  );
+  )
 }
