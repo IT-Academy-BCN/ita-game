@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { WikiContext } from '../store/wikiContext/WikiContext';
 import { FooterMenu, Navbar } from '../components';
@@ -9,6 +9,7 @@ import arrowRight from '../components/assets/arrow_right.svg';
 
 const Wiki = () => {
   const { categories, getStackData } = useContext(WikiContext);
+
   return (
     <>
       <Navbar>Wiki</Navbar>

@@ -1,18 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Navbar, FooterMenu, ResourcesCard } from '../components';
 import { WikiContext } from '../store/wikiContext/WikiContext';
 import NewResource from '../components/organisms/NewResource';
 
 const Resource = () => {
   const [openModal, setOpenModal] = useState(false);
-  const { stackData, getStackData, stack } = useContext(WikiContext);
-
-  useEffect(() => {
-    if (stackData.length === 0) {
-      const data = JSON.parse(localStorage.getItem('currentFramework'));
-      getStackData(data);
-    }
-  }, []);
+  const { stackData, stack } = useContext(WikiContext);
 
   return (
     <>
