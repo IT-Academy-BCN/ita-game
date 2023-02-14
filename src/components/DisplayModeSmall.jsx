@@ -1,4 +1,5 @@
 import AvatarTemp from "./AvatarTemp";
+import rightArrow from "../assets/arrow_right.svg";
 
 export default function DisplayModeSmall({
   user = { name: "user", points: 0 },
@@ -53,11 +54,7 @@ export default function DisplayModeSmall({
           <span className="font-bold text-black">{user.points} </span>
           <span className="text-xs text-black">ITAS</span>
         </p>
-        <img
-          className="w-6"
-          src="src/components/assets/arrow_right.svg"
-          alt="search"
-        />
+        <img className="w-6" src={rightArrow} alt="search" />
       </div>
     </div>
   );

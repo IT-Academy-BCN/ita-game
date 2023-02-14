@@ -1,7 +1,8 @@
-import cup from "./assets/images/cup.png";
-import medal from "./assets/images/medal.png";
+import cup from "../assets/images/cup.png";
+import medal from "../assets/images/medal.png";
 import AvatarTemp from "./AvatarTemp";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
+import rightArrow from "../assets/arrow_right.svg";
 
 export default function DisplayMode({ user }) {
   return (
@@ -24,19 +25,15 @@ export default function DisplayMode({ user }) {
           </div>
         </div>
       </div>
-    <HashLink smooth to="/profile#premios">
-      <div className="card-actions justify-end pt-6 ">
-        <button className="btn btn-block btn-base flex flex-row justify-around">
-          <img src={cup} alt="cup" className="w-6" />
-          <span>Premios conseguidos</span>
-          <img
-            className="w-6"
-            src="src/components/assets/arrow_right.svg"
-            alt="search"
-          />
-        </button>
-      </div>
-     </HashLink>
+      <HashLink smooth to="/profile#premios">
+        <div className="card-actions justify-end pt-6 ">
+          <button className="btn btn-block btn-base flex flex-row justify-around">
+            <img src={cup} alt="cup" className="w-6" />
+            <span>Premios conseguidos</span>
+            <img className="w-6" src={rightArrow} alt="search" />
+          </button>
+        </div>
+      </HashLink>
     </div>
   );
 }

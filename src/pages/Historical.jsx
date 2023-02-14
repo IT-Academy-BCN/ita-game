@@ -1,15 +1,15 @@
-import { FooterMenu, Navbar } from "../components";
-import place from "../components/assets/images/first-place.png";
-import zoom from "../components/assets/images/zoom-dynamic-color.png";
-import folder from "../components/assets/images/new-folder-dynamic-color.png";
-import thumb from "../components/assets/images/thumb-up-dynamic-color.png";
-import medal from "../components/assets/images/medal-dynamic-color.png";
-import LineChart from "../components/LineChart";
-import { groupByType } from "../utils/groupByType";
-import { calculateITA } from "../utils/calculateITA";
-import { useContext } from "react";
-import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext";
-import useCurrentWeek from "../hooks/useCurrentWeek";
+import { FooterMenu, Navbar } from '../components';
+import place from '../assets/images/first-place.png';
+import zoom from '../assets/images/zoom-dynamic-color.png';
+import folder from '../assets/images/new-folder-dynamic-color.png';
+import thumb from '../assets/images/thumb-up-dynamic-color.png';
+import medal from '../assets/images/medal-dynamic-color.png';
+import LineChart from '../components/LineChart';
+import { groupByType } from '../utils/groupByType';
+import { calculateITA } from '../utils/calculateITA';
+import { useContext } from 'react';
+import { ActivitiesContext } from '../store/activitiesContext/ActivitiesContext';
+import useCurrentWeek from '../hooks/useCurrentWeek';
 
 function Historical() {
   const { activities } = useContext(ActivitiesContext);

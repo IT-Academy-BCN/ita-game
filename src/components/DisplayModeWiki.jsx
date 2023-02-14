@@ -1,4 +1,4 @@
-import arrowRight from './assets/arrow_right.svg';
+import arrowRight from '../assets/arrow_right.svg';
 
 export default function DisplayModeWiki({ name, resource, theme }) {
   return (
@@ -7,7 +7,7 @@ export default function DisplayModeWiki({ name, resource, theme }) {
         <div className="avatar">
           <div className="w-14 rounded-full px-2 py-2">
             <img
-              src={import.meta.resolve(`./assets/images/${name}.png`)}
+              src={import.meta.resolve(`../assets/images/${name}.png`)}
               alt={`${name}-logo`}
             />
           </div>
