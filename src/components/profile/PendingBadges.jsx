@@ -1,6 +1,6 @@
 import React from 'react'
 
-import gym from '../../components/assets/images/gym-dynamic-clay.png'
+import gym from '../../assets/images/gym-dynamic-clay.png'
 import Badge from './Badge'
 import Card from './Card'
 import Title from './Title'
