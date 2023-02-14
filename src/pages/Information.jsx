@@ -11,8 +11,8 @@ function Information() {
     <>
       <Navbar>Información y normativa</Navbar>
       <div className="relative pt-16 pb-16 min-h-screen w-screen bg-gray-200">
-        <div className="w-full">
-          <div className="flex overflow-x-scroll hide-scrollbar max-w-full mt-4 ml-4">
+        <div className="w-full overflow-visible ">
+          <div className="flex overflow-x-scroll no-scrollbar max-w-full mt-4 ml-4 whitespace-nowrap">
             <button
               onClick={() => setSelectedTab('instrucciones')}
               className={`flex-1 py-2 px-4 text-center text-black bg-white rounded-full ${
@@ -44,7 +44,6 @@ function Information() {
               Wiki
             </button>
           </div>
-
           {selectedTab === 'instrucciones' && (
             <div>
               <h1 className="mt-6 ml-3 p-3 text-left text-lg font-bold text-black">
