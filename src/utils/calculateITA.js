@@ -8,24 +8,24 @@ export const calculateITA = (obj) => {
   
     if (obj.doubt) {
       const length = Object.keys(obj.doubt).length;
-      total += length * 10;
-      doubt += total
+      doubt += length * 10;
+      total += doubt
     }
   
     if (obj.wiki) {
       const length = Object.keys(obj.wiki).length;
-      total += length * 5;
-      wiki += total
+      wiki += length * 5;
+      total += wiki
     }
     if (obj.explanation) {
       const length = Object.keys(obj.explanation).length;
-      total += length * 30;
-      explanation += total
+      explanation += length * 30;
+      total += explanation
     }
     if (obj.revision) {
       const length = Object.keys(obj.revision).length;
-      total += length * 15;
-      revision += total
+      revision += length * 15;
+      total += revision
     }
   
     return {total, wiki, explanation, revision, doubt};
