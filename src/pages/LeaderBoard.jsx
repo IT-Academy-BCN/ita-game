@@ -1,18 +1,18 @@
-import DisplayModeSmall from "../components/DisplayModeSmall";
-import DisplayMode from "../components/DisplayMode";
-import { FooterMenu, Navbar } from "../components";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { DateTime } from "luxon";
+import DisplayModeSmall from '../components/DisplayModeSmall';
+import DisplayMode from '../components/DisplayMode';
+import { FooterMenu, Navbar } from '../components';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { DateTime } from 'luxon';
 
 const currentUser = {
-  id: "63e9d29bb04cb600417abcb6",
-  name: "Ona Costa",
+  id: '63e9d29bb04cb600417abcb6',
+  name: 'Ona Costa',
   points: 80,
 };
-const url = "https://itacademy.onrender.com/api/activity/";
+const url = 'https://itacademy.onrender.com/api/activity/';
 const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM';
 const options = {
   headers: {
     Authorization: `Bearer ${token}`,
@@ -27,7 +27,7 @@ function LeaderBoard() {
     SetIsLoading(true);
     const weekTimestamp = Math.floor(Date.now() / 1000);
     const weekDate = DateTime.fromMillis(weekTimestamp * 1000);
-    const startOfWeek = weekDate.startOf("week");
+    const startOfWeek = weekDate.startOf('week');
     let arrayCategories = [];
     // llamamos la API que nos devuelve un array con todas las actividades
     const getCategoriesArray = async () => {
