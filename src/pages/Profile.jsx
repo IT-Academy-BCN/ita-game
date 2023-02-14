@@ -1,38 +1,27 @@
-import { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../store/authentication/AuthContext'
-import { Actions } from '../store/authentication/AuthReducer'
 import { FooterMenu, Navbar } from '../components'
-import { Card, Title } from '../components/atoms/index'
 import Badge from '../components/atoms/Badge'
-import { Modal } from '../components/molecules'
-import { useNavigate } from 'react-router-dom'
 import folder from '../components/assets/images/folder-dynamic.png'
 import gym from '../components/assets/images/gym-dynamic-clay.png'
 import rocket from '../components/assets/images/rocket-dynamic.png'
 import sun from '../components/assets/images/sun-dynamic.png'
 import ButtonEdit from '../components/profile/ButtonEdit'
-import user from '../components/profile/mocks/user.json'
 import ProgressBar from '../components/profile/ProgressBar'
 import { Avatar } from '../components/avatar'
+import Title from '../components/profile/Title'
+import Card from '../components/profile/Card'
+import user from '../components/profile/mocks/user.json'
+import SubLabelProgressBar from '../components/profile/SubLabelProgressBar'
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
 // UI:Grid on 'Insignias Ganadas' Cards
 function Profile() {
-  const [nextMultiple, setNextMultiple] = useState(0)
-  const navigate = useNavigate()
+  const nextMultiple = Math.ceil(user.ITApoints / 50) * 50
 
-  // useEffect(() => {
-  //   setNextMultiple(Math.ceil(user.ITApoints / 50) * 50)
-  // }, [])
-
-  const handleLogout = () => {
-    localStorage.clear()
-    let user = localStorage.getItem('currentUser')
-    dispatch({ type: Actions.LOGOUT, payload: user })
-    navigate('/')
+  const subLabeData = {
+    points: user.ITApoints,
+    multiple: nextMultiple
   }
-
   // Fake user to obtain SVG and Data for looping
   const fakeUser = {
     ITAawards: [
@@ -54,11 +43,7 @@ function Profile() {
               {/* avatar box */}
               <div className="flex flex-col justify-center items-center absolute ">
                 {/* avatar*/}
-                <div className="avatar placeholder">
-                  <div className="bg-neutral-focus text-neutral-content rounded-full p-10">
-                    <span className="text-xs">AA</span>
-                  </div>
-                </div>
+                <Avatar />
                 {/* name */}
                 <div className="text-black font-bold ">
                   {user.name} {user.surname}
@@ -76,35 +61,11 @@ function Profile() {
             {/* card body */}
             <div className="flex flex-col mt-20 ">
               {/* progressbar  container*/}
-              <div className="flex flex-col ">
+              <div className="flex flex-col w-full">
                 {/* bar */}
-                <Avatar className="w-52 h-52"/>
-                <ProgressBar
-                  className="progress progress-primary"
-                  value={user.ITApoints}
-                />
-                {/* <progress
-                  className="progress progress-primary w-100"
-                  value={(user.ITApoints * 100) / nextMultiple}
-                  max="100"
-                ></progress> */}
-                {/* data bar */}
-                <div className="flex justify-between">
-                  <div className="flex justify-center">
-                    <p className="font-bold text-black text-sm">
-                      {user.ITApoints} ITAS
-                    </p>
-                  </div>
-                  <div className="flex justify-center">
-                    <p className="font-bold text-black text-sm">
-                      {nextMultiple - user.ITApoints}
-                    </p>
 
-                    <p className="text-neutral-focus font-bold text-sm">
-                      para subir de nivel
-                    </p>
-                  </div>
-                </div>
+                <ProgressBar value={user.ITApoints} />
+                <SubLabelProgressBar subLabeData={subLabeData} />
               </div>
 
               {/* divider section */}
@@ -122,6 +83,7 @@ function Profile() {
               </div>
             </div>
           </Card>
+
           <Title>Insignias ganadas</Title>
           <Card direction="row">
             {fakeUser.ITAawards.map(a => {
