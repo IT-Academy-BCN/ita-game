@@ -1,6 +1,6 @@
 const Badge = ({ children, classBody, classFigure, classTitle, img, text }) => {
    return (
-      <div className="card w-1/2 bg-base-100">
+      <div className="w-1/2 card bg-base-100">
          <figure className={classFigure}>
             <img src={img} alt={children} className="w-12 rounded-xl" />
          </figure>

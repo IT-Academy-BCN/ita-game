@@ -1,3 +1,3 @@
 export default function Title({ children }) {
-  return <h1 className="font-bold text-black my-5">{children}</h1>;
+  return <h1 className="my-5 font-bold text-black">{children}</h1>;
 }
