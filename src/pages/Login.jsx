@@ -1,7 +1,11 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 import { useNavigate } from 'react-router-dom';
+import { Actions } from '../store/authentication/authReducer';
+import axios from 'axios';
+
+const API_URL = 'https://itacademy.onrender.com/auth/signin';
 
 function Login() {
   const [values, setValues] = useState({
@@ -17,7 +21,6 @@ function Login() {
     login(values);
     if (!error) {
       navigate('/');
-    }
   };
 
   return (
@@ -99,11 +102,20 @@ function Login() {
 
             <div>
               <button type="submit" className="btn btn-block btn-primary">
+
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span>
                 Sign in
               </button>
             </div>
           </form>
+
+                {state.loading ? 'Loading...' : 'Sign in'}
+              </button>
+            </div>
+          </form>
+          <h2 className="text-red-700 self-center text-center">
+            {state.errorMessage && state.errorMessage}
+          </h2>
         </div>
         <div className="flex justify-center pb-10">
           <Link

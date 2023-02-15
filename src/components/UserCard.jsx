@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 import { AvatarTemp } from './index';
 import { NavHashLink } from 'react-router-hash-link';
 import rightArrow from '../assets/arrow_right.svg';
