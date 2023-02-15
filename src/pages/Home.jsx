@@ -11,21 +11,12 @@ function Home() {
   const [data, setData] = useState([])
   const { activities } = useContext(ActivitiesContext)
   const currentWeekData = useCurrentWeek()
-  const totalPerWeek = calculateITA(data)
 
+  const totalPerWeek = calculateITA(data)
   useEffect(() => {
     const groupedData = groupByType(currentWeekData)
     setData(groupedData)
-  }, [activities, currentWeekData])
-
-  console.log(
-    "activitis",
-    activities,
-    "semana",
-    currentWeekData,
-    "datitos",
-    data
-  )
+  }, [activities])
 
   return (
     <>

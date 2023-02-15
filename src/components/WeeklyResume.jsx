@@ -1,12 +1,9 @@
-import React, { useContext, useEffect, useState } from "react"
+import React from "react"
 import { IndicatorGroup } from "./molecules"
 import zoom from "../assets/images/zoom-dynamic-color.png"
 import folder from "../assets/images/new-folder-dynamic-color.png"
 import thumb from "../assets/images/thumb-up-dynamic-color.png"
 import medal from "../assets/images/medal-dynamic-color.png"
-import useCurrentWeek from "../hooks/useCurrentWeek"
-import { groupByType } from "../utils/groupByType"
-import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
 
 const WeeklyResume = ({ data }) => {
   return (
