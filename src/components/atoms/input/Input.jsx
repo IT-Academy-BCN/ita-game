@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useState } from 'react';
 import './input.css'
 // {/*`input input-bordered input-info w-full max-w-xs`*/}
@@ -13,9 +14,9 @@ function Input({
 }) {
   const [focused, setFocused] = useState(false);
 
-  const handleFocus = () => {
+  const handleFocus = useCallback(() => {
     setFocused(true);
-  };
+  });
   console.log(focused);
   return (
     <div>
