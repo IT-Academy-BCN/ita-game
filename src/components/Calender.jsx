@@ -5,7 +5,11 @@ import arrowDown from '../assets/arrow_down.svg';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-const Calender = ({ startDate, setStartDate }) => {
+const Calender = ( {startDate, setStartDate }) => {
+
+   const date = new Date()
+   const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear().toString().substr(-2)}`;
+
    const CalenderInput = forwardRef(({ onClick }, ref) => (
       <div
          className="card flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
@@ -19,7 +23,7 @@ const Calender = ({ startDate, setStartDate }) => {
                </div>
             </div>
             <div className="flex flex-col justify-center pl-2 my-1">
-               <h2 className="font-bold text-black">Hoy</h2>
+               <h2 className="font-bold text-black">{startDate ? formattedDate : "Fecha"}</h2>
             </div>
          </div>
          <div>
@@ -31,7 +35,7 @@ const Calender = ({ startDate, setStartDate }) => {
    return (
       <DatePicker
          // portalId="root-portal"
-         selected={startDate}
+         selected={date}
          onChange={(date) => setStartDate(date)}
          customInput={<CalenderInput />}
          // dateFormat="yyyy-MM-dd"
