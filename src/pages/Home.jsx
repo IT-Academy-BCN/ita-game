@@ -2,11 +2,10 @@ import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, FooterMenu, UserCard } from '../components';
 import { WeeklyResume } from '../components';
-import { AuthContext } from '../store/authentication/authContext';
+import { AuthContext } from '../store/authentication/AuthContext';
 
 function Home() {
-  const { state } = useContext(AuthContext);
-  const { user } = state;
+  const { user } = useContext(AuthContext);
 
   return (
     <>
