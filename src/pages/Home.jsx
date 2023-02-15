@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, FooterMenu, UserCard } from '../components';
 import { WeeklyResume } from '../components';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 
 function Home() {
   const { user } = useContext(AuthContext);

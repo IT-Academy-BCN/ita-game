@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 import { Actions } from '../store/authentication/AuthReducer';
 import { FooterMenu, Navbar } from '../components';
 import { Card, Title } from '../components/atoms/index';
