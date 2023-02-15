@@ -5,12 +5,25 @@
 @layer base {
   body {
     @apply bg-[#EBEBEB] tracking-wide;
-    @apply text-black
-
+    @apply text-black;
   }
 }
 
-*{
+* {
   font-family: 'Poppins', sans-serif;
 }
 
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
