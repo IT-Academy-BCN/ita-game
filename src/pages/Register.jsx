@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
-import { inputs } from '../components/atoms/input/Input'
-import Input from '../components/atoms/input/Input'
+import { useState, useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../store/authentication/AuthContextProvider';
+import { inputs } from '../components/atoms/input/Input';
+import Input from '../components/atoms/input/Input';
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -12,17 +12,19 @@ function Register() {
     sex: '',
     email: '',
     password: '',
-    confirmPassword: ''
-  })
+    confirmPassword: '',
+  });
 
-  const navigate = useNavigate()
+  const { register, error } = useContext(AuthContext);
 
-  const onChange = e => {
-    setValues({ ...values, [e.target.name]: e.target.value })
-  }
+  const navigate = useNavigate();
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const user = {
       name: values.name,
       surname: values.surname,
@@ -44,19 +46,17 @@ function Register() {
         noseStyle: 'long', //short, long, round
         shirtStyle: 'short', // hoody, short, polo
         shirtColor: '#BB8FCE',
-        bgColor: '#58c914'
-      }
-    }
-    try {
-      await axios.post('http://localhost:3002/users', user)
-      navigate('/login')
-    } catch (err) {
-      console.log(err)
-      // TODO: implement better way of error handling
-    }
-  }
+        bgColor: '#58c914',
+      },
+    };
+    register(user);
 
-  const inputArray = inputs(values.password)
+    if (!error) {
+      navigate('/');
+    }
+  };
+
+  const inputArray = inputs(values.password);
 
   return (
     <div className="flex min-h-screen justify-center pt-20 px-4">
@@ -75,7 +75,7 @@ function Register() {
           >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="grid gap-3 rounded-md shadow-sm">
-              {inputArray.map(input => (
+              {inputArray.map((input) => (
                 <Input
                   key={input.id}
                   {...input}
@@ -115,7 +115,7 @@ function Register() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

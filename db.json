@@ -8,7 +8,11 @@
       "password": "Test1-1234!",
       "framework": "Frontend React",
       "ITApoints": 123,
-      "ITAawards": ["Solete", "Megamind", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Megamind",
+        "Imparable"
+      ],
       "activities": 30,
       "avatar": {
         "sex": "woman",
@@ -23,7 +27,10 @@
       "password": "Test2-1234!",
       "framework": "Backend Java",
       "ITApoints": 133,
-      "ITAawards": ["Solete", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Imparable"
+      ],
       "activities": 23,
       "avatar": {
         "sex": "man",
@@ -47,7 +54,10 @@
       "password": "Test3-1234!",
       "framework": "Frontend React",
       "ITApoints": 203,
-      "ITAawards": ["Solete", "Imparable"],
+      "ITAawards": [
+        "Solete",
+        "Imparable"
+      ],
       "activities": 4,
       "avatar": {
         "sex": "man",
@@ -61,6 +71,26 @@
         "shirtColor": "peru",
         "bgColor": "#1e4b8f"
       }
+    },
+    {
+      "email": "test@f.com",
+      "password": "123asd|",
+      "id": 4
+    },
+    {
+      "email": "pruebas@gmail.com",
+      "password": "pruebas2023",
+      "id": 5
+    },
+    {
+      "email": "prueba@gmail.com",
+      "password": "prueba2023",
+      "id": 6
+    },
+    {
+      "email": "pruebas@gmail.com",
+      "password": "pruebas2023!",
+      "id": 7
     }
   ],
   "categories": [

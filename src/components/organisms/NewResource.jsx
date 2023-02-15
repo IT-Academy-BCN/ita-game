@@ -1,6 +1,6 @@
-import { useRef, useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../store/authentication/AuthContext';
+
 import { WikiContext } from '../../store/wikiContext/WikiContext';
 
 const NewResource = ({ setOpenModal }) => {
