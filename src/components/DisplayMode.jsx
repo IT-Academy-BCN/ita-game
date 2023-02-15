@@ -26,7 +26,7 @@ export default function DisplayMode({ user }) {
         </div>
       </div>
       <HashLink smooth to="/profile#premios">
-        <div className="card-actions justify-end pt-6 ">
+        <div className="card-actions justify-end ">
           <button className="btn btn-block btn-base flex flex-row justify-around">
             <img src={cup} alt="cup" className="w-6" />
             <span>Premios conseguidos</span>
