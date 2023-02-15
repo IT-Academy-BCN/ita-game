@@ -9,6 +9,7 @@ import { groupByType } from "../utils/groupByType"
 
 function Home() {
   const [data, setData] = useState([])
+  const [name, setName] = useState("")
   const { activities } = useContext(ActivitiesContext)
   const currentWeekData = useCurrentWeek()
 
@@ -17,13 +18,14 @@ function Home() {
     const groupedData = groupByType(currentWeekData)
     setData(groupedData)
   }, [activities])
+  console.log("nombre?", currentWeekData)
 
   return (
     <>
       <Navbar>Resumen Semanal</Navbar>
       <div className="w-full h-full bg-base pt-12 pb-12">
         <div className="flex items-start p-6">
-          <h1 className="font-bold text-3xl">Hola {}!</h1>
+          <h1 className="font-bold text-3xl">Hola user!</h1>
         </div>
         <div className="flex items-start ml-6">
           <p className="font-bold">Puntos ganados</p>

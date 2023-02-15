@@ -10,7 +10,7 @@ const Indicator = ({ children, punctuation, points }) => {
     if (punctuation === "1 / 2") {
       setValue("50")
     }
-    if (punctuation >= "2 / 2" || punctuation >= "1 / 1") {
+    if (punctuation >= "1") {
       setValue("100")
     }
   }, [punctuation])
