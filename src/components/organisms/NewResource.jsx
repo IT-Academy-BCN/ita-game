@@ -33,7 +33,7 @@ const NewResource = ({ setOpenModal }) => {
     const resource = {
       id: `${stack}-${Math.floor(Math.random() * (100 - 0) + 0)}`,
       createdBy: 'Ona',
-      createdOn: '8 septiembre 2022',
+      createdOn: new Date().toISOString(),
       stack: stack,
       title: values.title,
       likes: 0,
