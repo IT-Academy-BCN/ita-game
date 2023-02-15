@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 import { Actions } from '../store/authentication/AuthReducer';
 import { FooterMenu, Navbar } from '../components';
 import { Card, Title } from '../components/atoms/index';
@@ -30,9 +30,9 @@ function Profile() {
   };
 
   const handleLogout = () => {
-    dispatch({ type: Actions.LOGOUT })
-    navigate("/")
-  }
+    dispatch({ type: Actions.LOGOUT });
+    navigate('/');
+  };
 
   // Fake user to obtain SVG and Data for looping
   const fakeUser = {
