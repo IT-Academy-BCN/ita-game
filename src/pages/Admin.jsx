@@ -1,4 +1,5 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 import { FooterMenu, Navbar } from '../components';
 import arrowDown from '../assets/arrow_down.svg';
 import { Title } from '../components/atoms';
@@ -6,17 +7,44 @@ import avatar from '../assets/images/avatar.png';
 import thumbUp from '../assets/images/thumb-up-dynamic-color.png';
 import Calender from '../components/Calender';
 import { WikiContext } from '../store/wikiContext/WikiContext';
+// import { ActivitiesContext } from '../store/activitiesContext/ActivitiesContext';
 
 const fakeAdmin = [
    { id: 'Ona Costa', img: avatar },
    { id: 'Duda Resuelta', img: thumbUp }
 ];
 
+const url = 'https://itacademy.onrender.com/api/users';
+const token =
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzY0NjA4MDJ9.K8XxxIIqilV3Z39zEjlTzXOwlHSLz-4kQbmToiZWLQs';
+const options = {
+   headers: {
+      Authorization: `Bearer ${token}`
+   }
+};
+
 const Admin = () => {
-   const { categories } = useContext(WikiContext);
    const [startDate, setStartDate] = useState(new Date());
    // console.log('startDate', typeof startDate.toISOString());
    const hiddenBrowseButton = useRef(null);
+   const { categories } = useContext(WikiContext);
+   const [activities, setActivities] = useState([]);
+   console.log('activities', activities);
+
+   useEffect(() => {
+      const getActivities = async () => {
+         try {
+            const response = await axios.get(url, options);
+            if (response.status === 200) {
+               const { data } = response;
+               setActivities(data);
+            }
+         } catch (error) {
+            console.error(error);
+         }
+      };
+      getActivities();
+   }, []);
 
    return (
       <>
