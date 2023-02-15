@@ -1,18 +1,19 @@
-import DisplayModeSmall from '../components/DisplayModeSmall';
-import DisplayMode from '../components/DisplayMode';
-import { FooterMenu, Navbar } from '../components';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { DateTime } from 'luxon';
+import DisplayModeSmall from "../components/DisplayModeSmall";
+import DisplayMode from "../components/DisplayMode";
+import { FooterMenu, Navbar } from "../components";
+import { useEffect, useState } from "react";
+import { DateTime } from "luxon";
+import { useContext } from "react";
+import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext";
 
 const currentUser = {
-  id: '63e9d29bb04cb600417abcb6',
-  name: 'Ona Costa',
+  id: "63e9d29bb04cb600417abcb6",
+  name: "Ona Costa",
   points: 80,
 };
-const url = 'https://itacademy.onrender.com/api/activity/';
+const url = "https://itacademy.onrender.com/api/activity/";
 const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM';
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
 const options = {
   headers: {
     Authorization: `Bearer ${token}`,
@@ -20,6 +21,8 @@ const options = {
 };
 
 function LeaderBoard() {
+  const { activitiesAll } = useContext(ActivitiesContext);
+
   const [users, SetUsers] = useState();
   const [isLoading, SetIsLoading] = useState(false);
 
@@ -27,21 +30,11 @@ function LeaderBoard() {
     SetIsLoading(true);
     const weekTimestamp = Math.floor(Date.now() / 1000);
     const weekDate = DateTime.fromMillis(weekTimestamp * 1000);
-    const startOfWeek = weekDate.startOf('week');
-    let arrayCategories = [];
-    // llamamos la API que nos devuelve un array con todas las actividades
-    const getCategoriesArray = async () => {
-      try {
-        const response = await axios.get(url, options);
-        if (response.status === 200) {
-          const { data } = response;
-          arrayCategories = data;
-        }
-      } catch (error) {
-        console.error(error);
-      }
+    const startOfWeek = weekDate.startOf("week");
+
+    const getActivitiesAll = () => {
       let users = [];
-      arrayCategories
+      activitiesAll
         // filtramos per la ultima semana
         .filter((item) => {
           const itemDate = DateTime.fromMillis(Date.parse(item.doneDate));
@@ -65,14 +58,14 @@ function LeaderBoard() {
           SetIsLoading(false);
         });
     };
-    getCategoriesArray();
-  }, []);
+    getActivitiesAll();
+  }, [activitiesAll]);
 
   return (
     <>
       <Navbar>Competición</Navbar>
       <div className="container pt-10 mx-auto flex flex-col">
-        <DisplayMode user={currentUser} />
+        <DisplayMode />
         <p className="text-lg font-semibold m-6 text-black">
           Clasificación semanal
         </p>

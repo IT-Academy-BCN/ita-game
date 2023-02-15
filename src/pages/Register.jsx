@@ -1,8 +1,19 @@
+<<<<<<< HEAD
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../store/authentication/AuthContextProvider';
 import { inputs } from '../components/atoms/input/Input';
 import Input from '../components/atoms/input/Input';
+=======
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import { inputs } from '../components/atoms/input/Input';
+import Input from '../components/atoms/input/Input';
+import Swal from 'sweetalert2';
+
+const API_URL = 'https://itacademy.onrender.com/api/users';
+>>>>>>> 3caa9d445059d49ab47f4215a6de1ef70253ffaa
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -14,16 +25,34 @@ function Register() {
     password: '',
     confirmPassword: '',
   });
+<<<<<<< HEAD
+=======
+  const [state, setState] = useState({
+    loading: false,
+    errorMessage: null,
+  });
+>>>>>>> 3caa9d445059d49ab47f4215a6de1ef70253ffaa
 
   const { register, error } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
+=======
+  const showAlert = ({ message }) =>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: message,
+    });
+
+  const handleSubmit = async (e) => {
+>>>>>>> 3caa9d445059d49ab47f4215a6de1ef70253ffaa
     e.preventDefault();
     const user = {
       name: values.name,
@@ -46,6 +75,7 @@ function Register() {
         noseStyle: 'long', //short, long, round
         shirtStyle: 'short', // hoody, short, polo
         shirtColor: '#BB8FCE',
+<<<<<<< HEAD
         bgColor: '#58c914',
       },
     };
@@ -56,6 +86,24 @@ function Register() {
     }
   };
 
+=======
+        bgColor: '#58c914'
+      }
+    }
+    try {
+      setState((prev) => ({ ...prev, loading: true }));
+      await axios.post(API_URL, user)
+      setState((prev) => ({ ...prev, loading: false }));
+      navigate('/login')
+    } catch (err) {
+      setState(prev => ({ ...prev, errorMessage: err, loading: false }));
+      showAlert(state.errorMessage);
+      console.log(err)
+      // TODO: implement better way of error handling
+    }
+  };
+
+>>>>>>> 3caa9d445059d49ab47f4215a6de1ef70253ffaa
   const inputArray = inputs(values.password);
 
   return (
@@ -100,7 +148,9 @@ function Register() {
             </div>
             <div className="pt-4">
               <button type="submit" className="btn btn-block btn-primary">
-                <span className="font-bold">Registrarme</span>
+                <span className="font-bold">
+                  {state.loading ? 'Loading...' : 'Registrarme'}
+                </span>
               </button>
             </div>
           </form>

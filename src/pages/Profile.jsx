@@ -29,11 +29,9 @@ function Profile() {
   };
 
   const handleLogout = () => {
-    localStorage.clear();
-    let user = localStorage.getItem('currentUser');
-    dispatch({ type: Actions.LOGOUT, payload: user });
-    navigate('/');
-  };
+    dispatch({ type: Actions.LOGOUT })
+    navigate("/")
+  }
 
   // Fake user to obtain SVG and Data for looping
   const fakeUser = {

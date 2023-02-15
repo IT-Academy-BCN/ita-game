@@ -134,7 +134,7 @@
     {
       "id": "react-1",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "react",
       "title": "Context en 20 minutos",
       "likes": 167,
@@ -150,7 +150,7 @@
     {
       "id": "react-2",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-14T08:42:25.717Z",
       "stack": "react",
       "title": "Access Existing Context across Multiple Files",
       "likes": 300,
@@ -159,14 +159,14 @@
       "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
       "type": {
         "video": false,
-        "tutorial": true,
+        "tutorial": false,
         "blog": true
       }
     },
     {
       "id": "react-3",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-08T07:42:25.717Z",
       "stack": "react",
       "title": "Cómo utilizar useReducer",
       "likes": 2,
@@ -182,12 +182,12 @@
     {
       "id": "react-4",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "react",
       "title": "React + TypeScript",
       "likes": 125,
       "description": "Cómo inicializar TP",
-      "topic": "Components",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
       "type": {
         "video": true,
@@ -198,7 +198,7 @@
     {
       "id": "angular-1",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "angular",
       "title": "Global Theme Angular",
       "likes": 60,
@@ -214,7 +214,7 @@
     {
       "id": "angular-2",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "angular",
       "title": "Access to types",
       "likes": 250,
@@ -230,7 +230,7 @@
     {
       "id": "angular-3",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "angular",
       "title": "Cómo utilizar hooks",
       "likes": 8,
@@ -246,7 +246,7 @@
     {
       "id": "angular-4",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "angular",
       "title": "Angular + TypeScript",
       "likes": 125,
@@ -262,7 +262,7 @@
     {
       "id": "vue-1",
       "createdBy": "Joan Artola",
-      "createdOn": "20 febrero 2022",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "vue",
       "title": "Vue + TypeScript",
       "likes": 25,
@@ -278,7 +278,7 @@
     {
       "id": "vue-2",
       "createdBy": "Mariona Bosch",
-      "createdOn": "10 febrero 2022",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "vue",
       "title": "Vue Components",
       "likes": 25,
@@ -294,7 +294,7 @@
     {
       "id": "javascript-1",
       "createdBy": "Mariona Bosch",
-      "createdOn": "1 febrero 2022",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "javascript",
       "title": "Filters",
       "likes": 20,
@@ -310,7 +310,7 @@
     {
       "id": "javascript-2",
       "createdBy": "Joan Bosch",
-      "createdOn": "1 febrero 2022",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "javascript",
       "title": "Maps",
       "likes": 20,
@@ -326,7 +326,7 @@
     {
       "id": "javascript-3",
       "createdBy": "Mariona Bosch",
-      "createdOn": "1 febrero 2022",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "javascript",
       "title": "Spread Operator",
       "likes": 20,
@@ -342,7 +342,7 @@
     {
       "id": "datascience-1",
       "createdBy": "Luis Vicente",
-      "createdOn": "1 febrero 2022",
+      "createdOn": "2023-02-11T09:42:25.717Z",
       "stack": "datascience",
       "title": "Modelos Predictivos",
       "likes": 20,
@@ -358,7 +358,7 @@
     {
       "id": "datascience-2",
       "createdBy": "Luis Vicente",
-      "createdOn": "1 febrero 2022",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "datascience",
       "title": "Júpiter",
       "likes": 20,
