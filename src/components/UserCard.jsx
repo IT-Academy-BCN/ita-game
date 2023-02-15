@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../store/authentication/AuthContext";
-import { AvatarTemp } from "./index";
-import { NavHashLink } from "react-router-hash-link";
-import rightArrow from "../assets/arrow_right.svg";
+import React, { useContext } from 'react';
+import { AuthContext } from '../store/authentication/AuthContext';
+import { AvatarTemp } from './index';
+import { NavHashLink } from 'react-router-hash-link';
+import rightArrow from '../assets/arrow_right.svg';
 
 const UserCard = () => {
-  const { state } = useContext(AuthContext);
-  const { user } = state;
+  const { user } = useContext(AuthContext);
 
   return (
     <NavHashLink

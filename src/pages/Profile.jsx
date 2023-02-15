@@ -17,8 +17,7 @@ import sun from '../assets/images/sun-dynamic.png';
 function Profile() {
   const [nextMultiple, setNextMultiple] = useState(0);
   const [openModal, setOpenModal] = useState(false);
-  const { state, dispatch } = useContext(AuthContext);
-  const { user } = state;
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,9 +29,9 @@ function Profile() {
   };
 
   const handleLogout = () => {
-    dispatch({ type: Actions.LOGOUT })
-    navigate("/")
-  }
+    dispatch({ type: Actions.LOGOUT });
+    navigate('/');
+  };
 
   // Fake user to obtain SVG and Data for looping
   const fakeUser = {
