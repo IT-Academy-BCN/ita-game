@@ -1,28 +1,22 @@
 import { useRef, useEffect, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../store/authentication/AuthContext';
 import { WikiContext } from '../../store/wikiContext/WikiContext';
 
-const NewResource = ({ setIsModal }) => {
+const NewResource = ({ setOpenModal }) => {
+  const { addResource, stack } = useContext(WikiContext);
+
   const [values, setValues] = useState({
     title: '',
     description: '',
     url: '',
-    tema: '',
     video: false,
     tutorial: false,
     blog: false,
+    topic: '',
   });
 
-  const { addResource } = useContext(WikiContext);
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
-  }, []);
-  const clickOutsideRef = useRef(null);
-  const handleClickOutside = (e) => {
-    if (!clickOutsideRef.current.contains(e.target)) {
-      setIsModal((prev) => !prev);
-    }
-  };
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -37,13 +31,24 @@ const NewResource = ({ setIsModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const resource = {
+      id: `${stack}-${Math.floor(Math.random() * (100 - 0) + 0)}`,
+      createdBy: 'Ona',
+      createdOn: new Date().toISOString(),
+      stack: stack,
       title: values.title,
+      likes: 0,
       description: values.description,
       url: values.url,
-      tema: values.tema,
-      type: { video: values.video, tutorial: values.tutorial, blog: values.blog }
-    }
-    addResource(resource)
+      type: {
+        video: values.video,
+        tutorial: values.tutorial,
+        blog: values.blog,
+      },
+      topic: values.topic,
+    };
+    addResource(resource);
+    setOpenModal((prev) => !prev);
+    navigate(0);
   };
 
   return (
@@ -51,11 +56,11 @@ const NewResource = ({ setIsModal }) => {
       <div className="fixed top-0 left-0 right-0 bottom-0 z-40 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full bg-black opacity-70 flex justify-center items-center"></div>
       <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
         <div className="relative w-auto my-6 mx-auto max-w-sm">
-          <div ref={clickOutsideRef} className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-4">
+          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-4">
             <button
               type="button"
               className="btn btn-ghost btn-square absolute top-0 right-0"
-              onClick={() => setIsModal((prev) => !prev)}
+              onClick={() => setOpenModal((prev) => !prev)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,17 +121,17 @@ const NewResource = ({ setIsModal }) => {
                 value={values.url}
                 onChange={handleChange}
               />
-              <label htmlFor="tema" className="sr-only">
+              <label htmlFor="topic" className="sr-only">
                 Tema
               </label>
               <input
-                id="tema"
-                name="tema"
+                id="topic"
+                name="topic"
                 type="text"
                 required
                 className="input border-black w-full max-w-xs"
                 placeholder="Tema"
-                value={values.tema}
+                value={values.topic}
                 onChange={handleChange}
               />
 

@@ -1,66 +1,29 @@
-import { FooterMenu, Navbar } from "../components"
-import place from "../components/assets/images/first-place.png"
-import zoom from "../components/assets/images/zoom-dynamic-color.png"
-import folder from "../components/assets/new-folder-dynamic-color.svg"
-import thumb from "../components/assets/thumb-up-dynamic-color.svg"
-import medal from "../components/assets/images/medal-dynamic-color.png"
-import LineChart from "../components/LineChart"
-import { useEffect, useState } from "react"
-import { DateTime } from "luxon"
-import { groupByType } from "../utils/groupByType"
-import { calculateITA } from "../utils/calculateITA"
+import { FooterMenu, Navbar } from '../components';
+import place from '../assets/images/first-place.png';
+import zoom from '../assets/images/zoom-dynamic-color.png';
+import folder from '../assets/images/new-folder-dynamic-color.png';
+import thumb from '../assets/images/thumb-up-dynamic-color.png';
+import medal from '../assets/images/medal-dynamic-color.png';
+import LineChart from '../components/LineChart';
+import { groupByType } from '../utils/groupByType';
+import { calculateITA } from '../utils/calculateITA';
+import { useContext } from 'react';
+import { ActivitiesContext } from '../store/activitiesContext/ActivitiesContext';
+import useCurrentWeek from '../hooks/useCurrentWeek';
 
 function Historical() {
-  const [currentWeekData, setCurrentWeekData] = useState([])
+  const { activities } = useContext(ActivitiesContext);
 
-  const data = [
-    { date: 1672847739, type: "wiki" },
-    { date: 1675256878, type: "doubt" },
-    { date: 1672758090, type: "wiki" },
-    { date: 1674481469, type: "explanation" },
-    { date: 1675259859, type: "revision" },
-    { date: 1674570788, type: "wiki" },
-    { date: 1675439257, type: "doubt" },
-    { date: 1674661229, type: "wiki" },
-    { date: 1674053351, type: "explanation" },
-    { date: 1674737388, type: "revision" },
-    { date: 1675772169, type: "wiki" },
-    { date: 1675692582, type: "doubt" },
-    { date: 1675777469, type: "wiki" },
-    { date: 1675779142, type: "explanation" },
-    { date: 1675687676, type: "revision" },
-  ]
-
-  // DÍA ACTUAL TIMESTAMP EN SEGUNDOS
-  const weekTimestamp = Math.floor(Date.now() / 1000)
-
-  useEffect(() => {
-    // convierte los milisegundos que le pasamos en un objeto DateTime
-    const weekDate = DateTime.fromMillis(weekTimestamp * 1000)
-
-    // inicio semana actual
-    const startOfWeek = weekDate.startOf("week")
-
-    // se filtran los datos que están dentro del rango de fechas de la semana actual (desde el inicio de la semana hasta el final de la semana)
-    setCurrentWeekData(
-      data.filter((item) => {
-        const itemDate = DateTime.fromMillis(item.date * 1000)
-        return (
-          itemDate >= startOfWeek && itemDate < startOfWeek.plus({ weeks: 1 })
-        )
-      })
-    )
-  }, [weekTimestamp])
+  const currentWeekData = useCurrentWeek();
 
   // separa los datos de la semana actual por los tipos de actividad
-  const groupedData = groupByType(currentWeekData)
-
+  const groupedData = groupByType(currentWeekData);
   // suma el total de todas las actividad y el total por actividades separada
-  const totalPerWeek = calculateITA(groupedData)
+  const totalPerWeek = calculateITA(groupedData);
 
   // PUNTOS TOTAL POR ACTIVIDAD
-  const totalITAS = groupByType(data)
-  const { wiki, explanation, doubt, revision } = calculateITA(totalITAS)
+  const totalITAS = groupByType(activities);
+  const { wiki, explanation, doubt, revision } = calculateITA(totalITAS);
 
   return (
     <>
@@ -90,7 +53,7 @@ function Historical() {
           </div>
         </div>
 
-        <div>
+        <div id="puntos-ganados">
           <p className="font-bold	mb-5 mt-7">Puntos por actividad</p>
           <div className="card bg-white">
             <div className="card-body px-2 ">
@@ -129,7 +92,7 @@ function Historical() {
       </div>
       <FooterMenu />
     </>
-  )
+  );
 }
 
-export default Historical
+export default Historical;

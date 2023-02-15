@@ -8,11 +8,7 @@
       "password": "Test1-1234!",
       "framework": "Frontend React",
       "ITApoints": 123,
-      "ITAawards": [
-        "Solete",
-        "Megamind",
-        "Imparable"
-      ],
+      "ITAawards": ["Solete", "Megamind", "Imparable"],
       "activities": 30,
       "avatar": {
         "sex": "woman",
@@ -107,67 +103,243 @@
   "stackData": [
     {
       "id": "react-1",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "react",
       "title": "Context en 20 minutos",
+      "likes": 167,
       "description": "Teoría con ejemplos",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "react-2",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-14T08:42:25.717Z",
       "stack": "react",
       "title": "Access Existing Context across Multiple Files",
+      "likes": 300,
       "description": "Teoría con ejemplos",
+      "topic": "Props",
       "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
-      "type": { "video": false, "tutorial": true, "blog": true }
+      "type": {
+        "video": false,
+        "tutorial": false,
+        "blog": true
+      }
     },
     {
       "id": "react-3",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-08T07:42:25.717Z",
       "stack": "react",
       "title": "Cómo utilizar useReducer",
+      "likes": 2,
       "description": "Paso a paso de cómo utilizar useReducer en React",
+      "topic": "Hooks",
       "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "react-4",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "react",
       "title": "React + TypeScript",
+      "likes": 125,
       "description": "Cómo inicializar TP",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "angular-1",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "angular",
-      "title": "Context en 20 minutos",
+      "title": "Global Theme Angular",
+      "likes": 60,
       "description": "Teoría con ejemplos",
+      "topic": "Types",
       "url": "https://www.youtube.com/watch?v=gigKP6PPmW0",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "angular-2",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "angular",
-      "title": "Access Existing Context across Multiple Files",
+      "title": "Access to types",
+      "likes": 250,
       "description": "Teoría con ejemplos",
+      "topic": "Renders",
       "url": "https://stackoverflow.com/questions/49406602/angular-new-context-api-access-existing-context-across-multiple-files",
-      "type": { "video": false, "tutorial": true, "blog": true }
+      "type": {
+        "video": false,
+        "tutorial": true,
+        "blog": true
+      }
     },
     {
       "id": "angular-3",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "angular",
       "title": "Cómo utilizar hooks",
+      "likes": 8,
       "description": "Paso a paso de cómo utilizar useReducer en Angular",
+      "topic": "Mode",
       "url": "https://www.youtube.com/watch?v=_KNwCr6EJ8s",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     },
     {
       "id": "angular-4",
+      "createdBy": "Ona Costa",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "angular",
       "title": "Angular + TypeScript",
+      "likes": 125,
       "description": "Cómo inicializar TP",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
-      "type": { "video": true, "tutorial": true, "blog": false }
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "vue-1",
+      "createdBy": "Joan Artola",
+      "createdOn": "2023-02-10T09:42:25.717Z",
+      "stack": "vue",
+      "title": "Vue + TypeScript",
+      "likes": 25,
+      "description": "Typescript con Vue",
+      "topic": "Typescript + Vue",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "vue-2",
+      "createdBy": "Mariona Bosch",
+      "createdOn": "2023-02-12T09:42:25.717Z",
+      "stack": "vue",
+      "title": "Vue Components",
+      "likes": 25,
+      "description": "Componentes con Vue",
+      "topic": "Components",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "javascript-1",
+      "createdBy": "Mariona Bosch",
+      "createdOn": "2023-02-10T09:42:25.717Z",
+      "stack": "javascript",
+      "title": "Filters",
+      "likes": 20,
+      "description": "Filter method",
+      "topic": "Cúando utilizarlo",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "javascript-2",
+      "createdBy": "Joan Bosch",
+      "createdOn": "2023-02-12T09:42:25.717Z",
+      "stack": "javascript",
+      "title": "Maps",
+      "likes": 20,
+      "description": "Cómo implementarlo",
+      "topic": "Map",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "javascript-3",
+      "createdBy": "Mariona Bosch",
+      "createdOn": "2023-02-12T09:42:25.717Z",
+      "stack": "javascript",
+      "title": "Spread Operator",
+      "likes": 20,
+      "description": "Clonar objetos",
+      "topic": "Spread Operator",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "datascience-1",
+      "createdBy": "Luis Vicente",
+      "createdOn": "2023-02-11T09:42:25.717Z",
+      "stack": "datascience",
+      "title": "Modelos Predictivos",
+      "likes": 20,
+      "description": "Modelos Predictivos",
+      "topic": "Estructurar la data",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
+    },
+    {
+      "id": "datascience-2",
+      "createdBy": "Luis Vicente",
+      "createdOn": "2023-02-12T09:42:25.717Z",
+      "stack": "datascience",
+      "title": "Júpiter",
+      "likes": 20,
+      "description": "Cómo inicializarlo",
+      "topic": "Modelos Predictivos",
+      "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+      "type": {
+        "video": true,
+        "tutorial": true,
+        "blog": false
+      }
     }
   ]
 }

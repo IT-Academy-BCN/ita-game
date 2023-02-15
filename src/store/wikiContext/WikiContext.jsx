@@ -6,9 +6,9 @@ export const WikiContext = createContext();
 
 export const WikiContextProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
-  const [data, setData] = useState([]);
   const [stack, setStack] = useState('');
   const [stackData, setStackData] = useState([]);
+  const [originalStackData, setOriginalStackData] = useState([...stackData]);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -16,7 +16,6 @@ export const WikiContextProvider = ({ children }) => {
         const response = await axios.get(urls.categories);
         if (response.status === 200) {
           const { data } = response;
-          setData(data);
           setCategories(data);
         }
       } catch (error) {
@@ -28,11 +27,15 @@ export const WikiContextProvider = ({ children }) => {
   }, []);
 
   const getStackData = async (framework) => {
+    localStorage.removeItem('currentFramework');
+    localStorage.setItem('currentFramework', JSON.stringify({ framework }));
     try {
       const response = await axios.get(urls.stackData);
       if (response.status === 200) {
         const { data } = response;
+
         const selectedStack = data.filter((d) => d.stack === framework);
+        setOriginalStackData(selectedStack);
         setStackData(selectedStack);
         setStack(framework);
       }
@@ -53,9 +56,50 @@ export const WikiContextProvider = ({ children }) => {
       });
   };
 
+  const filterResourceByMediaType = (type) => {
+    const filteredResource = originalStackData.filter(
+      (d) => d.type[type] === true
+    );
+    setStackData(filteredResource);
+  };
+
+  const filterResourceByTopic = (topic) => {
+    const filteredResource = originalStackData.filter((d) => d.topic === topic);
+    setStackData(filteredResource);
+  };
+
+  const sortByDate = () => {
+    let copyOriginal = [...originalStackData];
+    copyOriginal.sort((a, b) => {
+      return new Date(b.createdOn) - new Date(a.createdOn);
+    });
+
+    setStackData(copyOriginal);
+  };
+  const sortByLikes = () => {
+    let copyOriginal = [...originalStackData];
+    copyOriginal.sort((a, b) => {
+      return b.likes - a.likes;
+    });
+
+    setStackData(copyOriginal);
+  };
+
   return (
     <WikiContext.Provider
-      value={{ categories, stackData, getStackData, addResource }}
+      value={{
+        categories,
+        stackData,
+        stack,
+        originalStackData,
+        getStackData,
+        addResource,
+        setStack,
+        filterResourceByMediaType,
+        filterResourceByTopic,
+        sortByDate,
+        sortByLikes,
+      }}
     >
       {children}
     </WikiContext.Provider>
