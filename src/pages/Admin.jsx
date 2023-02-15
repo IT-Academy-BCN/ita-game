@@ -23,6 +23,7 @@ const options = {
 
 const Admin = () => {
    const { categories } = useContext(WikiContext);
+   console.log('categories', categories);
    const [users, setUsers] = useState([]);
    const [startDate, setStartDate] = useState(new Date());
    // console.log('startDate', typeof startDate.toISOString());
@@ -43,6 +44,13 @@ const Admin = () => {
       getUsers();
    }, []);
 
+   const handleClick = () => {
+      const elem = document.activeElement;
+      if (elem) {
+         elem?.blur();
+      }
+   };
+
    return (
       <>
          <Navbar>Home (Admin)</Navbar>
@@ -53,6 +61,20 @@ const Admin = () => {
             </div>
             <div className="mx-7 mt-10 mb-0">
                <Title>Añadir nueva actividad</Title>
+            </div>
+            {/*  */}
+            <div className="dropdown">
+               <label tabIndex={0} className="btn m-1">
+                  Click
+               </label>
+               <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                  <li onClick={handleClick}>
+                     <a>Item 1</a>
+                  </li>
+                  <li onClick={handleClick}>
+                     <a>Item 2</a>
+                  </li>
+               </ul>
             </div>
             {/* DROPDOWN TYPES */}
             <div
@@ -74,10 +96,11 @@ const Admin = () => {
                </div>
                <ul tabIndex={0} className="dropdown-content  bg-transparent rounded-box w-full">
                   {categories.map((c) => (
-                     <div
+                     <li
                         className="card flex flex-row justify-between items-center p-2 my-1 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
                         key={c.id}
                         value={c.id}
+                        onClick={handleClick}
                      >
                         <div className="flex flex-row">
                            <div className="avatar">
@@ -94,7 +117,7 @@ const Admin = () => {
                               </h2>
                            </div>
                         </div>
-                     </div>
+                     </li>
                   ))}
                </ul>
             </div>
@@ -118,10 +141,11 @@ const Admin = () => {
                </div>
                <ul tabIndex={0} className="dropdown-content  bg-transparent rounded-box w-full">
                   {users.map((u) => (
-                     <div
+                     <li
                         className="card flex flex-row justify-between items-center p-2 my-1 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
                         key={u._id}
                         value={u._id}
+                        onClick={handleClick}
                      >
                         <div className="flex flex-row">
                            <div className="avatar">
@@ -135,7 +159,7 @@ const Admin = () => {
                               </h2>
                            </div>
                         </div>
-                     </div>
+                     </li>
                   ))}
                </ul>
             </div>
