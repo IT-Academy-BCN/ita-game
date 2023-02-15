@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../store/authentication/authContext';
+import { authContext } from '../store/authentication/authContext';
 import { Actions } from '../store/authentication/AuthReducer';
 import { FooterMenu, Navbar } from '../components';
 import { Card, Title } from '../components/atoms/index';
@@ -17,7 +17,7 @@ import sun from '../assets/images/sun-dynamic.png';
 function Profile() {
   const [nextMultiple, setNextMultiple] = useState(0);
   const [openModal, setOpenModal] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(authContext);
   const navigate = useNavigate();
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { authContext } from '../store/authentication/authContext';
 import { inputs } from '../components/atoms/input/Input';
 import Input from '../components/atoms/input/Input';
 
@@ -15,7 +15,7 @@ function Register() {
     confirmPassword: '',
   });
 
-  const { register, error } = useContext(AuthContext);
+  const { register, error } = useContext(authContext);
 
   const navigate = useNavigate();
 

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../store/authentication/authContext';
+import { authContext } from '../store/authentication/authContext';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
   });
   const navigate = useNavigate();
 
-  const { login, error } = useContext(AuthContext);
+  const { login, error } = useContext(authContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
