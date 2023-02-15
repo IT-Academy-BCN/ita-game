@@ -48,10 +48,8 @@ function Login() {
                   required
                   className="input focus:border-primary-500 w-full max-w-xs"
                   placeholder="Email address"
-                  value={values.email}
-                  onChange={(e) =>
-                    setValues((prev) => ({ ...prev, email: e.target.value }))
-                  }
+                  value={credentials.email}
+                  onChange={onChange}
                 />
               </div>
               <div>
@@ -65,10 +63,8 @@ function Login() {
                   required
                   className="input focus:border-primary-500 w-full max-w-xs"
                   placeholder="Contraseña"
-                  value={values.password}
-                  onChange={(e) =>
-                    setValues((prev) => ({ ...prev, password: e.target.value }))
-                  }
+                  value={credentials.password}
+                  onChange={onChange}
                 />
               </div>
             </div>
@@ -99,11 +95,13 @@ function Login() {
 
             <div>
               <button type="submit" className="btn btn-block btn-primary">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span>
-                Sign in
+                {state.loading ? 'Loading...' : 'Sign in'}
               </button>
             </div>
           </form>
+          <h2 className="text-red-700 self-center text-center">
+            {state.errorMessage && state.errorMessage}
+          </h2>
         </div>
         <div className="flex justify-center pb-10">
           <Link
