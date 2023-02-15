@@ -1,14 +1,54 @@
-import { createContext, useMemo, useReducer } from "react"
-import { initialState, AuthReducer } from "./AuthReducer"
+import axios from 'axios';
+import { createContext, useState } from 'react';
 
-const AuthContext = createContext(initialState)
+export const AuthContext = createContext();
 
-function AuthProvider({ children }) {
-  const [state, dispatch] = useReducer(AuthReducer, initialState)
-  const value = useMemo(() => ({ state, dispatch }), [state])
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-}
+export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-export { AuthContext }
+  const login = async (credentials) => {
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await axios.post(
+        'https://itacademy.onrender.com/auth/signin',
+        credentials
+      );
+      if (res.status === 200) {
+        setUser(res.data);
+        console.log(res.data);
+        setLoading(false);
+      }
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+      console.error(error);
+    }
+  };
 
-export default AuthProvider
+  const register = async (credentials) => {
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await axios.post(
+        'https://itacademy.onrender.com/api/users',
+        credentials
+      );
+      if (res.status === 200) {
+        setLoading(false);
+      }
+    } catch (error) {
+      setError(error);
+      setLoading(false);
+      console.error(error);
+    }
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, loading, error, login, register }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
