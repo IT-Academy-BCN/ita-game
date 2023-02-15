@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { AuthContextProvider } from './store/authentication/AuthContext';
+import { AuthContextProvider } from './store/authentication/authContext';
 import App from './App';
 import './index.css';
 import { WikiContextProvider } from './store/wikiContext/WikiContext';
