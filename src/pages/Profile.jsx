@@ -6,10 +6,10 @@ import { Card, Title } from "../components/atoms/index"
 import Badge from "../components/atoms/Badge"
 import { Modal } from "../components/molecules"
 import { useNavigate } from "react-router-dom"
-import folder from "../components/assets/images/folder-dynamic.png"
-import gym from "../components/assets/images/gym-dynamic-clay.png"
-import rocket from "../components/assets/images/rocket-dynamic.png"
-import sun from "../components/assets/images/sun-dynamic.png"
+import folder from "../assets/images/folder-dynamic.png"
+import gym from "../assets/images/gym-dynamic-clay.png"
+import rocket from "../assets/images/rocket-dynamic.png"
+import sun from "../assets/images/sun-dynamic.png"
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
@@ -24,7 +24,6 @@ function Profile() {
   useEffect(() => {
     setNextMultiple(Math.ceil(user.ITApoints / 50) * 50)
   }, [])
-
   const handleOpenModal = () => {
     setOpenModal(true)
   }
@@ -35,7 +34,6 @@ function Profile() {
     dispatch({ type: Actions.LOGOUT, payload: user })
     navigate("/")
   }
-
   // Fake user to obtain SVG and Data for looping
   const fakeUser = {
     ITAawards: [

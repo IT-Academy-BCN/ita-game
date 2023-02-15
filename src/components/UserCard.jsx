@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../store/authentication/AuthContext';
-import { AvatarTemp } from './index';
-import { NavHashLink } from 'react-router-hash-link';
+import React, { useContext } from "react"
+import { AuthContext } from "../store/authentication/AuthContext"
+import { AvatarTemp } from "./index"
+import { NavHashLink } from "react-router-hash-link"
+import rightArrow from "../assets/arrow_right.svg"
 
-const UserCard = () => {
-  const { state } = useContext(AuthContext);
-  const { user } = state;
+const UserCard = ({ points }) => {
+  const { state } = useContext(AuthContext)
+  const { user } = state
 
   return (
     <NavHashLink
@@ -28,16 +29,12 @@ const UserCard = () => {
       </div>
       <div className="flex flex-row ">
         <p>
-          <span className="font-bold text-sm text-black">+55 ITAS</span>
+          <span className="font-bold text-sm text-black">+{points} ITAS</span>
         </p>
-        <img
-          className="w-5 ml-3"
-          src="src/components/assets/arrow_right.svg"
-          alt="search"
-        />
+        <img className="w-5 ml-3" src={rightArrow} alt="search" />
       </div>
     </NavHashLink>
-  );
-};
+  )
+}
 
-export default UserCard;
+export default UserCard
