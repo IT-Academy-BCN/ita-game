@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { FooterMenu, Navbar } from '../components';
 import arrowDown from '../assets/arrow_down.svg';
 import { Title } from '../components/atoms';
 import avatar from '../assets/images/avatar.png';
 import thumbUp from '../assets/images/thumb-up-dynamic-color.png';
 import Calender from '../components/Calender';
+import { WikiContext } from '../store/wikiContext/WikiContext';
 
 const fakeAdmin = [
    { id: 'Ona Costa', img: avatar },
@@ -12,6 +13,7 @@ const fakeAdmin = [
 ];
 
 const Admin = () => {
+   const { categories } = useContext(WikiContext);
    const [startDate, setStartDate] = useState(new Date());
    // console.log('startDate', typeof startDate.toISOString());
    const hiddenBrowseButton = useRef(null);
@@ -25,6 +27,47 @@ const Admin = () => {
             </div>
             <div className="mx-7 mt-10 mb-0">
                <Title>Añadir nueva actividad</Title>
+            </div>
+            <div
+               className="card dropdown dropdown-bottom flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
+               tabIndex={0}
+            >
+               <div className="flex flex-row">
+                  <div className="avatar">
+                     <div className="w-14 rounded-full px-2 py-2">
+                        <img src={import.meta.resolve(`../assets/images/angular.png`)} alt="Angular logo" />
+                     </div>
+                  </div>
+                  <div className="flex flex-col justify-center pl-2 my-1">
+                     <h2 className="font-bold text-black">Angular</h2>
+                  </div>
+               </div>
+               <div>
+                  <img className="w-6" src={arrowDown} alt="Arrow down" />
+               </div>
+               <ul tabIndex={0} className="dropdown-content  bg-transparent rounded-box w-full">
+                  {categories.map((c) => (
+                     <div
+                        className="card flex flex-row justify-between items-center p-2 my-1 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
+                        key={c.id}
+                        value={c.id}
+                     >
+                        <div className="flex flex-row">
+                           <div className="avatar">
+                              <div className="w-14 rounded-full bg-slate-100 px-2 py-2">
+                                 <img
+                                    src={import.meta.resolve(`../assets/images/${c.stack}.png`)}
+                                    alt={`${c.stack}-logo`}
+                                 />
+                              </div>
+                           </div>
+                           <div className="flex flex-col justify-center pl-2 my-1">
+                              <h2 className="font-bold text-black">{c.stack}</h2>
+                           </div>
+                        </div>
+                     </div>
+                  ))}
+               </ul>
             </div>
             {fakeAdmin.map((f) => {
                return (
@@ -60,7 +103,6 @@ const Admin = () => {
                   Cargar Excel de actividades
                </button>
             </div>
-
             <FooterMenu />
          </div>
       </>
