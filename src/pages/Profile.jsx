@@ -17,27 +17,15 @@ function Profile() {
     'https://itacademy.onrender.com/api/activity/'
   )
 
-  // const totalPoints = isSuccess
-  //   ? activities
-  //       .filter(activity => activity?.doneBy._id === user._id)
-  //       .map(doneActivities => doneActivities.typeId.points)
-  //       .reduce((acc, current) => acc + current, 0)
-  //   : []
-
-  const totalPoints = isSuccess
+  const userDoneActivitiesPoints = isSuccess
     ? activities
         .filter(activity => activity?.doneBy._id === user._id)
-        .map(doneActivities => doneActivities.typeId.points)
-        .reduce((acc, current) => acc + current, 0)
+        .map(doneActivity => doneActivity.typeId.points)
     : []
 
-  const numberUserActivities = isSuccess
-    ? activities
-        .filter(activity => activity?.doneBy._id === user._id)
-        .map(doneActivities => doneActivities.typeId.points).length
-    : 0
+  const totalPoints = userDoneActivitiesPoints.reduce((acc, current) => acc + current, 0)
+  const numberUserActivities = userDoneActivitiesPoints.length
 
-    console.log(numberUserActivities)
   // data from the user.json
   const data = {
     name: user.name,
