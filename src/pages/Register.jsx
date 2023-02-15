@@ -49,11 +49,13 @@ function Register() {
         bgColor: '#58c914',
       },
     };
-    register(user);
-
-    if (!error) {
-      navigate('/');
-    }
+    register(user)
+      .then(() => {
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const inputArray = inputs(values.password);

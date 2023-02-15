@@ -14,10 +14,13 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(values);
-    if (!error) {
-      navigate('/');
-    }
+    login(values)
+      .then(() => {
+        navigate('/');
+      })
+      .catch(() => {
+        console.log(error);
+      });
   };
 
   return (
