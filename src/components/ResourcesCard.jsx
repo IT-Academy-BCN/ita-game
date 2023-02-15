@@ -64,7 +64,13 @@ const ResourcesCard = ({ title, likes, description, createdOn, createdBy }) => {
           </div>
           <div>
             <p className="font-bold text-secondary text-xs ml-3">
-              {createdBy}, {createdOn}
+              {createdBy},
+              {new Date(createdOn).toLocaleDateString('es-ES', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
             </p>
           </div>
         </div>

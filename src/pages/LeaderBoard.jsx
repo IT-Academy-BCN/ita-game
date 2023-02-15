@@ -1,9 +1,10 @@
 import DisplayModeSmall from '../components/DisplayModeSmall';
 import DisplayMode from '../components/DisplayMode';
 import { FooterMenu, Navbar } from '../components';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
+import { useContext } from 'react';
+import { ActivitiesContext } from '../store/activitiesContext/ActivitiesContext';
 
 const currentUser = {
   id: '63e9d29bb04cb600417abcb6',
@@ -20,6 +21,8 @@ const options = {
 };
 
 function LeaderBoard() {
+  const { activitiesAll } = useContext(ActivitiesContext);
+
   const [users, SetUsers] = useState();
   const [isLoading, SetIsLoading] = useState(false);
 
@@ -28,20 +31,10 @@ function LeaderBoard() {
     const weekTimestamp = Math.floor(Date.now() / 1000);
     const weekDate = DateTime.fromMillis(weekTimestamp * 1000);
     const startOfWeek = weekDate.startOf('week');
-    let arrayCategories = [];
-    // llamamos la API que nos devuelve un array con todas las actividades
-    const getCategoriesArray = async () => {
-      try {
-        const response = await axios.get(url, options);
-        if (response.status === 200) {
-          const { data } = response;
-          arrayCategories = data;
-        }
-      } catch (error) {
-        console.error(error);
-      }
+
+    const getActivitiesAll = () => {
       let users = [];
-      arrayCategories
+      activitiesAll
         // filtramos per la ultima semana
         .filter((item) => {
           const itemDate = DateTime.fromMillis(Date.parse(item.doneDate));
@@ -65,14 +58,14 @@ function LeaderBoard() {
           SetIsLoading(false);
         });
     };
-    getCategoriesArray();
-  }, []);
+    getActivitiesAll();
+  }, [activitiesAll]);
 
   return (
     <>
       <Navbar>Competición</Navbar>
       <div className="container pt-10 mx-auto flex flex-col">
-        <DisplayMode user={currentUser} />
+        <DisplayMode />
         <p className="text-lg font-semibold m-6 text-black">
           Clasificación semanal
         </p>
