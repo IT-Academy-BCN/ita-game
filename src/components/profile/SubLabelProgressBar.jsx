@@ -1,4 +1,5 @@
-function SubLabelProgressBar({ subLabeData: { points, multiple } }) {
+function SubLabelProgressBar({ subLabeData: { points, relativePoints } }) {
+  console.log(relativePoints)
   return (
     <div className="flex justify-between">
       <div className="flex justify-center">
@@ -11,7 +12,7 @@ function SubLabelProgressBar({ subLabeData: { points, multiple } }) {
       </div>
       <div className="flex justify-center">
         <p className="font-bold text-black text-sm">
-          {multiple - points}
+          {relativePoints - 100}
           <span className="ml-2 text-neutral-focus font-bold text-sm">
             para subir de nivel
           </span>

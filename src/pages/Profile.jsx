@@ -12,7 +12,6 @@ import CardProfile from '../components/profile/CardProfile'
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
 // UI:Grid on 'Insignias Ganadas' Cards
 
-
 function Profile() {
   const totalPoints = activities
     .filter(activity => activity.doneBy._id === user._id)
@@ -26,7 +25,7 @@ function Profile() {
     framework: user.framework,
     points: totalPoints,
     activities: user.activities,
-    multiple: Math.ceil(user.ITApoints / 50) * 50
+    relativePoints: (totalPoints / 100) * 50
   }
 
   // Fake user to obtain SVG and Data for looping
