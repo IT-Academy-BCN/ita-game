@@ -1,5 +1,5 @@
 function ProgressBar({ data: { points } }) {
-  const level = Math.ceil(points / 50);
+  const level = Math.ceil(points / 50)
   return (
     <div>
       <p className="uppercase font-bold">Nivel {level}</p>

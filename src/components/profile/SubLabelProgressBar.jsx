@@ -1,4 +1,4 @@
-function SubLabelProgressBar({ subLabeData: { points, relativePoints } }) {
+function SubLabelProgressBar({ subLabeData: { points } }) {
   const level = Math.ceil(points / 50)
   return (
     <div className="flex justify-between">

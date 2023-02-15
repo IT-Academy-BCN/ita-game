@@ -1,5 +1,4 @@
 import user from '../components/profile/mocks/user.json'
-import activities from '../components/profile/mocks/activities.json'
 import { FooterMenu, Navbar } from '../components'
 import folder from '../assets/images/rocket-dynamic.png'
 import rocket from '../assets/images/rocket-dynamic.png'
@@ -7,18 +6,23 @@ import sun from '../assets/images/sun-dynamic.png'
 import EarnBadges from '../components/profile/EarnBadges'
 import PendingBadges from '../components/profile/PendingBadges'
 import CardProfile from '../components/profile/CardProfile'
+import { useGetActivities } from '../hooks'
 
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
 // UI:Grid on 'Insignias Ganadas' Cards
 
 function Profile() {
-  const totalPoints = activities
-    .filter(activity => activity.doneBy._id === user._id)
-    .map(doneActivities => doneActivities.typeId.points)
-    .reduce((acc, current) => acc + current, 0)
+  const { data: activities, isSuccess } = useGetActivities(
+    'https://itacademy.onrender.com/api/activity/'
+  )
 
-  const level = Math.ceil(totalPoints / 50)
+  const totalPoints = isSuccess
+    ? activities
+        .filter(activity => activity?.doneBy._id === user._id)
+        .map(doneActivities => doneActivities.typeId.points)
+        .reduce((acc, current) => acc + current, 0)
+    : []
 
   // data from the user.json
   const data = {
@@ -27,7 +31,6 @@ function Profile() {
     framework: user.framework,
     points: totalPoints,
     activities: user.activities,
-    relativePoints: (totalPoints / 100) * level
   }
 
   // Fake user to obtain SVG and Data for looping
