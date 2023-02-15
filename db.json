@@ -104,7 +104,7 @@
     {
       "id": "react-1",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-10T09:42:25.717Z",
       "stack": "react",
       "title": "Context en 20 minutos",
       "likes": 167,
@@ -120,7 +120,7 @@
     {
       "id": "react-2",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-14T08:42:25.717Z",
       "stack": "react",
       "title": "Access Existing Context across Multiple Files",
       "likes": 300,
@@ -129,14 +129,14 @@
       "url": "https://stackoverflow.com/questions/49406602/react-new-context-api-access-existing-context-across-multiple-files",
       "type": {
         "video": false,
-        "tutorial": true,
+        "tutorial": false,
         "blog": true
       }
     },
     {
       "id": "react-3",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-08T07:42:25.717Z",
       "stack": "react",
       "title": "Cómo utilizar useReducer",
       "likes": 2,
@@ -152,12 +152,12 @@
     {
       "id": "react-4",
       "createdBy": "Ona Costa",
-      "createdOn": "14 febrero 2023",
+      "createdOn": "2023-02-12T09:42:25.717Z",
       "stack": "react",
       "title": "React + TypeScript",
       "likes": 125,
       "description": "Cómo inicializar TP",
-      "topic": "Components",
+      "topic": "Context",
       "url": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
       "type": {
         "video": true,
