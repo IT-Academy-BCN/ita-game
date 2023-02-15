@@ -71,9 +71,9 @@ function LeaderBoard() {
   return (
     <>
       <Navbar>Competición</Navbar>
-      <div className="container pt-10 mx-auto flex flex-col">
+      <div className="container pt-12 pb-12 mx-auto flex flex-col">
         <DisplayMode user={currentUser} />
-        <p className="text-lg font-semibold m-6 text-black">
+        <p className="text-lg font-semibold mt-6 mx-6 text-black">
           Clasificación semanal
         </p>
         {isLoading && <p className="text-center">Loading...</p>}
