@@ -3,6 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { inputs } from "../components/atoms/input/Input";
 import Input from "../components/atoms/input/Input";
+import { Modal } from "../components/molecules";
+import { Title } from "../components/atoms";
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -21,51 +23,53 @@ function Register() {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const [isChecked, setIsChecked] = useState(false)
-
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if(isChecked){
-    const user = {
-      name: values.name,
-      surname: values.surname,
-      email: values.email,
-      password: values.password,
-      framework: "",
-      ITApoints: 0,
-      ITAawards: [],
-      activities: 0,
-      avatar: {
-        sex: values.sex,
-        hairStyle: "normal",
-        hairColor: "#BA4A00",
-        faceColor: "#FAD7A0",
-        hatStyle: "beanie",
-        hatColor: "#F1C40F",
-        eyeStyle: "smile", // circle, oval, smile
-        glassesStyle: "round", // none, round, square
-        noseStyle: "long", //short, long, round
-        shirtStyle: "short", // hoody, short, polo
-        shirtColor: "#BB8FCE",
-        bgColor: "#58c914",
-      },
-    };
-    try {
-      await axios.post("http://localhost:3002/users", user);
-      navigate("/login");
-    } catch (err) {
-      console.log(err);
-      // TODO: implement better way of error handling
+    if (isChecked) {
+      const user = {
+        name: values.name,
+        surname: values.surname,
+        email: values.email,
+        password: values.password,
+        framework: "",
+        ITApoints: 0,
+        ITAawards: [],
+        activities: 0,
+        avatar: {
+          sex: values.sex,
+          hairStyle: "normal",
+          hairColor: "#BA4A00",
+          faceColor: "#FAD7A0",
+          hatStyle: "beanie",
+          hatColor: "#F1C40F",
+          eyeStyle: "smile", // circle, oval, smile
+          glassesStyle: "round", // none, round, square
+          noseStyle: "long", //short, long, round
+          shirtStyle: "short", // hoody, short, polo
+          shirtColor: "#BB8FCE",
+          bgColor: "#58c914",
+        },
+      };
+      try {
+        await axios.post("http://localhost:3002/users", user);
+        navigate("/login");
+      } catch (err) {
+        console.log(err);
+        // TODO: implement better way of error handling
+      }
     }
-    }else{ 
-      console.log("TIENES QUE ACEPTAR TÉRMINOS")
-  }
   };
 
   const inputArray = inputs(values.password);
 
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  console.log("checked", isChecked)
 
   return (
     <div className="flex min-h-screen justify-center pt-20 px-4">
@@ -82,31 +86,54 @@ function Register() {
             method="POST"
             onSubmit={handleSubmit}
           >
-            <input type="hidden" name="remember" defaultValue="true" />
-            <div className="grid gap-3 rounded-md shadow-sm">
-              {inputArray.map((input) => (
-                <Input
-                  key={input.id}
-                  {...input}
-                  value={values[input.name]}
-                  onChange={onChange}
-                />
-              ))}
-            </div>
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Pick your avatar</span>
-                <span className="label-text-alt">Woman/Man</span>
-              </label>
-              <select
-                name="sex"
-                className="select select-bordered"
-                onChange={onChange}
-              >
-                <option value="woman">woman</option>
-                <option value="man">man</option>
-              </select>
-            </div>
+            {openModal ? (
+              <Modal>
+                <div className="flex flex-col">
+                  <div className="card-title justify-between">
+                    <Title>Términos y condiciones</Title>
+                    <button
+                      className="btn btn-circle bg-secondary"
+                      onClick={() => setOpenModal(false)}
+                    >
+                      X
+                    </button>
+                  </div>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Illo, omnis voluptatum aut qui temporibus reiciendis,
+                  aspernatur necessitatibus velit delectus assumenda
+                  exercitationem vero recusandae, voluptate iure eius totam
+                  architecto suscipit iusto.
+                </div>
+              </Modal>
+            ) : (
+              <>
+                <input type="hidden" name="remember" defaultValue="true" />
+                <div className="grid gap-3 rounded-md shadow-sm">
+                  {inputArray.map((input) => (
+                    <Input
+                      key={input.id}
+                      {...input}
+                      value={values[input.name]}
+                      onChange={onChange}
+                    />
+                  ))}
+                </div>
+                <div className="form-control w-full max-w-xs">
+                  <label className="label">
+                    <span className="label-text">Pick your avatar</span>
+                    <span className="label-text-alt">Woman/Man</span>
+                  </label>
+                  <select
+                    name="sex"
+                    className="select select-bordered"
+                    onChange={onChange}
+                  >
+                    <option value="woman">woman</option>
+                    <option value="man">man</option>
+                  </select>
+                </div>
+              </>
+            )}
 
             <div className="form-control">
               <label className="flex gap-2">
@@ -116,13 +143,20 @@ function Register() {
                   onChange={() => setIsChecked(!isChecked)}
                   checked={isChecked}
                 />
-                <span className="text-black">Acepto <Link className="underline cursor-pointer" to="/">términos legales</Link></span>
+                <span className="text-black">
+                  Acepto{" "}
+                  <span
+                    className="underline cursor-pointer"
+                    onClick={handleOpenModal}
+                  >
+                    términos legales
+                  </span>
+                </span>
               </label>
             </div>
 
-
             <div className="pt-4">
-              <button type="submit" className="btn btn-block btn-primary">
+              <button type="submit" className={`btn btn-block btn-primary ${!isChecked && "cursor-not-allowed"}`} >
                 <span className="font-bold">Registrarme</span>
               </button>
             </div>
