@@ -18,6 +18,8 @@ function Profile() {
     .map(doneActivities => doneActivities.typeId.points)
     .reduce((acc, current) => acc + current, 0)
 
+  const level = Math.ceil(totalPoints / 50)
+
   // data from the user.json
   const data = {
     name: user.name,
@@ -25,7 +27,7 @@ function Profile() {
     framework: user.framework,
     points: totalPoints,
     activities: user.activities,
-    relativePoints: (totalPoints / 100) * 50
+    relativePoints: (totalPoints / 100) * level
   }
 
   // Fake user to obtain SVG and Data for looping
