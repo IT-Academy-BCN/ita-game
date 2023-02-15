@@ -16,7 +16,7 @@ function Input({
   const handleFocus = () => {
     setFocused(true);
   };
-  console.log(focused);
+ 
   return (
     <div>
       <label htmlFor={id} className="sr-only">
