@@ -10,9 +10,9 @@ export default function DisplayMode({ user }) {
       <div className="flex flex-row justify-start mb-6">
         <AvatarTemp />
         <div className="flex flex-col pl-6 ">
-          <p className="text-black font-bold ">{user.name}</p>
+          <p className="text-black font-bold">{user.name}</p>
           <p>jQuery</p>
-          <div className="flex flex-row ">
+          <div className="flex flex-row mt-3">
             <img
               src={medal}
               alt="medalla"
