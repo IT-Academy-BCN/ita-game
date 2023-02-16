@@ -13,8 +13,8 @@ const Wiki = () => {
   return (
     <>
       <Navbar>Wiki</Navbar>
-      <div className="container min-w-full flex flex-col bg-white pb-10">
-        <div className="bg-slate-200  pt-20">
+      <div className="container min-w-full flex flex-col pb-10">
+        <div className="pt-20">
           <div className="card flex  flex-row justify-between h-20 items-center my-2 mx-6 border border-stone-300 bg-white hover:border-stone-400">
             <div className="h-full rounded-l-xl rounded-r-3xl  bg-primary w-24 mr-6">
               <div className="flex items-center justify-start ml-4 h-full">
@@ -54,7 +54,9 @@ const Wiki = () => {
             </div>
           </div>
         </div>
-        <div className="mx-7 mt-10 mb-0">
+      </div>
+      <div className="container min-w-full flex flex-col pb-10 bg-white -mt-12">
+        <div className="mx-7 mt-10 mb-0 bg-white">
           <Title>Categorías</Title>
         </div>
         {categories.map((c) => (
