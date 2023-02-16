@@ -22,7 +22,7 @@ export const initialState = {
       noseStyle: 'long',
       shirtStyle: 'short',
       // shirtColor: '#BB8FCE',
-      bgColor: '#58c914'
+      bgColor: '#EBEBEB'
     }
   }
 }
