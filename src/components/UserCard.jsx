@@ -1,17 +1,11 @@
-
-import React, { useContext } from "react"
-import { AuthContext } from "../store/authentication/AuthContext"
-import { AvatarTemp } from "./index"
-import { NavHashLink } from "react-router-hash-link"
-import rightArrow from "../assets/arrow_right.svg"
-import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
+import React, { useContext } from "react";
+import { AuthContext } from "../store/authentication/AuthContext";
+import { AvatarTemp } from "./index";
+import { NavHashLink } from "react-router-hash-link";
+import rightArrow from "../assets/arrow_right.svg";
+import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext";
 
 const UserCard = ({ points }) => {
-  const { state } = useContext(AuthContext)
-  const { user } = state
-  const { activities } = useContext(ActivitiesContext)
-
-
   return (
     <NavHashLink
       smooth
@@ -36,7 +30,7 @@ const UserCard = ({ points }) => {
         <img className="w-5 ml-3" src={rightArrow} alt="search" />
       </div>
     </NavHashLink>
-  )
-}
+  );
+};
 
-export default UserCard
+export default UserCard;
