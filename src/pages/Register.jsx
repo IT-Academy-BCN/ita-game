@@ -143,9 +143,7 @@ function Register() {
                     <span className="label-text-alt">Woman/Man</span>
                   </label>
                <div className="flex justify-center">
-                 
                       <Avatar edit  />
-                 
                </div>
                 </div>
               </>
