@@ -144,7 +144,7 @@ function Register() {
                   </label>
                <div className="flex justify-center">
                  
-                      <Avatar edit />
+                      <Avatar edit  />
                  
                </div>
                 </div>
