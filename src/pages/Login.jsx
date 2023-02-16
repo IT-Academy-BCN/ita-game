@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 import { useNavigate } from 'react-router-dom';
-import { Actions } from '../store/authentication/AuthReducer';
+import { Actions } from '../store/authentication/authReducer';
 import axios from 'axios';
 
-const API_URL = 'https://itacademy.onrender.com/auth/signin'; 
+const API_URL = 'https://itacademy.onrender.com/auth/signin';
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -33,7 +33,7 @@ function Login() {
         navigate('/');
       }
     } catch (err) {
-      dispatch({type: Actions.LOGIN_ERROR, payload: err.message})
+      dispatch({ type: Actions.LOGIN_ERROR, payload: err.message });
       console.log('Login failed', err);
       // TODO: implement better error handling
     }
@@ -114,11 +114,13 @@ function Login() {
 
             <div>
               <button type="submit" className="btn btn-block btn-primary">
-                {state.loading? 'Loading...' : 'Sign in'}
+                {state.loading ? 'Loading...' : 'Sign in'}
               </button>
             </div>
           </form>
-          <h2 className='text-red-700 self-center text-center'>{state.errorMessage && state.errorMessage}</h2>
+          <h2 className="text-red-700 self-center text-center">
+            {state.errorMessage && state.errorMessage}
+          </h2>
         </div>
         <div className="flex justify-center pb-10">
           <Link

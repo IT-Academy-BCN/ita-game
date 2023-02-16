@@ -1,0 +1,302 @@
+[
+  {
+      "_id": "63eca309259a0d004199e6de",
+      "type": "revision",
+      "created": "2023-02-15T09:16:57.567Z",
+      "doneDate": "2023-02-15T09:16:57.567Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1b4b04cb600417abcb3",
+          "type": "revision",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63ec9500259a0d004199e6dd",
+      "type": "revision",
+      "created": "2023-02-15T08:17:04.903Z",
+      "doneDate": "2023-02-15T08:17:04.904Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1b4b04cb600417abcb3",
+          "type": "revision",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d3a2b04cb600417abcc2",
+      "type": "explanation",
+      "created": "2023-02-13T06:07:30.686Z",
+      "doneDate": "2023-02-13T06:07:30.686Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1a8b04cb600417abcb2",
+          "type": "explanation",
+          "points": 30
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d39eb04cb600417abcc1",
+      "type": "explanation",
+      "created": "2023-02-13T06:07:26.643Z",
+      "doneDate": "2023-02-13T06:07:26.643Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1a8b04cb600417abcb2",
+          "type": "explanation",
+          "points": 30
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d39eb04cb600417abcc0",
+      "type": "explanation",
+      "created": "2023-02-13T06:07:26.183Z",
+      "doneDate": "2023-02-13T06:07:26.183Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1a8b04cb600417abcb2",
+          "type": "explanation",
+          "points": 30
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d397b04cb600417abcbf",
+      "type": "revision",
+      "created": "2023-02-13T06:07:19.271Z",
+      "doneDate": "2023-02-13T06:07:19.271Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1b4b04cb600417abcb3",
+          "type": "revision",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d394b04cb600417abcbe",
+      "type": "revision",
+      "created": "2023-02-13T06:07:16.812Z",
+      "doneDate": "2023-02-13T06:07:16.812Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d26fb04cb600417abcb5",
+          "name": "Pepee"
+      },
+      "typeId": {
+          "_id": "63e9d1b4b04cb600417abcb3",
+          "type": "revision",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d33fb04cb600417abcbd",
+      "type": "revision",
+      "created": "2023-02-13T06:05:51.184Z",
+      "doneDate": "2023-02-13T06:05:51.184Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e9d1b4b04cb600417abcb3",
+          "type": "revision",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d33eb04cb600417abcbc",
+      "type": "revision",
+      "created": "2023-02-13T06:05:50.321Z",
+      "doneDate": "2023-02-13T06:05:50.321Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e9d1b4b04cb600417abcb3",
+          "type": "revision",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d327b04cb600417abcbb",
+      "type": "wiki",
+      "created": "2023-02-13T06:05:27.590Z",
+      "doneDate": "2023-02-13T06:05:27.590Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e64c68f3e26e0040bd6792",
+          "type": "wiki",
+          "points": 5
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d322b04cb600417abcba",
+      "type": "doubt",
+      "created": "2023-02-13T06:05:22.999Z",
+      "doneDate": "2023-02-13T06:05:22.999Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e9d1a1b04cb600417abcb1",
+          "type": "doubt",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d321b04cb600417abcb9",
+      "type": "doubt",
+      "created": "2023-02-13T06:05:21.652Z",
+      "doneDate": "2023-02-13T06:05:21.652Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e9d1a1b04cb600417abcb1",
+          "type": "doubt",
+          "points": 10
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d31db04cb600417abcb8",
+      "type": "explanation",
+      "created": "2023-02-13T06:05:17.241Z",
+      "doneDate": "2023-02-13T06:05:17.241Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e9d1a8b04cb600417abcb2",
+          "type": "explanation",
+          "points": 30
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e9d316b04cb600417abcb7",
+      "type": "wiki",
+      "created": "2023-02-13T06:05:10.579Z",
+      "doneDate": "2023-02-13T06:05:10.579Z",
+      "createdBy": {
+          "_id": "63e9d139b04cb600417abcb0",
+          "name": "luis"
+      },
+      "doneBy": {
+          "_id": "63e9d29bb04cb600417abcb6",
+          "name": "Ona Costa"
+      },
+      "typeId": {
+          "_id": "63e64c68f3e26e0040bd6792",
+          "type": "wiki",
+          "points": 5
+      },
+      "__v": 0
+  },
+  {
+      "_id": "63e64d2cf3e26e0040bd6794",
+      "type": "wiki",
+      "created": "2023-02-10T13:57:00.128Z",
+      "doneDate": "2023-02-10T13:57:00.128Z",
+      "createdBy": {
+          "_id": "63e645c760e6610040667efd",
+          "name": "vicenlu"
+      },
+      "doneBy": {
+          "_id": "63e64ceaf3e26e0040bd6793",
+          "name": "pruebas"
+      },
+      "typeId": {
+          "_id": "63e64c68f3e26e0040bd6792",
+          "type": "wiki",
+          "points": 5
+      },
+      "__v": 0
+  }
+]
