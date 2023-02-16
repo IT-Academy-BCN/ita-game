@@ -1,6 +1,6 @@
 import arrowRight from '../assets/arrow_right.svg';
 
-export default function DisplayModeWiki({ name, resource, theme }) {
+export default function DisplayModeWiki({ name, resource, theme, topicName }) {
   return (
     <div className="card flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300 hover:border-stone-400">
       <div className="flex flex-row">
@@ -13,7 +13,7 @@ export default function DisplayModeWiki({ name, resource, theme }) {
           </div>
         </div>
         <div className="flex flex-col justify-around pl-2 my-1">
-          <h2 className="font-bold text-black">{name}</h2>
+          <h2 className="font-bold text-black">{topicName}</h2>
           <div className="flex flex-row gap-2 text-xs font-semibold text-stone-500">
             <p>{resource} Recursos</p>
             <p>-</p>
