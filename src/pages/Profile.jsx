@@ -1,3 +1,4 @@
+
 import user from '../components/profile/mocks/user.json'
 import { FooterMenu, Navbar } from '../components'
 import folder from '../assets/images/rocket-dynamic.png'
@@ -13,18 +14,20 @@ import { useGetActivities } from '../hooks'
 // UI:Grid on 'Insignias Ganadas' Cards
 
 function Profile() {
+
   const [nextMultiple, setNextMultiple] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50);
-  }, []);
 
+  useEffect(() => {
+    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50)
+  }, [])
   const handleOpenModal = () => {
-    setOpenModal(true);
-  };
+    setOpenModal(true)
+  }
+
 
 
   const { data: activities, isSuccess } = useGetActivities(
@@ -49,6 +52,7 @@ function Profile() {
     activities: numberUserActivities
   }
 
+
   // Fake user to obtain SVG and Data for looping
   const fakeUsers = {
     ITAawards: [
@@ -67,6 +71,7 @@ function Profile() {
           <CardProfile data={data} />
           <EarnBadges fakeUsers={fakeUsers} />
           <PendingBadges fakeUsers={fakeUsers} />
+
         </div>
         <FooterMenu />
       </div>

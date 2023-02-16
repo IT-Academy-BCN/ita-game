@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { AuthContextProvider } from './store/authentication/authContext';
@@ -15,5 +16,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ActivitiesContextProvider>
       </WikiContextProvider>
     </AuthContextProvider>
+
   </React.StrictMode>
-);
+)
