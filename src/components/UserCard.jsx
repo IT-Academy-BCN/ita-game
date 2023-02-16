@@ -1,16 +1,15 @@
-
 import React, { useContext } from "react"
-import { AuthContext } from "../store/authentication/AuthContext"
+import { AuthContext } from "../store/authentication/authContext"
 import { AvatarTemp } from "./index"
 import { NavHashLink } from "react-router-hash-link"
 import rightArrow from "../assets/arrow_right.svg"
 import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
 
 const UserCard = ({ points }) => {
-  const { state } = useContext(AuthContext)
-  const { user } = state
-  const { activities } = useContext(ActivitiesContext)
-
+  const { user } = useContext(AuthContext)
+  // const { user } = state
+  // const { activities } = useContext(ActivitiesContext)
+  console.log("user", user)
 
   return (
     <NavHashLink
@@ -25,7 +24,7 @@ const UserCard = ({ points }) => {
           </span>
         </AvatarTemp>
         <div className="flex flex-col justify-center ml-6">
-          <h2 className="font-bold text-black">user name</h2>
+          <h2 className="font-bold text-black">{user && user.user.name}</h2>
           <p className="text-secondary font-bold text-xs">Semana 34</p>
         </div>
       </div>
