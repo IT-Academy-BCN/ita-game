@@ -1,13 +1,12 @@
-
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
 import { inputs } from "../components/atoms/input/Input";
 import Input from "../components/atoms/input/Input";
 import Swal from "sweetalert2";
 import { AuthContext } from '../store/authentication/authContext';
+import { Title } from "../components/atoms";
+import Modal from "../components/molecules/Modal";
 
-const API_URL = "https://itacademy.onrender.com/api/users";
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -36,15 +35,10 @@ function Register() {
 
   const [isChecked, setIsChecked] = useState(false);
   
-  const handleSubmit = async (e) => {
+  
 
   const { register, error } = useContext(AuthContext);
 
-  const navigate = useNavigate();
-
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,18 +68,16 @@ function Register() {
       },
     };
     if (isChecked) {
-      try {
-        setState((prev) => ({ ...prev, loading: true }));
-        await axios.post(API_URL, user);
-        setState((prev) => ({ ...prev, loading: false }));
-        navigate("/login");
-      } catch (err) {
-        setState((prev) => ({ ...prev, errorMessage: err, loading: false }));
-        showAlert(state.errorMessage);
-        console.log(err);
-        // TODO: implement better way of error handling
+
+      register(user)
+      .then(() => {
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
       }
-    }
+    
   };
 
   const inputArray = inputs(values.password);
@@ -185,7 +177,7 @@ function Register() {
 
             <button type="submit" className={`btn btn-block btn-primary ${!isChecked && "cursor-not-allowed"}`}>
                 <span className="font-bold">
-                  {state.loading ? "Loading..." : "Registrarme"}
+                  Registrarme
                 </span>
 
               </button>
