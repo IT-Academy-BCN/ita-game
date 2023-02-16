@@ -7,9 +7,6 @@ import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
 
 const UserCard = ({ points }) => {
   const { user } = useContext(AuthContext)
-  // const { user } = state
-  // const { activities } = useContext(ActivitiesContext)
-  console.log("user", user)
 
   return (
     <NavHashLink

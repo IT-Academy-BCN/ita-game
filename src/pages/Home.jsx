@@ -21,12 +21,6 @@ function Home() {
     setData(groupedData)
   }, [activities])
 
-  // ==> PARECE QUE DATA YA NO SE ESTÁ USANDO!! Sí se usan, pero cuando no hay login
-  // son los datos hardcodeados
-  console.log("debugandito", data)
-  console.log("a ver", totalPerWeek)
-  console.log("current Week", currentWeekData)
-
   return (
     <>
       <Navbar>Resumen Semanal</Navbar>
