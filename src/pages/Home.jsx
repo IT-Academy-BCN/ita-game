@@ -41,16 +41,16 @@ function Home() {
         <div className="flex justify-center items-center">
           <WeeklyResume data={data} />
         </div>
-        <NavLink to="/admin" className="flex justify-end mr-16 my-5">
+        <NavLink to="/admin" className="flex justify-center mx-6 my-5">
           <p className="font-bold">Ir a admin (pruebas)</p>
         </NavLink>
         <div className="flex justify-center">
-          <h4 className='flex gap-0.5'>
-            Creado con <span class="material-symbols-outlined">favorite</span> 
+          <h4 className='flex gap-0.5 text-xs'>
+            Creado con <span class="material-symbols-outlined text-sm">favorite</span> 
             por
             <span
               onClick={() => setIsModal((prev) => !prev)}
-              className="underline cursor-pointer ml-2"
+              className="underline cursor-pointer"
             >
                React Team
             </span>
