@@ -5,8 +5,7 @@ import { NavHashLink } from 'react-router-hash-link';
 import rightArrow from '../assets/arrow_right.svg';
 
 const UserCard = () => {
-  const { state } = useContext(AuthContext);
-  const { user } = state;
+  const { user } = useContext(AuthContext);
 
   return (
     <NavHashLink

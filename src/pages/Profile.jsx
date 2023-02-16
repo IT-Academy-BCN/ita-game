@@ -13,6 +13,20 @@ import { useGetActivities } from '../hooks'
 // UI:Grid on 'Insignias Ganadas' Cards
 
 function Profile() {
+  const [nextMultiple, setNextMultiple] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setNextMultiple(Math.ceil(user.ITApoints / 50) * 50);
+  }, []);
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+
   const { data: activities, isSuccess } = useGetActivities(
     'https://itacademy.onrender.com/api/activity/'
   )

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AuthProvider from './store/authentication/authContext';
+import { AuthContextProvider } from './store/authentication/authContext';
 import App from './App';
 import './index.css';
 import { WikiContextProvider } from './store/wikiContext/WikiContext';
@@ -8,12 +8,12 @@ import { ActivitiesContextProvider } from './store/activitiesContext/ActivitiesC
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
+    <AuthContextProvider>
       <WikiContextProvider>
         <ActivitiesContextProvider>
           <App />
         </ActivitiesContextProvider>
       </WikiContextProvider>
-    </AuthProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );
