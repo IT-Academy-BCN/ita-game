@@ -1,35 +1,26 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../store/authentication/AuthContext';
+import { AuthContext } from '../store/authentication/authContext';
 import { useNavigate } from 'react-router-dom';
-import { Actions } from '../store/authentication/AuthReducer';
-import axios from 'axios';
 
 function Login() {
   const [values, setValues] = useState({
     email: '',
     password: '',
   });
-  const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const { login, error } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      dispatch({ type: Actions.LOGIN_START });
-      const res = await axios.get('http://localhost:3002/users');
-      // TODO: if it were a real backend I suppose there is no need find() method
-      const currentUser = res.data.find((item) => item.email === values.email);
-      if (currentUser.password === values.password) {
-        dispatch({ type: Actions.LOGIN_SUCCESS, payload: currentUser });
-        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    login(values)
+      .then(() => {
         navigate('/');
-      } // TODO: else I could put some logic to inform a user that its incorrect password/user
-    } catch (err) {
-      dispatch({ type: Actions.LOGIN_ERROR });
-      console.log('Login failed', err);
-      // TODO: implement better error handling
-    }
+      })
+      .catch(() => {
+        console.log(error);
+      });
   };
 
   return (

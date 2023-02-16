@@ -1,6 +1,5 @@
-import { useRef, useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../store/authentication/AuthContext';
 import { WikiContext } from '../../store/wikiContext/WikiContext';
 
 const NewResource = ({ setOpenModal }) => {
@@ -33,7 +32,7 @@ const NewResource = ({ setOpenModal }) => {
     const resource = {
       id: `${stack}-${Math.floor(Math.random() * (100 - 0) + 0)}`,
       createdBy: 'Ona',
-      createdOn: '8 septiembre 2022',
+      createdOn: new Date().toISOString(),
       stack: stack,
       title: values.title,
       likes: 0,

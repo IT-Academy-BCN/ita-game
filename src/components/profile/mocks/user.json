@@ -1,0 +1,35 @@
+{
+  "following": [],
+  "followers": [],
+  "_id": "63e9d26fb04cb600417abcb5",
+  "name": "Pepee",
+  "surname": "Artola",
+  "email": "albert@gmail.com",
+  "type": "React",
+  "updated": "2023-02-14T09:10:00.088Z",
+  "password": "Test1-1234!",
+  "admin": true,
+  "framework": "Frontend React",
+  "ITApoints": 70,
+  "ITAawards": [
+    "Solete",
+    "Megamind",
+    "Imparable"
+  ],
+  "activities": 30,
+  "created": "2023-02-13T05:57:13.924Z",
+  "avatar": {
+    "sex": "woman",
+    "hairStyle": "normal",
+    "hairColor": "#BA4A00",
+    "faceColor": "#FAD7A0",
+    "hatStyle": "beanie",
+    "hatColor": "#F1C40F",
+    "eyeStyle": "smile",
+    "glassesStyle": "round",
+    "noseStyle": "long",
+    "shirtStyle": "short",
+    "shirtColor": "#BB8FCE",
+    "bgColor": "#58c914"
+  }
+}

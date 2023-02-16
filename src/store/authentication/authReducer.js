@@ -1,12 +1,9 @@
 import { createNextState } from '@reduxjs/toolkit';
-let user = localStorage.getItem('currentUser')
-  ? JSON.parse(localStorage.getItem('currentUser'))
-  : '';
 
 export const initialState = {
-  user: user,
+  user: '',
   loading: false,
-  isError: false,
+  errorMessage: null,
 };
 
 export const Actions = {
@@ -27,14 +24,14 @@ export const AuthReducer = (state = initialState, action) => {
         draft.user = action.payload;
         draft.loading = false;
       });
-    case Actions.LOGIN_ERROR:
+    case Actions.LOGIN_ERROR: 
       return createNextState(state, (draft) => {
         draft.loading = false;
-        draft.isError = true;
+        draft.errorMessage = action.payload
       });
     case Actions.LOGOUT:
       return createNextState(state, (draft) => {
-        draft.user = action.payload;
+        draft.user = '';
       });
     default:
       state;

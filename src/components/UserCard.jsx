@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react"
 import { AuthContext } from "../store/authentication/AuthContext"
 import { AvatarTemp } from "./index"
@@ -9,6 +10,7 @@ const UserCard = ({ points }) => {
   const { state } = useContext(AuthContext)
   const { user } = state
   const { activities } = useContext(ActivitiesContext)
+
 
   return (
     <NavHashLink
