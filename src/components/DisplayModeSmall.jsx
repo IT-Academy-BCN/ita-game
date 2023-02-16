@@ -10,9 +10,9 @@ export default function DisplayModeSmall({
 }) {
   let borderColor = "";
   if (position === 1) {
-    borderColor = "border-2 border-yellow-500"; // cambiarlo por oro
+    borderColor = "border-2 border-yellow-500"; // cambiar por oro
   } else if (position === 2) {
-    borderColor = "border-2 border-gray-500"; // cambiarlo por plata
+    borderColor = "border-2 border-gray-500"; // cambiar por plata
   } else if (position === 3) {
     borderColor = "border-2 border-red-500"; // cambair por bronce
   }
@@ -26,7 +26,7 @@ export default function DisplayModeSmall({
 
   let colorIndex = "";
   if (user.name === currentUser.name) {
-    colorIndex = "badge-secondary"; // no se puede escoger directamente el color que quieres. Hay que escoger entre primary, secondary, neutral y algunos más.
+    colorIndex = "badge-secondary text-white"; // no se puede escoger directamente el color del bg que quieres. Hay que escoger entre primary, secondary, neutral y algunos más.
   } else {
     colorIndex = "badge-primary";
   }
