@@ -64,7 +64,8 @@ const Wiki = () => {
             key={c.id}
           >
             <DisplayModeWiki
-              name={c.stack.charAt(0).toUpperCase() + c.stack.slice(1)}
+              topicName={c.stack.charAt(0).toUpperCase() + c.stack.slice(1)}
+              name={c.stack}
               resource={c.resource}
               theme={c.theme}
             />
