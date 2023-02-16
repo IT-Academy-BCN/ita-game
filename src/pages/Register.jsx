@@ -1,15 +1,12 @@
-
-import { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { inputs } from "../components/atoms/input/Input";
-import Input from "../components/atoms/input/Input";
-import Swal from "sweetalert2";
-import { AuthContext } from '../store/authentication/authContext';
-import { Title } from "../components/atoms";
-import Modal from "../components/molecules/Modal";
-import Avatar from "../components/avatar/Avatar";
-
->>>>>>> main
+import { useContext, useState } from "react"
+import { useNavigate, Link } from "react-router-dom"
+import { inputs } from "../components/atoms/input/Input"
+import Input from "../components/atoms/input/Input"
+import Swal from "sweetalert2"
+import { AuthContext } from "../store/authentication/authContext"
+import { Title } from "../components/atoms"
+import Modal from "../components/molecules/Modal"
+import Avatar from "../components/avatar/Avatar"
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -137,9 +134,9 @@ function Register() {
                     <span className="label-text">Pick your avatar</span>
                     <span className="label-text-alt">Woman/Man</span>
                   </label>
-               <div className="flex justify-center">
-                      <Avatar edit  />
-               </div>
+                  <div className="flex justify-center">
+                    <Avatar edit />
+                  </div>
                 </div>
               </>
             )}
