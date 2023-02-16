@@ -1,7 +1,6 @@
-
 import { useContext, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
-import { Navbar, FooterMenu, UserCard } from "../components"
+import { Navbar, FooterMenu, UserCard, ParticipantsModal } from "../components"
 import { WeeklyResume } from "../components"
 import useCurrentWeek from "../hooks/useCurrentWeek"
 import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
@@ -11,6 +10,7 @@ import { AuthContext } from '../store/authentication/authContext';
 
 
 function Home() {
+  const [isModal, setIsModal] = useState(false);
   const [data, setData] = useState([])
   const [name, setName] = useState("")
   const { activities } = useContext(ActivitiesContext)
@@ -56,6 +56,19 @@ function Home() {
         <NavLink to="/admin" className="flex justify-end mr-16 my-5">
           <p className="font-bold">Ir a admin (pruebas)</p>
         </NavLink>
+        <div className="flex justify-center">
+          <h4 className='flex gap-0.5'>
+            Creado con <span class="material-symbols-outlined">favorite</span> 
+            por
+            <span
+              onClick={() => setIsModal((prev) => !prev)}
+              className="underline cursor-pointer ml-2"
+            >
+               React Team
+            </span>
+          </h4>
+          {isModal && <ParticipantsModal setOpenModal={setIsModal} />}
+        </div>
       </div>
       <FooterMenu />
     </>
