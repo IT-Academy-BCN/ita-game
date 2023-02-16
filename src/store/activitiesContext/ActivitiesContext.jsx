@@ -7,14 +7,17 @@ const currentUser = {
   id: "63e9d29bb04cb600417abcb6",
   name: "Ona Costa",
   points: 80,
+
 };
 const url = "https://itacademy.onrender.com/api/activity/";
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
+
 const options = {
   headers: {
     Authorization: `Bearer ${token}`,
   },
+
 };
 
 export const ActivitiesContextProvider = ({ children }) => {
@@ -41,6 +44,7 @@ export const ActivitiesContextProvider = ({ children }) => {
     };
     getActivitiesOfAUser();
   }, []);
+
 
   return (
     <ActivitiesContext.Provider value={{ activities, activitiesAll }}>
