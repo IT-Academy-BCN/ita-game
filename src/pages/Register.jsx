@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from '../store/authentication/authContext';
 import { Title } from "../components/atoms";
 import Modal from "../components/molecules/Modal";
+import Avatar from "../components/avatar/Avatar";
 
 
 // TODO: informar el usuario ha sido o no registrado
@@ -141,14 +142,11 @@ function Register() {
                     <span className="label-text">Pick your avatar</span>
                     <span className="label-text-alt">Woman/Man</span>
                   </label>
-                  <select
-                    name="sex"
-                    className="select select-bordered"
-                    onChange={onChange}
-                  >
-                    <option value="woman">woman</option>
-                    <option value="man">man</option>
-                  </select>
+               <div className="flex justify-center">
+                 
+                      <Avatar edit />
+                 
+               </div>
                 </div>
               </>
             )}
