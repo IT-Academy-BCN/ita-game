@@ -9,7 +9,6 @@ export default function AvatarContainer({ className, random, ...rest }) {
 
  
   const config = random ? genConfig() : genConfig(avatar)
-  console.log('random from AvatarContainer', random)
 
   useEffect(() => {
     dispatch({ type: actions.UPDATE_AVATAR, payload: { ...avatar } })
