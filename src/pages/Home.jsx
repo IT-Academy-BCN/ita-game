@@ -5,15 +5,14 @@ import { WeeklyResume } from '../components';
 import { AuthContext } from '../store/authentication/authContext';
 
 function Home() {
-  const { state } = useContext(AuthContext);
-  const { user } = state;
+  const { user } = useContext(AuthContext);
 
   return (
     <>
       <Navbar>Resumen Semanal</Navbar>
       <div className="w-full h-full bg-base pt-12 pb-12">
         <div className="flex items-start p-6">
-          <h1 className="font-bold text-3xl">Hola {user.name}!</h1>
+          <h1 className="font-bold text-3xl">Hola {user && user.user.name}!</h1>
         </div>
         <div className="flex items-start ml-6">
           <p className="font-bold">Puntos ganados</p>

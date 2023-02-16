@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { inputs } from "../components/atoms/input/Input";
 import Input from "../components/atoms/input/Input";
 import Swal from "sweetalert2";
+import { AuthContext } from '../store/authentication/authContext';
 
 const API_URL = "https://itacademy.onrender.com/api/users";
 
@@ -17,10 +19,7 @@ function Register() {
     password: "",
     confirmPassword: "",
   });
-  const [state, setState] = useState({
-    loading: false,
-    errorMessage: null,
-  });
+
 
   const navigate = useNavigate();
 
@@ -36,8 +35,18 @@ function Register() {
     });
 
   const [isChecked, setIsChecked] = useState(false);
-
+  
   const handleSubmit = async (e) => {
+
+  const { register, error } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const user = {
       name: values.name,
@@ -50,6 +59,7 @@ function Register() {
       activities: 0,
       avatar: {
         sex: values.sex,
+
         hairStyle: "normal",
         hairColor: "#BA4A00",
         faceColor: "#FAD7A0",
@@ -101,6 +111,7 @@ function Register() {
             method="POST"
             onSubmit={handleSubmit}
           >
+
             {openModal ? (
               <Modal>
                 <div className="flex flex-col">
@@ -171,10 +182,12 @@ function Register() {
             </div>
 
             <div className="pt-4">
+
             <button type="submit" className={`btn btn-block btn-primary ${!isChecked && "cursor-not-allowed"}`}>
                 <span className="font-bold">
                   {state.loading ? "Loading..." : "Registrarme"}
                 </span>
+
               </button>
             </div>
           </form>
