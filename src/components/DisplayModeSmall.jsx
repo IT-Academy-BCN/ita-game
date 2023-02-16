@@ -2,11 +2,10 @@ import rightArrow from "../assets/arrow_right.svg";
 import Avatar from "./Avatar/Avatar";
 
 export default function DisplayModeSmall({
-  user = { name: "user", points: 0 },
-  position = "",
-  currentUser = { name: "Nombre Apellido", points: 0 },
-  week = null,
-  level = null,
+  user,
+  currentUser = { _id: "ninguno" },
+  position,
+  level,
 }) {
   let borderColor = "";
   if (position === 1) {
@@ -18,14 +17,14 @@ export default function DisplayModeSmall({
   }
 
   let backgroundColor = "";
-  if (user.name === currentUser.name) {
+  if (user.id === currentUser._id) {
     backgroundColor = "bg-primary";
   } else {
     backgroundColor = "bg-white";
   }
 
   let colorIndex = "";
-  if (user.name === currentUser.name) {
+  if (user.id === currentUser._id) {
     colorIndex = "badge-secondary text-white"; // no se puede escoger directamente el color del bg que quieres. Hay que escoger entre primary, secondary, neutral y algunos más.
   } else {
     colorIndex = "badge-primary";
@@ -48,7 +47,6 @@ export default function DisplayModeSmall({
         </div>
         <div className="flex flex-col justify-center pl-6">
           <h2 className="font-bold text-black">{user.name}</h2>
-          {week && <p>Semana {week}</p>}
           {level && <p>#Nivell {level}</p>}
         </div>
       </div>

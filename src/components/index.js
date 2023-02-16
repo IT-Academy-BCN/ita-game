@@ -1,9 +1,10 @@
-export { default as Navbar } from './Navbar';
-export { default as FooterMenu } from './FooterMenu';
 export { default as AvatarTemp } from './AvatarTemp';
-export { default as DisplayModeSmall } from './DisplayModeSmall';
 export { default as DisplayMode } from './DisplayMode';
-export { default as WeeklyResume } from './WeeklyResume';
-export { default as UserCard } from './UserCard';
-export { default as ResourcesCard } from './ResourcesCard';
+export { default as DisplayModeSmall } from './DisplayModeSmall';
 export { default as DropDown } from './DropdownAdmin';
+export { default as FooterMenu } from './FooterMenu';
+export { default as Navbar } from './Navbar';
+export { default as ParticipantsModal } from './ParticipantsModal';
+export { default as ResourcesCard } from './ResourcesCard';
+export { default as UserCard } from './UserCard';
+export { default as WeeklyResume } from './WeeklyResume';

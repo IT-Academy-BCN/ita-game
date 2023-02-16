@@ -5,25 +5,14 @@ import { useEffect, useState, useContext } from "react";
 import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext";
 import filterByLastWeek from "../utils/filterByLastWeek";
 import userList from "../utils/userList";
-
-const currentUser = {
-  id: "63e9d29bb04cb600417abcb6",
-  name: "Ona Costa",
-  points: 80,
-};
-const url = "https://itacademy.onrender.com/api/activity/";
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
-const options = {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-};
+import { AuthContext } from "../store/authentication/authContext";
 
 function LeaderBoard() {
   const { activitiesAll } = useContext(ActivitiesContext);
   const [users, SetUsers] = useState();
   const [isLoading, SetIsLoading] = useState(false);
+  const { user } = useContext(AuthContext);
+  const currentUser = user.user;
 
   useEffect(() => {
     SetIsLoading(true);

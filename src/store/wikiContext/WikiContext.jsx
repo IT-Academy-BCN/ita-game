@@ -69,7 +69,7 @@ export const WikiContextProvider = ({ children }) => {
   };
 
   const sortByDate = () => {
-    let copyOriginal = [...originalStackData];
+    let copyOriginal = [...stackData];
     copyOriginal.sort((a, b) => {
       return new Date(b.createdOn) - new Date(a.createdOn);
     });
@@ -77,7 +77,7 @@ export const WikiContextProvider = ({ children }) => {
     setStackData(copyOriginal);
   };
   const sortByLikes = () => {
-    let copyOriginal = [...originalStackData];
+    let copyOriginal = [...stackData];
     copyOriginal.sort((a, b) => {
       return b.likes - a.likes;
     });
