@@ -6,7 +6,7 @@ import Swal from "sweetalert2"
 import { AuthContext } from "../store/authentication/authContext"
 import { Title } from "../components/atoms"
 import Modal from "../components/molecules/Modal"
-import Avatar from "../components/avatar/Avatar"
+import Avatar from 'react-nice-avatar'
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -135,7 +135,7 @@ function Register() {
                     <span className="label-text-alt">Woman/Man</span>
                   </label>
                   <div className="flex justify-center">
-                    <Avatar edit />
+                    <Avatar />
                   </div>
                 </div>
               </>
