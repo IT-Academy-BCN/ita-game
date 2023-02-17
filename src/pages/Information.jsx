@@ -10,7 +10,7 @@ function Information() {
   return (
     <>
       <Navbar>Información y normativa</Navbar>
-      <div className="relative pt-16 pb-16 min-h-screen w-screen bg-gray-200">
+      <div className="relative pt-16 pb-16 min-h-screen w-screen">
         <div className="w-full overflow-visible ">
           <div className="flex overflow-x-scroll no-scrollbar max-w-full mt-4 ml-4 whitespace-nowrap">
             <button

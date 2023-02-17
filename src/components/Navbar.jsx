@@ -14,7 +14,7 @@ function Navbar({ children }) {
 
   return (
     <div className="fixed z-[1000] flex w-full items-center justify-between rounded-b-xl bg-black p-3 text-center text-white">
-      <NavLink to={"/"}>
+      <NavLink to={"/home"}>
         <IconArrow />
       </NavLink>
       <div className="flex flex-grow justify-center">{children}</div>

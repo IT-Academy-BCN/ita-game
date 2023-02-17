@@ -1,13 +1,12 @@
-import { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { inputs } from "../components/atoms/input/Input";
-import Input from "../components/atoms/input/Input";
-import Swal from "sweetalert2";
-import { AuthContext } from '../store/authentication/authContext';
-import { Title } from "../components/atoms";
-import Modal from "../components/molecules/Modal";
-import Avatar from "../components/avatar/Avatar";
-
+import { useContext, useState } from "react"
+import { useNavigate, Link } from "react-router-dom"
+import { inputs } from "../components/atoms/input/Input"
+import Input from "../components/atoms/input/Input"
+import Swal from "sweetalert2"
+import { AuthContext } from "../store/authentication/authContext"
+import { Title } from "../components/atoms"
+import Modal from "../components/molecules/Modal"
+import Avatar from "../components/avatar/Avatar"
 
 // TODO: informar el usuario ha sido o no registrado
 function Register() {
@@ -18,31 +17,27 @@ function Register() {
     email: "",
     password: "",
     confirmPassword: "",
-  });
+  })
 
-
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
 
   const showAlert = ({ message }) =>
     Swal.fire({
       icon: "error",
       title: "Oops...",
       text: message,
-    });
+    })
 
-  const [isChecked, setIsChecked] = useState(false);
-  
-  
+  const [isChecked, setIsChecked] = useState(false)
 
-  const { register, error } = useContext(AuthContext);
-
+  const { register, error } = useContext(AuthContext)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const user = {
       name: values.name,
       surname: values.surname,
@@ -67,27 +62,25 @@ function Register() {
         shirtColor: "#BB8FCE",
         bgColor: "#58c914",
       },
-    };
+    }
     if (isChecked) {
-
       register(user)
-      .then(() => {
-        navigate('/');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-      }
-    
-  };
+        .then(() => {
+          navigate("/")
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }
+  }
 
-  const inputArray = inputs(values.password);
+  const inputArray = inputs(values.password)
 
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
 
   const handleOpenModal = () => {
-    setOpenModal(true);
-  };
+    setOpenModal(true)
+  }
 
   return (
     <div className="flex min-h-screen justify-center pt-20 px-4">
@@ -104,7 +97,6 @@ function Register() {
             method="POST"
             onSubmit={handleSubmit}
           >
-
             {openModal ? (
               <Modal>
                 <div className="flex flex-col">
@@ -142,9 +134,9 @@ function Register() {
                     <span className="label-text">Pick your avatar</span>
                     <span className="label-text-alt">Woman/Man</span>
                   </label>
-               <div className="flex justify-center">
-                      <Avatar edit  />
-               </div>
+                  <div className="flex justify-center">
+                    <Avatar edit />
+                  </div>
                 </div>
               </>
             )}
@@ -170,19 +162,20 @@ function Register() {
             </div>
 
             <div className="pt-4">
-
-            <button type="submit" className={`btn btn-block btn-primary ${!isChecked && "cursor-not-allowed"}`}>
-                <span className="font-bold">
-                  Registrarme
-                </span>
-
+              <button
+                type="submit"
+                className={`btn btn-block btn-primary ${
+                  !isChecked && "cursor-not-allowed"
+                }`}
+              >
+                <span className="font-bold">Registrarme</span>
               </button>
             </div>
           </form>
         </div>
         <div className="flex justify-center pb-10">
           <Link
-            to="/login"
+            to="/"
             className="font-bold text-black hover:text-indigo-500 underline"
           >
             ¿Tienes una cuenta?,entrar
@@ -190,7 +183,7 @@ function Register() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Register;
+export default Register

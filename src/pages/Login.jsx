@@ -1,27 +1,27 @@
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../store/authentication/authContext';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from "react"
+import { Link } from "react-router-dom"
+import { AuthContext } from "../store/authentication/authContext"
+import { useNavigate } from "react-router-dom"
 
 function Login() {
   const [values, setValues] = useState({
-    email: '',
-    password: '',
-  });
-  const navigate = useNavigate();
+    email: "",
+    password: "",
+  })
+  const navigate = useNavigate()
 
-  const { login, error } = useContext(AuthContext);
+  const { login, error } = useContext(AuthContext)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     login(values)
       .then(() => {
-        navigate('/');
+        navigate("/")
       })
       .catch(() => {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
 
   return (
     <div className="flex min-h-screen justify-center pt-20 px-4">
@@ -113,12 +113,12 @@ function Login() {
             to="/register"
             className="font-bold text-black hover:text-indigo-500 underline"
           >
-            ¿No tienes una cuenta?,crear una
+            ¿No tienes una cuenta? Crear una
           </Link>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

@@ -48,8 +48,8 @@ function Profile() {
   return (
     <>
       <Navbar>Perfil</Navbar>
-      <div className="h-screen pt-10 mb-15">
-        <div className="p-5 bg-slate-100">
+      <div className="min-h-screen pt-12 pb-12">
+        <div className="p-5">
           <CardProfile data={data} />
           <EarnBadges fakeUsers={fakeUsers} />
           <PendingBadges fakeUsers={fakeUsers} />
