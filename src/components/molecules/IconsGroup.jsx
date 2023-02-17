@@ -15,7 +15,7 @@ const IconsGroup = () => {
       <NavLink
         to="/home"
         className={`${
-          location.pathname === "/" || location.pathname === "/admin"
+          location.pathname === "/home" || location.pathname === "/admin"
             ? "text-primary"
             : ""
         }`}
