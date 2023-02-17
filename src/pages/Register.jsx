@@ -178,7 +178,7 @@ function Register() {
             to="/"
             className="font-bold text-black hover:text-indigo-500 underline"
           >
-            ¿Tienes una cuenta?,entrar
+            ¿Tienes una cuenta? Entra
           </Link>
         </div>
       </div>
