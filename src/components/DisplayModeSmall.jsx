@@ -1,12 +1,22 @@
 import rightArrow from "../assets/arrow_right.svg";
-import Avatar from "./Avatar/Avatar";
+import Avatar, { genConfig } from 'react-nice-avatar'
+import { useEffect, useState } from "react";
+
 
 export default function DisplayModeSmall({
   user,
   currentUser = { _id: "ninguno" },
   position,
   level,
-}) {
+})
+{
+  const [config, setConfig] = useState();
+
+  useEffect(()=>{
+    // TODO: Login endpoint will return avatar in the future. Get avatar from authContext
+    setConfig(genConfig())
+  },[])
+
   let borderColor = "";
   if (position === 1) {
     borderColor = "border-2 border-yellow-500"; // cambiar por oro
@@ -36,7 +46,7 @@ export default function DisplayModeSmall({
     >
       <div className="flex">
         <div className="flex w-16">
-          <Avatar className="w-14 h-14" />
+         <Avatar className="w-14 h-14" {...config} />
           {user.points && (
             <span
               className={`flex font-semibold z-[100] items-center justify-center border-white w-[25px] h-[25px] border-2 absolute right-0 bottom-[55px] left-14 rounded-full text-center text-[10px]  text-black ${colorIndex}`}
