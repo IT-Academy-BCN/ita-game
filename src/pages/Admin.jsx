@@ -80,6 +80,10 @@ const Admin = () => {
                      showConfirmButton: false,
                      timer: 2500
                   });
+                  setSelectedStack(null);
+                  setSelectedUser(null);
+                  setSelectedActivity(null);
+                  setStartDate(new Date());
                }
             })
             .catch((error) => {
