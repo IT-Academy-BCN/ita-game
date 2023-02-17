@@ -23,40 +23,41 @@ const url = "https://itacademy.onrender.com/api/activity/";
 
 export const ActivitiesContextProvider = ({ children }) => {
 
+
   const { user } = useContext(AuthContext)
   console.log("user", user.token)
 
   const [activities, setActivities] = useState([]);
   const [activitiesAll, setActivitiesAll] = useState([]);
 
+  const getActivitiesOfAUser = async () => {
+    let dataAll = [];
+    try {
+      const response = await axios.get(url, 
+        { headers: {
+          Authorization: `Bearer ${user.token}`,
+        }});
+      if (response.status === 200) {
+        const { data } = response;
+        dataAll = data;
+        setActivitiesAll(dataAll);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    if(user){
+    let dataUser = dataAll.filter(
+      (user) => user.doneBy._id == user.user._id
+    );
+    setActivities(dataUser);}
+  };
 
   useEffect(() => {
-    let dataAll = [];
-    const getActivitiesOfAUser = async () => {
-      try {
-        const response = await axios.get(url, 
-          { headers: {
-            Authorization: `Bearer ${user.token}`,
-          }});
-        if (response.status === 200) {
-          const { data } = response;
-          dataAll = data;
-          setActivitiesAll(dataAll);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-      if(user){
-      let dataUser = dataAll.filter(
-        (user) => user.doneBy._id == user.user._id
-      );
-      setActivities(dataUser);}
-    };
     getActivitiesOfAUser();
   }, []);
 
   return (
-    <ActivitiesContext.Provider value={{ activities, activitiesAll }}>
+    <ActivitiesContext.Provider value={{ activities, activitiesAll, getActivitiesOfAUser }}>
       {children}
     </ActivitiesContext.Provider>
   );

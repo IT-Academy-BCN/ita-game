@@ -12,10 +12,15 @@ function Home() {
   const [isModal, setIsModal] = useState(false);
   const [data, setData] = useState([])
   const { activities } = useContext(ActivitiesContext)
+  const { getActivitiesOfAUser } = useContext(ActivitiesContext)
   const currentWeekData = useCurrentWeek()
   const { user } = useContext(AuthContext)
 
   const totalPerWeek = calculateITA(data)
+
+  useEffect(() => {
+    getActivitiesOfAUser()
+  }, [])
 
   useEffect(() => {
     const groupedData = groupByType(currentWeekData)
