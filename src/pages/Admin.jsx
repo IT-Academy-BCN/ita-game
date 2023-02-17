@@ -104,7 +104,7 @@ const Admin = () => {
                {/* TODO -> <h1>¡Hola {currentUser.name}!</h1> */}
                <h1 className="text-3xl font-bold text-black">¡Hola Manoli!</h1>
             </div>
-            <div className="mx-7 mt-10 mb-0">
+            <div className="mx-7 mt-10 mb-1 font-bold">
                <h1>Añadir nueva actividad</h1>
             </div>
             <DropDown info={categories} selected={selectedStack} setSelected={setSelectedStack} id="stack">
