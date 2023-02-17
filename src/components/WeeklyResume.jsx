@@ -13,7 +13,7 @@ const WeeklyResume = ({ data }) => {
         punctuation={data.revision ? `${data.revision.length} / 2` : "0 / 2"}
         points="+15"
       >
-        <img src={zoom} alt="zoom" className="z-[100] h-14" />
+        <img src={zoom} alt="zoom" className="z-[40] h-14" />
       </IndicatorGroup>
 
       <IndicatorGroup
@@ -21,7 +21,7 @@ const WeeklyResume = ({ data }) => {
         punctuation={data.wiki ? `${data.wiki.length}` : "0"}
         points="+5"
       >
-        <img src={folder} alt="folder" className="z-[100] h-12" />
+        <img src={folder} alt="folder" className="z-[40] h-12" />
       </IndicatorGroup>
 
       <IndicatorGroup
@@ -29,7 +29,7 @@ const WeeklyResume = ({ data }) => {
         punctuation={data.doubt ? `${data.doubt.length} / 1` : "0 / 1"}
         points="+10"
       >
-        <img src={thumb} alt="zoom" className="z-[100] h-12" />
+        <img src={thumb} alt="zoom" className="z-[40] h-12" />
       </IndicatorGroup>
 
       <IndicatorGroup
@@ -37,7 +37,7 @@ const WeeklyResume = ({ data }) => {
         punctuation={data.explanation ? `${data.explanation.length}` : "0"}
         points="+30"
       >
-        <img src={medal} alt="zoom" className="z-[100] h-14" />
+        <img src={medal} alt="zoom" className="z-[40] h-14" />
       </IndicatorGroup>
     </div>
   )
