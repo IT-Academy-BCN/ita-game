@@ -1,7 +1,6 @@
 import arrowDown from '../assets/arrow_down.svg';
 
-const DropdownAdmin = ({ categories, selected, setSelected, children, id }) => {
-   console.log('selected', selected);
+const DropdownAdmin = ({ info, selected, setSelected, children, id }) => {
    const handleClick = () => {
       const elem = document.activeElement;
       if (elem) {
@@ -46,7 +45,7 @@ const DropdownAdmin = ({ categories, selected, setSelected, children, id }) => {
             <img className="w-6" src={arrowDown} alt="Arrow down" />
          </div>
          <ul tabIndex={0} className="dropdown-content  bg-transparent rounded-box w-full">
-            {categories?.map((c) => (
+            {info?.map((c) => (
                <li
                   className="card flex flex-row justify-between items-center p-2 my-1 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
                   key={c.id}

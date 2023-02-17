@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { FooterMenu, Navbar } from '../components';
+import { DropDown, FooterMenu, Navbar } from '../components';
 import arrowDown from '../assets/arrow_down.svg';
 import { Title } from '../components/atoms';
 import Calender from '../components/Calender';
@@ -12,7 +12,7 @@ import medal from '../assets/images/medal-dynamic-color.png';
 
 const URL_USERS = 'https://itacademy.onrender.com/api/users';
 const token =
-   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzY0NjA4MDJ9.K8XxxIIqilV3Z39zEjlTzXOwlHSLz-4kQbmToiZWLQs';
+   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDEzOWIwNGNiNjAwNDE3YWJjYjAiLCJpYXQiOjE2NzY1Mjc1NjB9.ruhJ15DHlKeqeXT1EqO-v6BITS_eAZECFGKDfK6YHig';
 const options = {
    headers: {
       Authorization: `Bearer ${token}`
@@ -38,13 +38,11 @@ const activities = [
 const Admin = () => {
    const users = useUsers(URL_USERS);
    const hiddenBrowseButton = useRef(null);
+   const [message, setMessage] = useState('');
 
    const [selectedStack, setSelectedStack] = useState(null);
    const [selectedUser, setSelectedUser] = useState(null);
    const [selectedActivity, setSelectedActivity] = useState(null);
-
-   //  ¿Convertir a startDate?.ISOString()?
-   //  Si no se elije fecha, por defecto va la actual
    const [startDate, setStartDate] = useState(new Date());
 
    const [data, setData] = useState();
@@ -55,7 +53,7 @@ const Admin = () => {
       if (selectedActivity) {
          const newData = {
             type: selectedActivity.type,
-            date: startDate
+            date: startDate?.toISOString()
          };
          setData(newData);
       }
@@ -70,20 +68,17 @@ const Admin = () => {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      // if (selectedActivity) {
-      //    const newData = {
-      //       type: selectedActivity.type,
-      //       date: startDate
-      //    };
-      //    setData(newData);
-      // }
-      // console.log('FALTAN DATOS');
 
-      try {
-         await axios.post(`https://itacademy.onrender.com/api/activity/new/${selectedUser._id}`, data);
-      } catch (error) {
-         console.log(error);
-      }
+      axios
+         .post(`https://itacademy.onrender.com/api/activity/new/${selectedUser._id}`, data, options)
+         .then((response) => {
+            if (response.status === 200) {
+               setMessage('Datos enviados correctamente');
+            }
+         })
+         .catch((error) => {
+            console.error(error);
+         });
    };
 
    return (
@@ -97,59 +92,10 @@ const Admin = () => {
             <div className="mx-7 mt-10 mb-0">
                <Title>Añadir nueva actividad</Title>
             </div>
-            {/* DROPDOWN TYPES */}
-            <div
-               className="card dropdown dropdown-bottom cursor-pointer flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
-               tabIndex={0}
-            >
-               <div className="flex flex-row">
-                  <div className="avatar">
-                     <div className="w-14 rounded-full px-2 py-2">
-                        <img
-                           src={import.meta.resolve(
-                              `../assets/images/${selectedStack ? selectedStack.name : 'angular'}.png`
-                           )}
-                           alt={`${selectedStack?.name}-logo`}
-                        />
-                     </div>
-                  </div>
-                  <div className="flex flex-col justify-center pl-2 my-1">
-                     <h2 className="font-bold text-black">{selectedStack ? selectedStack.name : 'Categoría'}</h2>
-                  </div>
-               </div>
-               <div>
-                  <img className="w-6" src={arrowDown} alt="Arrow down" />
-               </div>
-               <ul tabIndex={0} className="dropdown-content  bg-transparent rounded-box w-full">
-                  {categories.map((c) => (
-                     <li
-                        className="card flex flex-row justify-between items-center p-2 my-1 mx-6 border border-stone-300 hover:border-stone-400 bg-white"
-                        key={c.id}
-                        // value={c.id}
-                        onClick={() => {
-                           handleClick();
-                           setSelectedStack(c);
-                        }}
-                     >
-                        <div className="flex flex-row">
-                           <div className="avatar">
-                              <div className="w-14 rounded-full bg-slate-100 px-2 py-2">
-                                 <img
-                                    src={import.meta.resolve(`../assets/images/${c.name}.png`)}
-                                    alt={`${c.name}-logo`}
-                                 />
-                              </div>
-                           </div>
-                           <div className="flex flex-col justify-center pl-2 my-1">
-                              <h2 className="font-bold text-black">
-                                 {c.name.slice(0, 1).toUpperCase() + c.name.slice(1)}
-                              </h2>
-                           </div>
-                        </div>
-                     </li>
-                  ))}
-               </ul>
-            </div>
+            {/*  */}
+            <DropDown info={categories} selected={selectedStack} setSelected={setSelectedStack} id="stack">
+               Categoría
+            </DropDown>
             {/* DROPDOWN USERS */}
             <div
                className="card dropdown dropdown-bottom cursor-pointer flex flex-row justify-between items-center p-2.5 my-2 mx-6 border border-stone-300 hover:border-stone-400 bg-white "
@@ -250,8 +196,11 @@ const Admin = () => {
             </div>
             {/* CALENDER */}
             <Calender startDate={startDate} setStartDate={setStartDate} />
+            <div className="text-center mt-4 mb-0 font-bold text-green-600">
+               <p>👌 {message}</p>
+            </div>
             <div className="flex justify-center mb-3">
-               <button type="submit" className="btn  btn-primary mt-6 w-80 px-16" onClick={handleSubmit}>
+               <button type="submit" className="btn  btn-primary mt-3 w-80 px-16" onClick={handleSubmit}>
                   <span className="text-gray-900">Enviar</span>
                </button>
             </div>
