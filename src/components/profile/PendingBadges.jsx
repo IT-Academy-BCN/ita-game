@@ -3,12 +3,11 @@ import React from 'react'
 import gym from '../../assets/images/gym-dynamic-clay.png'
 import Badge from './Badge'
 import Card from './Card'
-import Title from './Title'
 
 function PendingBadges() {
   return (
     <>
-      <Title>Insignias Pendientes</Title>
+      <h1 className="my-4 mt-6 font-bold text-black">Insignias pendientes</h1>
       <Card>
         <Badge
           classBody="card-body py-0 px-0 gap-0 items-center text-center"

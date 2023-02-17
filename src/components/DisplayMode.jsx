@@ -6,23 +6,30 @@ import { ActivitiesContext } from "../store/activitiesContext/ActivitiesContext"
 import { useEffect, useState, useContext } from "react";
 import filterByLastWeek from "../utils/filterByLastWeek";
 import userList from "../utils/userList";
-import Avatar from "./Avatar/Avatar";
+import Avatar, { genConfig } from 'react-nice-avatar'
 
 export default function DisplayMode() {
   const { activities } = useContext(ActivitiesContext);
   const [user, SetUser] = useState([]);
+  const [config, setConfig] = useState();
+
+  useEffect(()=>{
+    // TODO: Login endpoint will return avatar in the future. Get avatar from authContext
+    setConfig()
+  },[user])
 
   useEffect(() => {
     const filteredActivities = filterByLastWeek(activities);
     const user = userList(filteredActivities);
     SetUser(user);
   }, [activities]);
+
   return (
     <>
       {user.length > 0 && (
         <div className="card bg-white  flex flex-col p-6 content-around mx-6 mt-6 ">
           <div className="flex flex-row justify-start mb-6">
-            <Avatar />
+              <Avatar {...config} className="w-28 h-28"/>
             <div className="flex flex-col pl-6 ">
               <p className="text-black font-bold ">{user[0].name}</p>
               <p>jQuery</p>
