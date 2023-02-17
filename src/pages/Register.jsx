@@ -4,7 +4,6 @@ import { inputs } from "../components/atoms/input/Input"
 import Input from "../components/atoms/input/Input"
 import Swal from "sweetalert2"
 import { AuthContext } from "../store/authentication/authContext"
-import { Title } from "../components/atoms"
 import Modal from "../components/molecules/Modal"
 import Avatar from 'react-nice-avatar'
 
@@ -101,7 +100,7 @@ function Register() {
               <Modal>
                 <div className="flex flex-col">
                   <div className="card-title justify-between">
-                    <Title>Términos y condiciones</Title>
+                    <h1>Términos y condiciones</h1>
                     <button
                       className="btn btn-circle bg-secondary"
                       onClick={() => setOpenModal(false)}

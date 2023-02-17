@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { WikiContext } from '../store/wikiContext/WikiContext';
 import { FooterMenu, Navbar } from '../components';
-import { Title } from '../components/atoms';
 import DisplayModeWiki from '../components/DisplayModeWiki';
 import folder from '../assets/images/new-folder-dynamic-color.png';
 import arrowRight from '../assets/arrow_right.svg';
@@ -57,7 +56,7 @@ const Wiki = () => {
       </div>
       <div className="container min-w-full flex flex-col pb-10 bg-white -mt-12">
         <div className="mx-7 mt-10 mb-0 bg-white">
-          <Title>Categorías</Title>
+          <h1>Categorías</h1>
         </div>
         {categories.map((c) => (
           <NavLink
