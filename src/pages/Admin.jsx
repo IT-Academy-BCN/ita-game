@@ -9,6 +9,7 @@ import zoom from '../assets/images/zoom-dynamic-color.png';
 import folder from '../assets/images/new-folder-dynamic-color.png';
 import thumb from '../assets/images/thumb-up-dynamic-color.png';
 import medal from '../assets/images/medal-dynamic-color.png';
+import Swal from 'sweetalert2';
 
 const URL_USERS = 'https://itacademy.onrender.com/api/users';
 const token =
@@ -69,16 +70,25 @@ const Admin = () => {
    const handleSubmit = async (e) => {
       e.preventDefault();
 
-      axios
-         .post(`https://itacademy.onrender.com/api/activity/new/${selectedUser._id}`, data, options)
-         .then((response) => {
-            if (response.status === 200) {
-               setMessage('Datos enviados correctamente');
-            }
-         })
-         .catch((error) => {
-            console.error(error);
-         });
+      if (selectedUser && selectedUser._id) {
+         axios
+            .post(`https://itacademy.onrender.com/api/activity/new/${selectedUser._id}`, data, options)
+            .then((response) => {
+               if (response.status === 200) {
+                  Swal.fire({
+                     position: 'center',
+                     icon: 'success',
+                     title: 'Datos enviados correctamente',
+                     showConfirmButton: false,
+                     timer: 2500
+                  });
+               }
+            })
+            .catch((error) => {
+               console.error(error);
+            });
+      }
+      console.log('FALTAN DATOS');
    };
 
    return (
@@ -197,7 +207,7 @@ const Admin = () => {
             {/* CALENDER */}
             <Calender startDate={startDate} setStartDate={setStartDate} />
             <div className="text-center mt-4 mb-0 font-bold text-green-600">
-               <p>👌 {message}</p>
+               <p>{message}</p>
             </div>
             <div className="flex justify-center mb-3">
                <button type="submit" className="btn  btn-primary mt-3 w-80 px-16" onClick={handleSubmit}>
