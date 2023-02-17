@@ -40,7 +40,12 @@ const IconsGroup = () => {
       </NavLink>
       <NavLink
         to="/wiki"
-        className={`${location.pathname === "/wiki" ? "text-primary" : ""}`}
+        className={`${
+          location.pathname === "/wiki" ||
+          location.pathname === "/wiki/resource"
+            ? "text-primary"
+            : ""
+        }`}
       >
         <IconWiki />
       </NavLink>
