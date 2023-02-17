@@ -47,7 +47,7 @@ export const ActivitiesContextProvider = ({ children }) => {
     }
     if(user){
     let dataUser = dataAll.filter(
-      (user) => user.doneBy._id == user.user._id
+      (el) => el.doneBy._id == user.user._id  
     );
     setActivities(dataUser);}
   };
