@@ -9,7 +9,7 @@ import { groupByType } from "../utils/groupByType"
 import { AuthContext } from "../store/authentication/authContext"
 
 function Home() {
-  const [isModal, setIsModal] = useState(false);
+  const [isModal, setIsModal] = useState(false)
   const [data, setData] = useState([])
   const { activities } = useContext(ActivitiesContext)
   const { getActivitiesOfAUser } = useContext(ActivitiesContext)
@@ -50,14 +50,15 @@ function Home() {
           <p className="font-bold">Ir a admin (pruebas)</p>
         </NavLink>
         <div className="flex justify-center">
-          <h4 className='flex gap-0.5 text-xs'>
-            Creado con <span class="material-symbols-outlined text-sm">favorite</span> 
+          <h4 className="flex gap-0.5">
+            Creado con{" "}
+            <span className="material-symbols-outlined">favorite</span>
             por
             <span
               onClick={() => setIsModal((prev) => !prev)}
               className="underline cursor-pointer"
             >
-               React Team
+              React Team
             </span>
           </h4>
           {isModal && <ParticipantsModal setOpenModal={setIsModal} />}
