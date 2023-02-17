@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import Avatar from './Avatar'
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import Avatar from "./Avatar"
 
 function PageEdition() {
   const [edit, setEdit] = useState(false)
@@ -11,7 +11,7 @@ function PageEdition() {
         Display Edition
       </button>
       <Avatar edit={edit} />
-      <Link to="/" className="absolute right-4 btn btn-primary">
+      <Link to="/home" className="absolute right-4 btn btn-primary">
         Home
       </Link>
     </div>
