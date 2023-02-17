@@ -39,7 +39,6 @@ const activities = [
 const Admin = () => {
    const users = useUsers(URL_USERS);
    const hiddenBrowseButton = useRef(null);
-   const [message, setMessage] = useState('');
 
    const [selectedStack, setSelectedStack] = useState(null);
    const [selectedUser, setSelectedUser] = useState(null);
@@ -70,7 +69,7 @@ const Admin = () => {
    const handleSubmit = async (e) => {
       e.preventDefault();
 
-      if (selectedUser && selectedUser._id) {
+      if (data) {
          axios
             .post(`https://itacademy.onrender.com/api/activity/new/${selectedUser._id}`, data, options)
             .then((response) => {
@@ -87,8 +86,15 @@ const Admin = () => {
             .catch((error) => {
                console.error(error);
             });
+      } else {
+         Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: '¡Ojo, faltan datos!',
+            showConfirmButton: false,
+            timer: 2500
+         });
       }
-      console.log('FALTAN DATOS');
    };
 
    return (
@@ -96,13 +102,12 @@ const Admin = () => {
          <Navbar>Home (Admin)</Navbar>
          <div className="container min-w-full flex flex-col bg-slate-100 pb-10">
             <div className="mx-7 mt-20 mb-0">
+               {/* TODO -> <h1>¡Hola {currentUser.name}!</h1> */}
                <h1 className="text-3xl font-bold text-black">¡Hola Manoli!</h1>
-               {/* <h1 className="text-3xl font-bold text-black">¡Hola {currentUser.name}!</h1> */}
             </div>
             <div className="mx-7 mt-10 mb-0">
                <Title>Añadir nueva actividad</Title>
             </div>
-            {/*  */}
             <DropDown info={categories} selected={selectedStack} setSelected={setSelectedStack} id="stack">
                Categoría
             </DropDown>
@@ -206,9 +211,6 @@ const Admin = () => {
             </div>
             {/* CALENDER */}
             <Calender startDate={startDate} setStartDate={setStartDate} />
-            <div className="text-center mt-4 mb-0 font-bold text-green-600">
-               <p>{message}</p>
-            </div>
             <div className="flex justify-center mb-3">
                <button type="submit" className="btn  btn-primary mt-3 w-80 px-16" onClick={handleSubmit}>
                   <span className="text-gray-900">Enviar</span>
