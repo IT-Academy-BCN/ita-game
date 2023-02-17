@@ -1,5 +1,6 @@
 import axios from "axios";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import { AuthContext } from "../authentication/authContext";
 
 export const ActivitiesContext = createContext();
 
@@ -10,25 +11,33 @@ const currentUser = {
 
 };
 const url = "https://itacademy.onrender.com/api/activity/";
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
+// const token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM";
 
-const options = {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
+// const options = {
+//   headers: {
+//     Authorization: `Bearer ${token}`,
+//   },
 
-};
+// };
 
 export const ActivitiesContextProvider = ({ children }) => {
+
+  const { user } = useContext(AuthContext)
+  console.log("user", user.token)
+
   const [activities, setActivities] = useState([]);
   const [activitiesAll, setActivitiesAll] = useState([]);
+
 
   useEffect(() => {
     let dataAll = [];
     const getActivitiesOfAUser = async () => {
       try {
-        const response = await axios.get(url, options);
+        const response = await axios.get(url, 
+          { headers: {
+            Authorization: `Bearer ${user.token}`,
+          }});
         if (response.status === 200) {
           const { data } = response;
           dataAll = data;
@@ -37,14 +46,14 @@ export const ActivitiesContextProvider = ({ children }) => {
       } catch (error) {
         console.error(error);
       }
+      if(user){
       let dataUser = dataAll.filter(
-        (user) => user.doneBy._id == currentUser.id
+        (user) => user.doneBy._id == user.user._id
       );
-      setActivities(dataUser);
+      setActivities(dataUser);}
     };
     getActivitiesOfAUser();
   }, []);
-
 
   return (
     <ActivitiesContext.Provider value={{ activities, activitiesAll }}>
