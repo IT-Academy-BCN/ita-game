@@ -17,7 +17,7 @@ const Indicator = ({ children, punctuation, points }) => {
 
   return (
     <div className="indicator">
-      <span className="flex font-semibold z-[100] items-center justify-center border-white w-[30px] h-[30px] border-2 absolute right-0 bottom-15 left-16 rounded-full text-center text-[10px] bg-black text-white">
+      <span className="flex font-semibold z-[40] items-center justify-center border-white w-[30px] h-[30px] border-2 absolute right-0 bottom-15 left-16 rounded-full text-center text-[10px] bg-black text-white">
         {points}
       </span>
 
