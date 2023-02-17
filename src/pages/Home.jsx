@@ -12,10 +12,15 @@ function Home() {
   const [isModal, setIsModal] = useState(false)
   const [data, setData] = useState([])
   const { activities } = useContext(ActivitiesContext)
+  const { getActivitiesOfAUser } = useContext(ActivitiesContext)
   const currentWeekData = useCurrentWeek()
   const { user } = useContext(AuthContext)
 
   const totalPerWeek = calculateITA(data)
+
+  useEffect(() => {
+    getActivitiesOfAUser()
+  }, [])
 
   useEffect(() => {
     const groupedData = groupByType(currentWeekData)
@@ -41,7 +46,7 @@ function Home() {
         <div className="flex justify-center items-center">
           <WeeklyResume data={data} />
         </div>
-        <NavLink to="/admin" className="flex justify-end mr-16 my-5">
+        <NavLink to="/admin" className="flex justify-center mx-6 my-5">
           <p className="font-bold">Ir a admin (pruebas)</p>
         </NavLink>
         <div className="flex justify-center">
@@ -51,7 +56,7 @@ function Home() {
             por
             <span
               onClick={() => setIsModal((prev) => !prev)}
-              className="underline cursor-pointer ml-2"
+              className="underline cursor-pointer"
             >
               React Team
             </span>

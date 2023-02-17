@@ -16,7 +16,7 @@ function Login() {
     e.preventDefault()
     login(values)
       .then(() => {
-        navigate("/")
+        navigate("/home")
       })
       .catch(() => {
         console.log(error)

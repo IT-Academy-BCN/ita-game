@@ -10,12 +10,13 @@ import { calculateITA } from '../utils/calculateITA';
 import { useContext } from 'react';
 import { ActivitiesContext } from '../store/activitiesContext/ActivitiesContext';
 import useCurrentWeek from '../hooks/useCurrentWeek';
+import { AuthContext } from '../store/authentication/authContext';
 
 function Historical() {
   const { activities } = useContext(ActivitiesContext);
+  const { user } = useContext(AuthContext)
 
   const currentWeekData = useCurrentWeek();
-
   // separa los datos de la semana actual por los tipos de actividad
   const groupedData = groupByType(currentWeekData);
   // suma el total de todas las actividad y el total por actividades separada
@@ -23,7 +24,7 @@ function Historical() {
 
   // PUNTOS TOTAL POR ACTIVIDAD
   const totalITAS = groupByType(activities);
-  const { wiki, explanation, doubt, revision } = calculateITA(totalITAS);
+  const { wiki, total, explanation, doubt, revision } = calculateITA(totalITAS);
 
   return (
     <>
@@ -31,14 +32,14 @@ function Historical() {
       <div className=" pb-10 pt-16 px-5">
         <div className="flex justify-between">
           <div className="self-center">
-            <h1 className="font-bold ">Ona Costa</h1>
+            <h1 className="font-bold ">{user && user.user.name}</h1>
             <p className="font-bold opacity-50	text-xs">Frontend React</p>
           </div>
           <div className="flex bg-white p-2 rounded-full 	">
             <img src={place} className="mr-2 h-12 bg-slate-200 rounded-full " />
             <div className="mr-8">
               <p className="font-bold">Nivel 5</p>
-              <p className="text-xs">235 ITAS</p>
+              <p className="text-xs">{total} ITAS</p>
             </div>
           </div>
         </div>

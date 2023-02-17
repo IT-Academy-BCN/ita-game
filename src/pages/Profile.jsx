@@ -8,9 +8,20 @@ import PendingBadges from '../components/profile/PendingBadges'
 import CardProfile from '../components/profile/CardProfile'
 import { useGetActivities } from '../hooks'
 
+
 // TODO:
 // LOGIC: refactor into smaller components/ endpoint Itaawards with images/Protecte Route
 // UI:Grid on 'Insignias Ganadas' Cards
+
+// Fake user to obtain SVG and Data for looping
+const fakeUsers = {
+  ITAawards: [
+    { name: user.ITAawards[0], img: sun, text: '+5 dudas' },
+    { name: user.ITAawards[1], img: folder, text: '+3 wikis' },
+    { name: user.ITAawards[2], img: rocket, text: '+2 explicaciones' }
+  ],
+  pendingAwards: ['Coordinator']
+}
 
 function Profile() {
   const { data: activities, isSuccess } = useGetActivities(
@@ -35,21 +46,12 @@ function Profile() {
     activities: numberUserActivities
   }
 
-  // Fake user to obtain SVG and Data for looping
-  const fakeUsers = {
-    ITAawards: [
-      { name: user.ITAawards[0], img: sun, text: '+5 dudas' },
-      { name: user.ITAawards[1], img: folder, text: '+3 wikis' },
-      { name: user.ITAawards[2], img: rocket, text: '+2 explicaciones' }
-    ],
-    pendingAwards: ['Coordinator']
-  }
 
   return (
     <>
       <Navbar>Perfil</Navbar>
-      <div className="h-screen pt-10 mb-15">
-        <div className="p-5 bg-slate-100">
+      <div className="min-h-screen pt-12 pb-12">
+        <div className="p-5">
           <CardProfile data={data} />
           <EarnBadges fakeUsers={fakeUsers} />
           <PendingBadges fakeUsers={fakeUsers} />

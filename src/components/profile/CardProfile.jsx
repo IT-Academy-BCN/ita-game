@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ActivitiesContext } from '../../store/activitiesContext/ActivitiesContext'
+import { AuthContext } from '../../store/authentication/authContext'
+import { calculateITA } from '../../utils/calculateITA'
 import { Avatar } from '../avatar'
 import ButtonEdit from './ButtonEdit'
 import Card from './Card'
@@ -7,8 +10,12 @@ import ProgressBar from './ProgressBar'
 import SubLabelProgressBar from './SubLabelProgressBar'
 
 function CardProfile({ data }) {
-  const { name, surname, framework } = data
+  const { framework } = data
+  const { user } = useContext(AuthContext)
 
+  const { activities } = useContext(ActivitiesContext);
+  const totalITAS = calculateITA(activities)
+  const {total} = totalITAS
   const [edit, setEdit] = useState(false)
   const handleClick = e =>  setEdit(!edit)
   
@@ -23,7 +30,7 @@ function CardProfile({ data }) {
            <Avatar />
           {/* name */}
           <div className="font-bold text-black">
-            {name} {surname}
+            {user && user.user.name}
           </div>
           {/* dev position */}
           <div className="font-bold text-neutral-focus">{framework}</div>
