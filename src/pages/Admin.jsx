@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { DropDown, FooterMenu, Navbar } from '../components';
 import arrowDown from '../assets/arrow_down.svg';
-import { Title } from '../components/atoms';
 import Calender from '../components/Calender';
 import useUsers from '../hooks/useUsers';
 import zoom from '../assets/images/zoom-dynamic-color.png';
@@ -106,7 +105,7 @@ const Admin = () => {
                <h1 className="text-3xl font-bold text-black">¡Hola Manoli!</h1>
             </div>
             <div className="mx-7 mt-10 mb-0">
-               <Title>Añadir nueva actividad</Title>
+               <h1>Añadir nueva actividad</h1>
             </div>
             <DropDown info={categories} selected={selectedStack} setSelected={setSelectedStack} id="stack">
                Categoría

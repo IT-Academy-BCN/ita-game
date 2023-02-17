@@ -1,11 +1,11 @@
-import { Avatar } from '../avatar'
+import Avatar from 'react-nice-avatar'
 
 export default function Modal({ modalLink }) {
   return (
     <div className="modal">
       <div className="modal-box relative resize w-full h-full">
         <div className="flex justify-center mt-6">
-          <Avatar edit />
+          <Avatar />
         </div>
         <label
           htmlFor="modalprofile"

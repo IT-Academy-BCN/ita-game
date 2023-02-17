@@ -16,7 +16,7 @@ function Login() {
     e.preventDefault()
     login(values)
       .then(() => {
-        navigate("/")
+        navigate("/home")
       })
       .catch(() => {
         console.log(error)
@@ -113,7 +113,7 @@ function Login() {
             to="/register"
             className="font-bold text-black hover:text-indigo-500 underline"
           >
-            ¿No tienes una cuenta? Crear una
+            ¿No tienes una cuenta? Crea una
           </Link>
         </div>
       </div>

@@ -1,12 +1,11 @@
 import React from 'react'
 import Badge from './Badge'
 import Card from './Card'
-import Title from './Title'
 
 function EarnBadges({ fakeUsers }) {
   return (
     <>
-      <Title>Insignias ganadas</Title>
+      <h1 className="my-4 mt-6 font-bold text-black">Insignias ganadas</h1>
       <Card direction="row">
         {fakeUsers.ITAawards.map(user => {
           return (

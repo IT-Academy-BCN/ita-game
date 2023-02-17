@@ -16,7 +16,7 @@ const UserCard = ({ points }) => {
     >
       <div className="flex flex-row">
         <AvatarTemp>
-          <span className="flex font-semibold z-[100] items-center justify-center border-white w-[25px] h-[25px] border-2 absolute right-0 bottom-[35px] left-10 rounded-full text-center text-[10px] bg-primary text-black">
+          <span className="flex font-semibold z-[50] items-center justify-center border-white w-[25px] h-[25px] border-2 absolute right-0 bottom-[35px] left-10 rounded-full text-center text-[10px] bg-primary text-black">
             {points}
           </span>
         </AvatarTemp>

@@ -1,18 +1,30 @@
-import { useState } from 'react'
-import { Avatar } from '../avatar'
-import ButtonEdit from './ButtonEdit'
+import { useContext, useState, useEffect } from 'react'
+import { ActivitiesContext } from '../../store/activitiesContext/ActivitiesContext'
+import { AuthContext } from '../../store/authentication/authContext'
+import { calculateITA } from '../../utils/calculateITA'
+import Avatar, { genConfig } from 'react-nice-avatar'
 import Card from './Card'
 import DividerSection from './DividerSection'
 import ProgressBar from './ProgressBar'
 import SubLabelProgressBar from './SubLabelProgressBar'
 
 function CardProfile({ data }) {
-  const { name, surname, framework } = data
+  const { framework } = data
+  const { user } = useContext(AuthContext)
 
+  const { activities } = useContext(ActivitiesContext);
+  const totalITAS = calculateITA(activities)
+  const {total} = totalITAS
   const [edit, setEdit] = useState(false)
-  const handleClick = e =>  setEdit(!edit)
-  
+  const [config, setConfig] = useState();
 
+  useEffect(()=>{
+    // TODO: Login endpoint will return avatar in the future. Get avatar from authContext
+    setConfig(genConfig())
+  },[])
+
+  const handleClick = e =>  setEdit(!edit)
+ 
   return (
     <Card>
       {/*  card profile header */}
@@ -20,17 +32,13 @@ function CardProfile({ data }) {
         {/* avatar box */}
         <div className="absolute flex flex-col items-center justify-center ">
           {/* avatar*/}
-           <Avatar />
+           <Avatar {...config} className="w-28 h-28" />
           {/* name */}
-          <div className="font-bold text-black">
-            {name} {surname}
+          <div className="font-bold text-black mt-2">
+            {user && user.user.name}
           </div>
           {/* dev position */}
           <div className="font-bold text-neutral-focus">{framework}</div>
-        </div>
-        {/* edition */}
-        <div className="absolute right-0 w-1/6">
-          <ButtonEdit handleClick={handleClick} />
         </div>
       </div>
       {/* card body */}
@@ -41,7 +49,7 @@ function CardProfile({ data }) {
           <ProgressBar data={data} />
           <SubLabelProgressBar subLabeData={data} />
         </div>
-        {/* divider section */}
+        {/* Profile info */}
         <DividerSection data={data} />
       </div>
     </Card>
