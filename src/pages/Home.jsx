@@ -30,7 +30,7 @@ function Home() {
   return (
     <>
       <Navbar>Resumen Semanal</Navbar>
-      <div className="w-full h-full bg-base pt-12 pb-12">
+      <div className="w-full min-h-screen bg-base pt-12 pb-12">
         <div className="flex items-start p-6">
           <h1 className="font-bold text-3xl">Hola {user && user.user.name}!</h1>
         </div>
@@ -50,7 +50,7 @@ function Home() {
           <p className="font-bold">Ir a admin (pruebas)</p>
         </NavLink>
         <div className="flex justify-center">
-          <h4 className="flex gap-0.5">
+          <h4 className="flex gap-0.5 text-sm">
             Creado con{" "}
             <span className="material-symbols-outlined">favorite</span>
             por
