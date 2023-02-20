@@ -29,7 +29,7 @@ function Historical() {
   return (
     <>
       <Navbar>Historial</Navbar>
-      <div className=" pb-10 pt-16 px-5">
+      <div className=" pb-10 pt-16 px-5 min-h-screen">
         <div className="flex justify-between">
           <div className="self-center">
             <h1 className="font-bold ">{user && user.user.name}</h1>
