@@ -1,7 +1,9 @@
 export { default as AvatarTemp } from './AvatarTemp';
 export { default as DisplayMode } from './DisplayMode';
 export { default as DisplayModeSmall } from './DisplayModeSmall';
-export { default as DropDown } from './DropdownAdmin';
+export { default as DropdownStack } from './DropdownStack';
+export { default as DropdownType } from './DropdownType';
+export { default as DropdownUser } from './DropdownUser';
 export { default as FooterMenu } from './FooterMenu';
 export { default as Navbar } from './Navbar';
 export { default as ParticipantsModal } from './ParticipantsModal';
