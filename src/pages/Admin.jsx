@@ -10,9 +10,9 @@ import thumb from '../assets/images/thumb-up-dynamic-color.png';
 import medal from '../assets/images/medal-dynamic-color.png';
 import Swal from 'sweetalert2';
 
+// TODO: important, remove hardcoded tokens, URLs...
 const URL_USERS = 'https://itacademy.onrender.com/api/users';
-const token =
-   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDEzOWIwNGNiNjAwNDE3YWJjYjAiLCJpYXQiOjE2NzY1Mjc1NjB9.ruhJ15DHlKeqeXT1EqO-v6BITS_eAZECFGKDfK6YHig';
+const token = '';
 const options = {
    headers: {
       Authorization: `Bearer ${token}`
