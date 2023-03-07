@@ -13,7 +13,7 @@ function useGetActivities(url) {
     const headers = new Headers({
       'Content-Type': 'application/json',
       Cookie: document.cookie,
-      Authorization: `Bearer ${import.meta.env.VITE_TOKEN_ACTIVITIES}`
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U5ZDA1OGIwNGNiNjAwNDE3YWJjYWUiLCJpYXQiOjE2NzYyNjc3MjZ9.4NFtPYgOQnQbWeAQ3Ow0qhyeMszw8cqC5TlOBRlaynM`
     })
     fetch(url, {
       method: 'GET',

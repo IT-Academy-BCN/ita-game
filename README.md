@@ -1,27 +1,70 @@
-# ita-game
-Plataforma de gamificación para alumnos de una academia de código
+# Getting Started with Create React App
 
-## Application structure
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-### Atomic Design
+In the project directory, you can run:
 
-Atomic design is not used by the following reasons (following the recommendations of the react web page):
+### `npm start`
 
-- Simplicity: A smaller project may not require the level of organization that atomic design provides. By avoiding the use of atomic design, the project structure is simplified and make it easier to understand.
-- Avoiding excessive nesting: Atomic design often involves creating multiple folders for atoms, molecules, organisms, and templates, which can lead to a deeply nested file structure.
-- Avoid overthinking: When starting a small project, it can be tempting to overthink the structure and try to plan for every possible scenario. However, this can lead to over-engineering and make the project harder to develop.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Therefore, the design consists of two main building blocks: components and pages.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Components
-Components are the smallest and most reusable elements of the interface. They are responsible for rendering individual panels or UI elements of the app.
+### `npm test`
 
-### Pages
-Pages are composed of components and are responsible for rendering the different sections or screens of the app. They provide context and meaning to the components they contain.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-By following this simplified atomic design, the application is made up of modular and reusable components, making it easier to maintain and scale in the future.
+### `npm run build`
 
-## Styles structure
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The CSS for this project is organized by following the principle of grouping similar types of files together. All CSS files are stored in the same folder grouped into components and pages, naming each css file after the component or page they reference. 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

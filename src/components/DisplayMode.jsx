@@ -32,7 +32,7 @@ export default function DisplayMode() {
               <Avatar {...config} className="w-28 h-28"/>
             <div className="flex flex-col pl-6 ">
               <p className="text-black font-bold ">{user[0].name}</p>
-              <p>jQuery</p>
+              <p>React</p>
               <div className="flex flex-row mt-2">
                 <img
                   src={medal}

@@ -24,7 +24,7 @@ export const calculateITA = (obj) => {
     }
     if (obj.revision) {
       const length = Object.keys(obj.revision).length;
-      revision += length * 15;
+      revision += length * 10;
       total += revision
     }
   
